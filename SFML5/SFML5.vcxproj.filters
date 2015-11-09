@@ -13,9 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\TinyXML">
+      <UniqueIdentifier>{3115e603-520f-4888-8000-ef16281d454e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyXML\tinyxml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyXML\tinystr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyXML\tinyxmlerror.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyXML\tinyxmlparser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -27,6 +42,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="coordinate.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="level.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyXML\tinystr.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
