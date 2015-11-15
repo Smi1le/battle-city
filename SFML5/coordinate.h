@@ -9,15 +9,15 @@ void getplayercoordinateforview(float x, float y) {
 
 void viewMap(float time) {
 	if (Keyboard::isKeyPressed(Keyboard::D)) {
-		view.move(0.1*time, 0);
+		view.move(0.1f*time, 0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::S)) {
-		view.move(0, 0.1*time);
+		view.move(0, 0.1f*time);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::A)) {
-		view.move(-0.1*time, 0);
+		view.move(-0.1f*time, 0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::W)) {
-		view.move(0, -0.1*time);
+		view.move(0, -0.1f*time);
 	}
 }
