@@ -40,14 +40,17 @@ public:
 	std::vector<Object> GetAllObjects();//выдаем все объекты в наш уровень
 	void Draw(sf::RenderWindow &window);//рисуем в окно
 	sf::Vector2i GetTileSize();//получаем размер тайла
+	std::vector<Object> GetTiles();
+	std::vector<Layer> layers;
+	std::vector<Object> objects;//массив типа Объекты, который мы создали
 
 private:
 	int width, height, tileWidth, tileHeight;//в tmx файле width height в начале,затем размер тайла
 	int firstTileID;//получаем айди первого тайла
 	sf::Rect<float> drawingBounds;//размер части карты которую рисуем
 	sf::Texture tilesetImage;//текстура карты
-	std::vector<Object> objects;//массив типа Объекты, который мы создали
-	std::vector<Layer> layers;
+	
+	
 };
 
 ///////////////////////////////////////
@@ -322,7 +325,6 @@ std::vector<Object> Level::GetObjects(std::string name)
 
 	return vec;
 }
-
 
 std::vector<Object> Level::GetAllObjects()
 {

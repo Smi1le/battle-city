@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="28" tilewidth="26" tileheight="25" nextobjectid="288">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="28" tilewidth="26" tileheight="25" nextobjectid="1454">
  <tileset firstgid="1" name="block" tilewidth="26" tileheight="25" tilecount="14">
   <image source="images/block.png" width="183" height="50"/>
+ </tileset>
+ <tileset firstgid="15" name="eagle" tilewidth="100" tileheight="100" tilecount="0">
+  <image source="images/eagle.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="15" name="eagle" tilewidth="26" tileheight="25" tilecount="2">
+  <image source="images/eagle.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="17" name="eagle" tilewidth="26" tileheight="25" tilecount="2">
+  <image source="images/eagle.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="19" name="eagle" tilewidth="50" tileheight="50" tilecount="1">
+  <image source="images/eagle.png" width="50" height="50"/>
  </tileset>
  <layer name="Слой тайлов 1" width="32" height="28">
   <data>
@@ -45,16 +57,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -65,28 +67,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -105,28 +85,28 @@
    <tile gid="11"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="11"/>
@@ -141,12 +121,12 @@
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
@@ -173,54 +153,22 @@
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
@@ -233,274 +181,114 @@
    <tile gid="11"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
@@ -521,114 +309,10 @@
    <tile gid="11"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
@@ -641,6 +325,14 @@
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="11"/>
    <tile gid="11"/>
    <tile gid="11"/>
@@ -659,18 +351,274 @@
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="11"/>
@@ -697,14 +645,14 @@
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
    <tile gid="11"/>
    <tile gid="11"/>
    <tile gid="11"/>
@@ -723,42 +671,10 @@
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
-   <tile gid="11"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
@@ -781,16 +697,16 @@
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
@@ -818,17 +734,49 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="0"/>
@@ -851,18 +799,82 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="11"/>
@@ -904,247 +916,452 @@
   </data>
  </layer>
  <objectgroup name="collision">
-  <object id="1" name="solid" x="19" y="0" width="30" height="695"/>
-  <object id="2" name="solid" x="52.5" y="677" width="673" height="19"/>
-  <object id="3" name="solid" x="729.333" y="4" width="81.3333" height="688"/>
-  <object id="4" name="solid" x="52" y="3" width="676" height="20.6667"/>
-  <object id="35" name="player" x="267.333" y="194" width="40.6667" height="41.3333"/>
-  <object id="40" name="EasyEnemy" x="55.6667" y="28.3333" width="40.6667" height="41.3333"/>
-  <object id="51" name="solid" x="312" y="274.5" width="25.5" height="24.75"/>
-  <object id="52" name="solid" x="338" y="274.375" width="25.5" height="24.75"/>
-  <object id="54" name="solid" x="312.25" y="300.125" width="25.5" height="24.75"/>
-  <object id="55" name="solid" x="338.25" y="299.875" width="25.5" height="24.75"/>
-  <object id="56" name="solid" x="364.25" y="225.125" width="25.5" height="24.75"/>
-  <object id="57" name="solid" x="389.75" y="224.875" width="25.5" height="24.75"/>
-  <object id="58" name="solid" x="364.25" y="250.375" width="25.5" height="24.75"/>
-  <object id="59" name="solid" x="390.25" y="250.375" width="25.5" height="24.75"/>
-  <object id="60" name="solid" x="416" y="24.875" width="25.5" height="24.75"/>
-  <object id="61" name="solid" x="442" y="24.625" width="25.5" height="24.75"/>
-  <object id="62" name="solid" x="416.5" y="50.125" width="25.5" height="24.75"/>
-  <object id="63" name="solid" x="442.5" y="50.375" width="25.5" height="24.75"/>
-  <object id="64" name="solid" x="416.5" y="75.375" width="25.5" height="24.75"/>
-  <object id="65" name="solid" x="442.25" y="75.375" width="25.5" height="24.75"/>
-  <object id="66" name="solid" x="416.5" y="100.125" width="25.5" height="24.75"/>
-  <object id="67" name="solid" x="442.25" y="99.875" width="25.5" height="24.75"/>
-  <object id="68" name="solid" x="520.5" y="75.375" width="25.5" height="24.75"/>
-  <object id="69" name="solid" x="546.5" y="75.375" width="25.5" height="24.75"/>
-  <object id="70" name="solid" x="520.5" y="100.375" width="25.5" height="24.75"/>
-  <object id="71" name="solid" x="546" y="100.625" width="25.5" height="24.75"/>
-  <object id="72" name="solid" x="520" y="125.125" width="25.5" height="24.75"/>
-  <object id="73" name="solid" x="546" y="125.125" width="25.5" height="24.75"/>
-  <object id="74" name="solid" x="571.75" y="125.125" width="25.5" height="24.75"/>
-  <object id="75" name="solid" x="520.5" y="150.375" width="25.5" height="24.75"/>
-  <object id="76" name="solid" x="546.25" y="150.375" width="25.5" height="24.75"/>
-  <object id="77" name="solid" x="572" y="150.125" width="25.5" height="24.75"/>
-  <object id="78" name="solid" x="598" y="149.875" width="25.5" height="24.75"/>
-  <object id="79" name="solid" x="597.75" y="125.375" width="25.5" height="24.75"/>
-  <object id="80" name="solid" x="520.5" y="175.625" width="25.5" height="24.75"/>
-  <object id="81" name="solid" x="546" y="175.875" width="25.5" height="24.75"/>
-  <object id="82" name="solid" x="520.5" y="200.875" width="25.5" height="24.75"/>
-  <object id="83" name="solid" x="546.5" y="201.125" width="25.5" height="24.75"/>
-  <object id="84" name="solid" x="520.75" y="225.375" width="25.5" height="24.75"/>
-  <object id="85" name="solid" x="546.5" y="225.125" width="25.5" height="24.75"/>
-  <object id="86" name="solid" x="520.25" y="250.375" width="25.5" height="24.75"/>
-  <object id="87" name="solid" x="546" y="249.875" width="25.5" height="24.75"/>
-  <object id="88" name="solid" x="468.25" y="275.625" width="25.5" height="24.75"/>
-  <object id="89" name="solid" x="494.25" y="275.125" width="25.5" height="24.75"/>
-  <object id="90" name="solid" x="468.25" y="300.125" width="25.5" height="24.75"/>
-  <object id="91" name="solid" x="493.75" y="299.875" width="25.5" height="24.75"/>
-  <object id="92" name="solid" x="624.25" y="75.375" width="25.5" height="24.75"/>
-  <object id="93" name="solid" x="650.5" y="75.625" width="25.5" height="24.75"/>
-  <object id="94" name="solid" x="624.25" y="100.125" width="25.5" height="24.75"/>
-  <object id="95" name="solid" x="650.25" y="100.125" width="25.5" height="24.75"/>
-  <object id="96" name="solid" x="624" y="125.125" width="25.5" height="24.75"/>
-  <object id="97" name="solid" x="649.75" y="125.125" width="25.5" height="24.75"/>
-  <object id="98" name="solid" x="624" y="149.875" width="25.5" height="24.75"/>
-  <object id="99" name="solid" x="650" y="149.875" width="25.5" height="24.75"/>
-  <object id="100" name="solid" x="624.25" y="225.125" width="25.5" height="24.75"/>
-  <object id="101" name="solid" x="649.75" y="225.125" width="25.5" height="24.75"/>
-  <object id="102" name="solid" x="624.5" y="250.125" width="25.5" height="24.75"/>
-  <object id="103" name="solid" x="650" y="250.125" width="25.5" height="24.75"/>
-  <object id="104" name="solid" x="676.125" y="225.125" width="25.875" height="24.75"/>
-  <object id="105" name="solid" x="702.125" y="225.125" width="25.875" height="24.75"/>
-  <object id="106" name="solid" x="676.25" y="249.875" width="25.5" height="24.75"/>
-  <object id="107" name="solid" x="702.25" y="249.875" width="25.5" height="24.75"/>
-  <object id="108" name="solid" x="624.25" y="325.125" width="25.5" height="24.75"/>
-  <object id="109" name="solid" x="650.25" y="325.125" width="25.5" height="24.75"/>
-  <object id="110" name="solid" x="650.5" y="350.125" width="25.5" height="24.75"/>
-  <object id="111" name="solid" x="624.5" y="350.375" width="25.5" height="24.75"/>
-  <object id="112" name="solid" x="624.5" y="375.125" width="25.5" height="24.75"/>
-  <object id="113" name="solid" x="650.5" y="375.125" width="25.5" height="24.75"/>
-  <object id="114" name="solid" x="624.5" y="400.375" width="25.5" height="24.75"/>
-  <object id="115" name="solid" x="650" y="400.125" width="25.5" height="24.75"/>
-  <object id="116" name="solid" x="624.5" y="425.625" width="25.5" height="24.75"/>
-  <object id="117" name="solid" x="650.5" y="425.625" width="25.5" height="24.75"/>
-  <object id="118" name="solid" x="624.25" y="450.625" width="25.5" height="24.75"/>
-  <object id="119" name="solid" x="650.25" y="450.875" width="25.5" height="24.75"/>
-  <object id="120" name="solid" x="650.5" y="475.375" width="25.5" height="24.75"/>
-  <object id="121" name="solid" x="650.5" y="499.875" width="25.5" height="24.75"/>
-  <object id="122" name="solid" x="624.75" y="475.625" width="25.5" height="24.75"/>
-  <object id="123" name="solid" x="624.75" y="499.875" width="25.5" height="24.75"/>
-  <object id="124" name="solid" x="598.5" y="475.375" width="25.5" height="24.75"/>
-  <object id="125" name="solid" x="598.75" y="499.875" width="25.5" height="24.75"/>
-  <object id="126" name="solid" x="572.75" y="475.375" width="25.5" height="24.75"/>
-  <object id="127" name="solid" x="572.75" y="500.125" width="25.5" height="24.75"/>
-  <object id="128" name="solid" x="546.25" y="475.125" width="25.5" height="24.75"/>
-  <object id="129" name="solid" x="546.25" y="500.375" width="25.5" height="24.75"/>
-  <object id="130" name="solid" x="520.5" y="474.875" width="25.5" height="24.75"/>
-  <object id="131" name="solid" x="520.5" y="499.875" width="25.5" height="24.75"/>
-  <object id="132" name="solid" x="520" y="575.125" width="25.5" height="24.75"/>
-  <object id="133" name="solid" x="546" y="575.125" width="25.5" height="24.75"/>
-  <object id="134" name="solid" x="520.25" y="599.875" width="25.5" height="24.75"/>
-  <object id="135" name="solid" x="546.25" y="600.125" width="25.5" height="24.75"/>
-  <object id="136" name="solid" x="520.25" y="625.125" width="25.5" height="24.75"/>
-  <object id="137" name="solid" x="546.25" y="625.375" width="25.5" height="24.75"/>
-  <object id="138" name="solid" x="520.25" y="650.375" width="25.5" height="24.75"/>
-  <object id="139" name="solid" x="546" y="650.625" width="25.5" height="24.75"/>
-  <object id="140" name="solid" x="572.25" y="625.375" width="25.5" height="24.75"/>
-  <object id="141" name="solid" x="598.25" y="625.625" width="25.5" height="24.75"/>
-  <object id="142" name="solid" x="572.25" y="650.625" width="25.5" height="24.75"/>
-  <object id="143" name="solid" x="598.5" y="650.375" width="25.5" height="24.75"/>
-  <object id="144" name="solid" x="624.5" y="575.125" width="25.5" height="24.75"/>
-  <object id="145" name="solid" x="650.25" y="574.875" width="25.5" height="24.75"/>
-  <object id="146" name="solid" x="624.5" y="600.375" width="25.5" height="24.75"/>
-  <object id="147" name="solid" x="650.5" y="600.125" width="25.5" height="24.75"/>
-  <object id="148" name="solid" x="624.5" y="625.375" width="25.5" height="24.75"/>
-  <object id="149" name="solid" x="650.5" y="625.375" width="25.5" height="24.75"/>
-  <object id="150" name="solid" x="624.5" y="650.375" width="25.5" height="24.75"/>
-  <object id="151" name="solid" x="650" y="650.375" width="25.5" height="24.75"/>
-  <object id="152" name="solid" x="520.25" y="374.875" width="25.5" height="24.75"/>
-  <object id="153" name="solid" x="546.25" y="374.875" width="25.5" height="24.75"/>
-  <object id="154" name="solid" x="546.25" y="399.875" width="25.5" height="24.75"/>
-  <object id="155" name="solid" x="520.25" y="399.875" width="25.5" height="24.75"/>
-  <object id="156" name="solid" x="442.25" y="325.292" width="25.5" height="24.75"/>
-  <object id="157" name="solid" x="416.5" y="325.25" width="25.5" height="24.75"/>
-  <object id="158" name="solid" x="442.375" y="350" width="25.5" height="24.75"/>
-  <object id="159" name="solid" x="416.375" y="350" width="25.5" height="24.75"/>
-  <object id="160" name="solid" x="442.25" y="375" width="25.5" height="24.75"/>
-  <object id="161" name="solid" x="416.25" y="375" width="25.5" height="24.75"/>
-  <object id="162" name="solid" x="416.125" y="400" width="25.5" height="24.75"/>
-  <object id="163" name="solid" x="442.125" y="400" width="25.5" height="24.75"/>
-  <object id="164" name="solid" x="442.25" y="425" width="25.5" height="24.75"/>
-  <object id="165" name="solid" x="416.375" y="425.125" width="25.5" height="24.75"/>
-  <object id="166" name="solid" x="416.125" y="450.125" width="25.5" height="24.75"/>
-  <object id="167" name="solid" x="442.125" y="450.125" width="25.5" height="24.75"/>
-  <object id="168" name="solid" x="442.25" y="475.25" width="25.5" height="24.75"/>
-  <object id="169" name="solid" x="442.25" y="500.125" width="25.5" height="24.75"/>
-  <object id="170" name="solid" x="442.25" y="525.125" width="25.5" height="24.75"/>
-  <object id="171" name="solid" x="442.375" y="550.25" width="25.5" height="24.75"/>
-  <object id="172" name="solid" x="416.5" y="550" width="25.5" height="24.75"/>
-  <object id="173" name="solid" x="416.5" y="500.125" width="25.5" height="24.75"/>
-  <object id="174" name="solid" x="416.25" y="525.125" width="25.5" height="24.75"/>
-  <object id="175" name="solid" x="416.375" y="475" width="25.5" height="24.75"/>
-  <object id="176" name="solid" x="389.875" y="475.125" width="26" height="24.75"/>
-  <object id="177" name="solid" x="390.25" y="500.25" width="25.5" height="24.75"/>
-  <object id="178" name="solid" x="390.375" y="525.5" width="25.5" height="24.75"/>
-  <object id="179" name="solid" x="390.5" y="550.25" width="25.5" height="24.75"/>
-  <object id="180" name="solid" x="364.5" y="549.875" width="25.5" height="24.75"/>
-  <object id="181" name="solid" x="364.25" y="525.125" width="25.5" height="24.75"/>
-  <object id="182" name="solid" x="364.25" y="500.375" width="25.5" height="24.75"/>
-  <object id="183" name="solid" x="364.25" y="475.125" width="25.5" height="24.75"/>
-  <object id="184" name="solid" x="312.125" y="375.125" width="25.5" height="24.75"/>
-  <object id="185" name="solid" x="338.25" y="375.25" width="25.5" height="24.75"/>
-  <object id="186" name="solid" x="338.25" y="400.375" width="25.5" height="24.75"/>
-  <object id="187" name="solid" x="312.5" y="400.25" width="25.5" height="24.75"/>
-  <object id="188" name="solid" x="312.375" y="425.375" width="25.5" height="24.75"/>
-  <object id="189" name="solid" x="338.125" y="425.5" width="25.5" height="24.75"/>
-  <object id="190" name="solid" x="338.25" y="450.625" width="25.5" height="24.75"/>
-  <object id="191" name="solid" x="312.375" y="450.5" width="25.5" height="24.75"/>
-  <object id="192" name="solid" x="338.25" y="475.25" width="25.5" height="24.75"/>
-  <object id="193" name="solid" x="312.375" y="475.25" width="25.5" height="24.75"/>
-  <object id="194" name="solid" x="312.375" y="500.375" width="25.5" height="24.75"/>
-  <object id="195" name="solid" x="338" y="500.375" width="25.5" height="24.75"/>
-  <object id="196" name="solid" x="338.25" y="525.25" width="25.5" height="24.75"/>
-  <object id="197" name="solid" x="312.5" y="525.5" width="25.5" height="24.75"/>
-  <object id="198" name="solid" x="338.5" y="550.25" width="25.5" height="24.75"/>
-  <object id="199" name="solid" x="312.375" y="550.125" width="25.5" height="24.75"/>
-  <object id="200" name="solid" x="338.25" y="650" width="25.5" height="24.75"/>
-  <object id="201" name="solid" x="338.375" y="624.875" width="25.5" height="24.75"/>
-  <object id="202" name="solid" x="338.25" y="600.125" width="25.5" height="24.75"/>
-  <object id="203" name="solid" x="364.25" y="600.125" width="25.5" height="24.75"/>
-  <object id="204" name="solid" x="390" y="600.25" width="25.5" height="24.75"/>
-  <object id="205" name="solid" x="416.25" y="600.125" width="25.5" height="24.75"/>
-  <object id="206" name="solid" x="416.25" y="624.875" width="25.5" height="24.75"/>
-  <object id="207" name="solid" x="416.125" y="649.75" width="25.5" height="24.75"/>
-  <object id="208" name="solid" x="234.159" y="650.08" width="25.5" height="24.75"/>
-  <object id="209" name="solid" x="208.341" y="650.08" width="25.5" height="24.75"/>
-  <object id="210" name="solid" x="208.341" y="625.08" width="25.5" height="24.75"/>
-  <object id="211" name="solid" x="234.159" y="625.08" width="25.5" height="24.75"/>
-  <object id="212" name="solid" x="234.25" y="550" width="25.5" height="24.75"/>
-  <object id="213" name="solid" x="208.375" y="550.125" width="25.5" height="24.75"/>
-  <object id="214" name="solid" x="208.25" y="525" width="25.5" height="24.75"/>
-  <object id="215" name="solid" x="234.125" y="525" width="25.5" height="24.75"/>
-  <object id="216" name="solid" x="234.375" y="500.125" width="25.5" height="24.75"/>
-  <object id="217" name="solid" x="208.5" y="500.25" width="25.5" height="24.75"/>
-  <object id="218" name="solid" x="208" y="475.125" width="25.5" height="24.75"/>
-  <object id="219" name="solid" x="234.125" y="475.125" width="25.5" height="24.75"/>
-  <object id="220" name="solid" x="234" y="450.125" width="25.5" height="24.75"/>
-  <object id="221" name="solid" x="208.25" y="450.125" width="25.5" height="24.75"/>
-  <object id="222" name="solid" x="208" y="425.125" width="25.5" height="24.75"/>
-  <object id="223" name="solid" x="234" y="425.125" width="25.5" height="24.75"/>
-  <object id="224" name="solid" x="234" y="400.25" width="25.5" height="24.75"/>
-  <object id="225" name="solid" x="208.375" y="400.125" width="25.5" height="24.75"/>
-  <object id="226" name="solid" x="208.375" y="375" width="25.5" height="24.75"/>
-  <object id="227" name="solid" x="234.125" y="374.875" width="25.5" height="24.75"/>
-  <object id="228" name="solid" x="234" y="350.125" width="25.5" height="24.75"/>
-  <object id="229" name="solid" x="234" y="325.125" width="25.5" height="24.75"/>
-  <object id="230" name="solid" x="208.25" y="325.125" width="25.5" height="24.75"/>
-  <object id="231" name="solid" x="208.375" y="350" width="25.5" height="24.75"/>
-  <object id="232" name="solid" x="182.5" y="350" width="25.5" height="24.75"/>
-  <object id="233" name="solid" x="182.5" y="325.125" width="25.5" height="24.75"/>
-  <object id="234" name="solid" x="156.25" y="325" width="25.5" height="24.75"/>
-  <object id="235" name="solid" x="156.125" y="350" width="25.5" height="24.75"/>
-  <object id="236" name="solid" x="130.375" y="350" width="25.5" height="24.75"/>
-  <object id="237" name="solid" x="130.375" y="324.875" width="25.5" height="24.75"/>
-  <object id="238" name="solid" x="104.375" y="325" width="25.5" height="24.75"/>
-  <object id="239" name="solid" x="104.5" y="350.125" width="25.5" height="24.75"/>
-  <object id="240" name="solid" x="130.375" y="425" width="25.5" height="24.75"/>
-  <object id="241" name="solid" x="130.25" y="450.125" width="25.5" height="24.75"/>
-  <object id="242" name="solid" x="104.375" y="424.875" width="25.5" height="24.75"/>
-  <object id="243" name="solid" x="104.5" y="450.125" width="25.5" height="24.75"/>
-  <object id="244" name="solid" x="104.25" y="475.125" width="25.5" height="24.75"/>
-  <object id="245" name="solid" x="130" y="475.125" width="25.5" height="24.75"/>
-  <object id="246" name="solid" x="130.25" y="500.125" width="25.5" height="24.75"/>
-  <object id="247" name="solid" x="104.375" y="500.25" width="25.5" height="24.75"/>
-  <object id="248" name="solid" x="130.375" y="525" width="25.5" height="24.75"/>
-  <object id="249" name="solid" x="104.5" y="525" width="25.5" height="24.75"/>
-  <object id="250" name="solid" x="104.25" y="550.125" width="25.5" height="24.75"/>
-  <object id="251" name="solid" x="130" y="550" width="25.5" height="24.75"/>
-  <object id="252" name="solid" x="130.125" y="575.25" width="25.5" height="24.75"/>
-  <object id="253" name="solid" x="104.25" y="575.125" width="25.5" height="24.75"/>
-  <object id="254" name="solid" x="104.25" y="600" width="25.5" height="24.75"/>
-  <object id="255" name="solid" x="130" y="600" width="25.5" height="24.75"/>
-  <object id="256" name="solid" x="130.125" y="624.875" width="25.5" height="24.75"/>
-  <object id="257" name="solid" x="104.25" y="624.875" width="25.5" height="24.75"/>
-  <object id="258" name="solid" x="130.25" y="649.875" width="25.5" height="24.75"/>
-  <object id="259" name="solid" x="104.375" y="650" width="25.5" height="24.75"/>
-  <object id="260" name="solid" x="208.25" y="250" width="25.5" height="24.75"/>
-  <object id="261" name="solid" x="234.25" y="249.875" width="25.5" height="24.75"/>
-  <object id="262" name="solid" x="234.25" y="224.875" width="25.5" height="24.75"/>
-  <object id="263" name="solid" x="208.375" y="225" width="25.5" height="24.75"/>
-  <object id="264" name="solid" x="234.375" y="199.875" width="25.5" height="24.75"/>
-  <object id="265" name="solid" x="208.25" y="199.75" width="25.5" height="24.75"/>
-  <object id="266" name="solid" x="234.125" y="175" width="25.5" height="24.75"/>
-  <object id="267" name="solid" x="208.25" y="175.125" width="25.5" height="24.75"/>
-  <object id="268" name="solid" x="208.125" y="100.062" width="25.5" height="24.75"/>
-  <object id="269" name="solid" x="234.188" y="100.062" width="25.5" height="24.75"/>
-  <object id="270" name="solid" x="208.312" y="75.0625" width="25.5" height="24.75"/>
-  <object id="271" name="solid" x="234.125" y="75.125" width="25.5" height="24.75"/>
-  <object id="272" name="solid" x="234.188" y="50.0625" width="25.5" height="24.75"/>
-  <object id="273" name="solid" x="208.375" y="50.125" width="25.5" height="24.75"/>
-  <object id="274" name="solid" x="208.188" y="25.0625" width="25.5" height="24.75"/>
-  <object id="275" name="solid" x="234.125" y="25.0625" width="25.5" height="24.75"/>
-  <object id="276" name="solid" x="104.432" y="75.1705" width="25.5" height="24.75"/>
-  <object id="277" name="solid" x="130.341" y="75.1705" width="25.5" height="24.75"/>
-  <object id="278" name="solid" x="130.159" y="100.17" width="25.5" height="24.75"/>
-  <object id="279" name="solid" x="104.341" y="100.261" width="25.5" height="24.75"/>
-  <object id="280" name="solid" x="104.341" y="125.08" width="25.5" height="24.75"/>
-  <object id="281" name="solid" x="130.25" y="125.17" width="25.5" height="24.75"/>
-  <object id="282" name="solid" x="104.432" y="150.08" width="25.5" height="24.75"/>
-  <object id="283" name="solid" x="130.25" y="150.17" width="25.5" height="24.75"/>
-  <object id="284" name="solid" x="52.5" y="424.875" width="25.5" height="24.75"/>
-  <object id="285" name="solid" x="78.25" y="425.125" width="25.5" height="24.75"/>
-  <object id="286" name="solid" x="78" y="450.125" width="25.5" height="24.75"/>
-  <object id="287" name="solid" x="52.25" y="449.875" width="25.5" height="24.75"/>
+  <object id="566" name="destroyedSolid" x="338" y="650" width="26" height="25"/>
+  <object id="616" name="noDestroySolidBlock" x="52" y="400" width="26" height="25"/>
+  <object id="617" name="noDestroySolidBlock" x="78" y="400" width="26" height="25"/>
+  <object id="785" name="player" x="265" y="617" width="52" height="50"/>
+  <object id="790" name="EasyEnemy" x="162.667" y="33.6667" width="35" height="35"/>
+  <object id="791" name="Deagle" x="364" y="625.5" width="52.5" height="49"/>
+  <object id="1008" name="destroyedSolid" x="338" y="625" width="26" height="25"/>
+  <object id="1009" name="destroyedSolid" x="338" y="600" width="26" height="25"/>
+  <object id="1010" name="destroyedSolid" x="364" y="600" width="26" height="25"/>
+  <object id="1011" name="destroyedSolid" x="390" y="600" width="26" height="25"/>
+  <object id="1012" name="destroyedSolid" x="416" y="600" width="26" height="25"/>
+  <object id="1013" name="destroyedSolid" x="416" y="625" width="26" height="25"/>
+  <object id="1014" name="destroyedSolid" x="416" y="650" width="26" height="25"/>
+  <object id="1015" name="destroyedSolid" x="442" y="525" width="26" height="25"/>
+  <object id="1016" name="destroyedSolid" x="416" y="525" width="26" height="25"/>
+  <object id="1017" name="destroyedSolid" x="416" y="500" width="26" height="25"/>
+  <object id="1018" name="destroyedSolid" x="442" y="500" width="26" height="25"/>
+  <object id="1019" name="destroyedSolid" x="442" y="425" width="26" height="25"/>
+  <object id="1020" name="destroyedSolid" x="416" y="425" width="26" height="25"/>
+  <object id="1021" name="destroyedSolid" x="416" y="450" width="26" height="25"/>
+  <object id="1022" name="destroyedSolid" x="442" y="450" width="26" height="25"/>
+  <object id="1023" name="destroyedSolid" x="442" y="475" width="26" height="25"/>
+  <object id="1024" name="destroyedSolid" x="416" y="475" width="26" height="25"/>
+  <object id="1025" name="destroyedSolid" x="390" y="475" width="26" height="25"/>
+  <object id="1026" name="destroyedSolid" x="364" y="475" width="26" height="25"/>
+  <object id="1027" name="destroyedSolid" x="364" y="450" width="26" height="25"/>
+  <object id="1028" name="destroyedSolid" x="390" y="450" width="26" height="25"/>
+  <object id="1029" name="destroyedSolid" x="338" y="450" width="26" height="25"/>
+  <object id="1030" name="destroyedSolid" x="338" y="425" width="26" height="25"/>
+  <object id="1031" name="destroyedSolid" x="312" y="425" width="26" height="25"/>
+  <object id="1032" name="destroyedSolid" x="312" y="450" width="26" height="25"/>
+  <object id="1033" name="destroyedSolid" x="312" y="475" width="26" height="25"/>
+  <object id="1034" name="destroyedSolid" x="338" y="475" width="26" height="25"/>
+  <object id="1035" name="destroyedSolid" x="338" y="500" width="26" height="25"/>
+  <object id="1036" name="destroyedSolid" x="312" y="500" width="26" height="25"/>
+  <object id="1037" name="destroyedSolid" x="312" y="525" width="26" height="25"/>
+  <object id="1038" name="destroyedSolid" x="338" y="525" width="26" height="25"/>
+  <object id="1039" name="destroyedSolid" x="520" y="475" width="26" height="25"/>
+  <object id="1040" name="destroyedSolid" x="520" y="500" width="26" height="25"/>
+  <object id="1041" name="destroyedSolid" x="520" y="525" width="26" height="25"/>
+  <object id="1042" name="destroyedSolid" x="520" y="550" width="26" height="25"/>
+  <object id="1043" name="destroyedSolid" x="520" y="575" width="26" height="25"/>
+  <object id="1044" name="destroyedSolid" x="520" y="600" width="26" height="25"/>
+  <object id="1045" name="destroyedSolid" x="546" y="600" width="26" height="25"/>
+  <object id="1046" name="destroyedSolid" x="546" y="575" width="26" height="25"/>
+  <object id="1047" name="destroyedSolid" x="546" y="550" width="26" height="25"/>
+  <object id="1048" name="destroyedSolid" x="546" y="525" width="26" height="25"/>
+  <object id="1049" name="destroyedSolid" x="546" y="500" width="26" height="25"/>
+  <object id="1050" name="destroyedSolid" x="546" y="475" width="26" height="25"/>
+  <object id="1051" name="destroyedSolid" x="234" y="600" width="26" height="25"/>
+  <object id="1052" name="destroyedSolid" x="208" y="600" width="26" height="25"/>
+  <object id="1053" name="destroyedSolid" x="208" y="575" width="26" height="25"/>
+  <object id="1054" name="destroyedSolid" x="234" y="575" width="26" height="25"/>
+  <object id="1055" name="destroyedSolid" x="234" y="550" width="26" height="25"/>
+  <object id="1056" name="destroyedSolid" x="234" y="525" width="26" height="25"/>
+  <object id="1057" name="destroyedSolid" x="234" y="500" width="26" height="25"/>
+  <object id="1058" name="destroyedSolid" x="234" y="475" width="26" height="25"/>
+  <object id="1059" name="destroyedSolid" x="208" y="475" width="26" height="25"/>
+  <object id="1060" name="destroyedSolid" x="208" y="500" width="26" height="25"/>
+  <object id="1061" name="destroyedSolid" x="208" y="525" width="26" height="25"/>
+  <object id="1062" name="destroyedSolid" x="208" y="550" width="26" height="25"/>
+  <object id="1063" name="destroyedSolid" x="130" y="600" width="26" height="25"/>
+  <object id="1064" name="destroyedSolid" x="104" y="600" width="26" height="25"/>
+  <object id="1065" name="destroyedSolid" x="104" y="575" width="26" height="25"/>
+  <object id="1066" name="destroyedSolid" x="130" y="575" width="26" height="25"/>
+  <object id="1067" name="destroyedSolid" x="130" y="550" width="26" height="25"/>
+  <object id="1068" name="destroyedSolid" x="104" y="550" width="26" height="25"/>
+  <object id="1069" name="destroyedSolid" x="104" y="525" width="26" height="25"/>
+  <object id="1070" name="destroyedSolid" x="130" y="525" width="26" height="25"/>
+  <object id="1071" name="destroyedSolid" x="130" y="500" width="26" height="25"/>
+  <object id="1072" name="destroyedSolid" x="104" y="500" width="26" height="25"/>
+  <object id="1073" name="destroyedSolid" x="104" y="475" width="26" height="25"/>
+  <object id="1074" name="destroyedSolid" x="130" y="475" width="26" height="25"/>
+  <object id="1075" name="destroyedSolid" x="156" y="400" width="26" height="25"/>
+  <object id="1076" name="destroyedSolid" x="156" y="375" width="26" height="25"/>
+  <object id="1077" name="destroyedSolid" x="182" y="375" width="26" height="25"/>
+  <object id="1078" name="destroyedSolid" x="208" y="375" width="26" height="25"/>
+  <object id="1079" name="destroyedSolid" x="234" y="375" width="26" height="25"/>
+  <object id="1080" name="destroyedSolid" x="234" y="400" width="26" height="25"/>
+  <object id="1081" name="destroyedSolid" x="208" y="400" width="26" height="25"/>
+  <object id="1082" name="destroyedSolid" x="182" y="400" width="26" height="25"/>
+  <object id="1083" name="destroyedSolid" x="208" y="300" width="26" height="25"/>
+  <object id="1084" name="destroyedSolid" x="234" y="300" width="26" height="25"/>
+  <object id="1085" name="destroyedSolid" x="234" y="275" width="26" height="25"/>
+  <object id="1086" name="destroyedSolid" x="208" y="275" width="26" height="25"/>
+  <object id="1087" name="destroyedSolid" x="208" y="250" width="26" height="25"/>
+  <object id="1088" name="destroyedSolid" x="234" y="250" width="26" height="25"/>
+  <object id="1089" name="destroyedSolid" x="234" y="225" width="26" height="25"/>
+  <object id="1090" name="destroyedSolid" x="208" y="225" width="26" height="25"/>
+  <object id="1091" name="destroyedSolid" x="208" y="200" width="26" height="25"/>
+  <object id="1092" name="destroyedSolid" x="234" y="200" width="26" height="25"/>
+  <object id="1093" name="destroyedSolid" x="234" y="175" width="26" height="25"/>
+  <object id="1094" name="destroyedSolid" x="208" y="175" width="26" height="25"/>
+  <object id="1095" name="destroyedSolid" x="208" y="150" width="26" height="25"/>
+  <object id="1096" name="destroyedSolid" x="234" y="150" width="26" height="25"/>
+  <object id="1097" name="destroyedSolid" x="234" y="125" width="26" height="25"/>
+  <object id="1098" name="destroyedSolid" x="208" y="125" width="26" height="25"/>
+  <object id="1099" name="destroyedSolid" x="234" y="100" width="26" height="25"/>
+  <object id="1100" name="destroyedSolid" x="208" y="100" width="26" height="25"/>
+  <object id="1101" name="destroyedSolid" x="208" y="75" width="26" height="25"/>
+  <object id="1102" name="destroyedSolid" x="234" y="75" width="26" height="25"/>
+  <object id="1103" name="destroyedSolid" x="130" y="75" width="26" height="25"/>
+  <object id="1104" name="destroyedSolid" x="130" y="100" width="26" height="25"/>
+  <object id="1105" name="destroyedSolid" x="104" y="75" width="26" height="25"/>
+  <object id="1106" name="destroyedSolid" x="104" y="100" width="26" height="25"/>
+  <object id="1107" name="destroyedSolid" x="104" y="125" width="26" height="25"/>
+  <object id="1108" name="destroyedSolid" x="130" y="125" width="26" height="25"/>
+  <object id="1109" name="destroyedSolid" x="130" y="150" width="26" height="25"/>
+  <object id="1110" name="destroyedSolid" x="104" y="150" width="26" height="25"/>
+  <object id="1111" name="destroyedSolid" x="104" y="175" width="26" height="25"/>
+  <object id="1112" name="destroyedSolid" x="130" y="175" width="26" height="25"/>
+  <object id="1113" name="destroyedSolid" x="130" y="200" width="26" height="25"/>
+  <object id="1114" name="destroyedSolid" x="104" y="200" width="26" height="25"/>
+  <object id="1115" name="destroyedSolid" x="104" y="225" width="26" height="25"/>
+  <object id="1116" name="destroyedSolid" x="130" y="225" width="26" height="25"/>
+  <object id="1117" name="destroyedSolid" x="130" y="250" width="26" height="25"/>
+  <object id="1118" name="destroyedSolid" x="104" y="250" width="26" height="25"/>
+  <object id="1119" name="destroyedSolid" x="104" y="275" width="26" height="25"/>
+  <object id="1120" name="destroyedSolid" x="130" y="275" width="26" height="25"/>
+  <object id="1121" name="destroyedSolid" x="130" y="300" width="26" height="25"/>
+  <object id="1122" name="destroyedSolid" x="104" y="300" width="26" height="25"/>
+  <object id="1123" name="destroyedSolid" x="312" y="250" width="26" height="25"/>
+  <object id="1124" name="destroyedSolid" x="338" y="250" width="26" height="25"/>
+  <object id="1125" name="destroyedSolid" x="338" y="225" width="26" height="25"/>
+  <object id="1126" name="destroyedSolid" x="312" y="225" width="26" height="25"/>
+  <object id="1127" name="destroyedSolid" x="338" y="200" width="26" height="25"/>
+  <object id="1128" name="destroyedSolid" x="312" y="200" width="26" height="25"/>
+  <object id="1129" name="destroyedSolid" x="312" y="175" width="26" height="25"/>
+  <object id="1130" name="destroyedSolid" x="338" y="175" width="26" height="25"/>
+  <object id="1131" name="destroyedSolid" x="338" y="150" width="26" height="25"/>
+  <object id="1132" name="destroyedSolid" x="312" y="150" width="26" height="25"/>
+  <object id="1133" name="destroyedSolid" x="312" y="125" width="26" height="25"/>
+  <object id="1134" name="destroyedSolid" x="338" y="125" width="26" height="25"/>
+  <object id="1135" name="destroyedSolid" x="338" y="100" width="26" height="25"/>
+  <object id="1136" name="destroyedSolid" x="312" y="100" width="26" height="25"/>
+  <object id="1137" name="destroyedSolid" x="312" y="75" width="26" height="25"/>
+  <object id="1138" name="destroyedSolid" x="338" y="75" width="26" height="25"/>
+  <object id="1139" name="destroyedSolid" x="416" y="75" width="26" height="25"/>
+  <object id="1140" name="destroyedSolid" x="416" y="100" width="26" height="25"/>
+  <object id="1141" name="destroyedSolid" x="442" y="100" width="26" height="25"/>
+  <object id="1142" name="destroyedSolid" x="442" y="75" width="26" height="25"/>
+  <object id="1143" name="destroyedSolid" x="442" y="125" width="26" height="25"/>
+  <object id="1144" name="destroyedSolid" x="416" y="125" width="26" height="25"/>
+  <object id="1145" name="destroyedSolid" x="416" y="150" width="26" height="25"/>
+  <object id="1146" name="destroyedSolid" x="442" y="150" width="26" height="25"/>
+  <object id="1147" name="destroyedSolid" x="442" y="175" width="26" height="25"/>
+  <object id="1148" name="destroyedSolid" x="416" y="175" width="26" height="25"/>
+  <object id="1149" name="destroyedSolid" x="416" y="200" width="26" height="25"/>
+  <object id="1150" name="destroyedSolid" x="442" y="200" width="26" height="25"/>
+  <object id="1151" name="destroyedSolid" x="442" y="225" width="26" height="25"/>
+  <object id="1152" name="destroyedSolid" x="416" y="225" width="26" height="25"/>
+  <object id="1153" name="destroyedSolid" x="416" y="250" width="26" height="25"/>
+  <object id="1154" name="destroyedSolid" x="442" y="250" width="26" height="25"/>
+  <object id="1155" name="destroyedSolid" x="442" y="325" width="26" height="25"/>
+  <object id="1156" name="destroyedSolid" x="416" y="325" width="26" height="25"/>
+  <object id="1157" name="destroyedSolid" x="416" y="350" width="26" height="25"/>
+  <object id="1158" name="destroyedSolid" x="442" y="350" width="26" height="25"/>
+  <object id="1159" name="destroyedSolid" x="338" y="350" width="26" height="25"/>
+  <object id="1160" name="destroyedSolid" x="338" y="325" width="26" height="25"/>
+  <object id="1161" name="destroyedSolid" x="312" y="325" width="26" height="25"/>
+  <object id="1162" name="destroyedSolid" x="312" y="350" width="26" height="25"/>
+  <object id="1163" name="destroyedSolid" x="624" y="600" width="26" height="25"/>
+  <object id="1164" name="destroyedSolid" x="650" y="600" width="26" height="25"/>
+  <object id="1165" name="destroyedSolid" x="650" y="575" width="26" height="25"/>
+  <object id="1166" name="destroyedSolid" x="624" y="575" width="26" height="25"/>
+  <object id="1167" name="destroyedSolid" x="624" y="550" width="26" height="25"/>
+  <object id="1168" name="destroyedSolid" x="650" y="550" width="26" height="25"/>
+  <object id="1169" name="destroyedSolid" x="650" y="525" width="26" height="25"/>
+  <object id="1170" name="destroyedSolid" x="624" y="525" width="26" height="25"/>
+  <object id="1171" name="destroyedSolid" x="624" y="500" width="26" height="25"/>
+  <object id="1172" name="destroyedSolid" x="650" y="500" width="26" height="25"/>
+  <object id="1173" name="destroyedSolid" x="650" y="475" width="26" height="25"/>
+  <object id="1174" name="destroyedSolid" x="624" y="475" width="26" height="25"/>
+  <object id="1175" name="destroyedSolid" x="598" y="400" width="26" height="25"/>
+  <object id="1176" name="destroyedSolid" x="598" y="375" width="26" height="25"/>
+  <object id="1177" name="destroyedSolid" x="572" y="375" width="26" height="25"/>
+  <object id="1178" name="destroyedSolid" x="546" y="375" width="26" height="25"/>
+  <object id="1179" name="destroyedSolid" x="520" y="375" width="26" height="25"/>
+  <object id="1180" name="destroyedSolid" x="520" y="400" width="26" height="25"/>
+  <object id="1181" name="destroyedSolid" x="546" y="400" width="26" height="25"/>
+  <object id="1182" name="destroyedSolid" x="572" y="400" width="26" height="25"/>
+  <object id="1183" name="destroyedSolid" x="546" y="300" width="26" height="25"/>
+  <object id="1184" name="destroyedSolid" x="520" y="300" width="26" height="25"/>
+  <object id="1185" name="destroyedSolid" x="520" y="275" width="26" height="25"/>
+  <object id="1186" name="destroyedSolid" x="546" y="275" width="26" height="25"/>
+  <object id="1187" name="destroyedSolid" x="546" y="250" width="26" height="25"/>
+  <object id="1188" name="destroyedSolid" x="520" y="250" width="26" height="25"/>
+  <object id="1189" name="destroyedSolid" x="520" y="225" width="26" height="25"/>
+  <object id="1190" name="destroyedSolid" x="546" y="225" width="26" height="25"/>
+  <object id="1191" name="destroyedSolid" x="546" y="200" width="26" height="25"/>
+  <object id="1192" name="destroyedSolid" x="520" y="200" width="26" height="25"/>
+  <object id="1193" name="destroyedSolid" x="520" y="175" width="26" height="25"/>
+  <object id="1194" name="destroyedSolid" x="546" y="175" width="26" height="25"/>
+  <object id="1195" name="destroyedSolid" x="546" y="150" width="26" height="25"/>
+  <object id="1196" name="destroyedSolid" x="520" y="150" width="26" height="25"/>
+  <object id="1197" name="destroyedSolid" x="520" y="125" width="26" height="25"/>
+  <object id="1198" name="destroyedSolid" x="546" y="125" width="26" height="25"/>
+  <object id="1199" name="destroyedSolid" x="546" y="100" width="26" height="25"/>
+  <object id="1200" name="destroyedSolid" x="520" y="100" width="26" height="25"/>
+  <object id="1201" name="destroyedSolid" x="520" y="75" width="26" height="25"/>
+  <object id="1202" name="destroyedSolid" x="546" y="75" width="26" height="25"/>
+  <object id="1203" name="destroyedSolid" x="624" y="75" width="26" height="25"/>
+  <object id="1204" name="destroyedSolid" x="650" y="75" width="26" height="25"/>
+  <object id="1205" name="destroyedSolid" x="650" y="100" width="26" height="25"/>
+  <object id="1206" name="destroyedSolid" x="624" y="100" width="26" height="25"/>
+  <object id="1207" name="destroyedSolid" x="624" y="125" width="26" height="25"/>
+  <object id="1208" name="destroyedSolid" x="650" y="125" width="26" height="25"/>
+  <object id="1209" name="destroyedSolid" x="650" y="150" width="26" height="25"/>
+  <object id="1210" name="destroyedSolid" x="624" y="150" width="26" height="25"/>
+  <object id="1211" name="destroyedSolid" x="624" y="175" width="26" height="25"/>
+  <object id="1212" name="destroyedSolid" x="650" y="175" width="26" height="25"/>
+  <object id="1213" name="destroyedSolid" x="650" y="200" width="26" height="25"/>
+  <object id="1214" name="destroyedSolid" x="624" y="200" width="26" height="25"/>
+  <object id="1215" name="destroyedSolid" x="624" y="225" width="26" height="25"/>
+  <object id="1216" name="destroyedSolid" x="650" y="225" width="26" height="25"/>
+  <object id="1217" name="destroyedSolid" x="650" y="250" width="26" height="25"/>
+  <object id="1218" name="destroyedSolid" x="624" y="250" width="26" height="25"/>
+  <object id="1219" name="destroyedSolid" x="624" y="275" width="26" height="25"/>
+  <object id="1220" name="destroyedSolid" x="650" y="275" width="26" height="25"/>
+  <object id="1221" name="destroyedSolid" x="650" y="300" width="26" height="25"/>
+  <object id="1222" name="destroyedSolid" x="624" y="300" width="26" height="25"/>
+  <object id="1223" name="noDestroySolidBorder" x="0" y="0" width="26" height="25"/>
+  <object id="1224" name="noDestroySolidBorder" x="26" y="0" width="26" height="25"/>
+  <object id="1225" name="noDestroySolidBorder" x="26" y="25" width="26" height="25"/>
+  <object id="1226" name="noDestroySolidBorder" x="0" y="25" width="26" height="25"/>
+  <object id="1227" name="noDestroySolidBorder" x="0" y="50" width="26" height="25"/>
+  <object id="1228" name="noDestroySolidBorder" x="26" y="50" width="26" height="25"/>
+  <object id="1229" name="noDestroySolidBorder" x="26" y="75" width="26" height="25"/>
+  <object id="1230" name="noDestroySolidBorder" x="0" y="75" width="26" height="25"/>
+  <object id="1231" name="noDestroySolidBorder" x="0" y="100" width="26" height="25"/>
+  <object id="1232" name="noDestroySolidBorder" x="26" y="100" width="26" height="25"/>
+  <object id="1233" name="noDestroySolidBorder" x="26" y="125" width="26" height="25"/>
+  <object id="1234" name="noDestroySolidBorder" x="0" y="125" width="26" height="25"/>
+  <object id="1235" name="noDestroySolidBorder" x="0" y="150" width="26" height="25"/>
+  <object id="1236" name="noDestroySolidBorder" x="26" y="150" width="26" height="25"/>
+  <object id="1237" name="noDestroySolidBorder" x="26" y="175" width="26" height="25"/>
+  <object id="1238" name="noDestroySolidBorder" x="0" y="175" width="26" height="25"/>
+  <object id="1239" name="noDestroySolidBorder" x="0" y="200" width="26" height="25"/>
+  <object id="1240" name="noDestroySolidBorder" x="26" y="200" width="26" height="25"/>
+  <object id="1241" name="noDestroySolidBorder" x="26" y="225" width="26" height="25"/>
+  <object id="1242" name="noDestroySolidBorder" x="0" y="225" width="26" height="25"/>
+  <object id="1243" name="noDestroySolidBorder" x="0" y="250" width="26" height="25"/>
+  <object id="1244" name="noDestroySolidBorder" x="26" y="250" width="26" height="25"/>
+  <object id="1245" name="noDestroySolidBorder" x="26" y="275" width="26" height="25"/>
+  <object id="1246" name="noDestroySolidBorder" x="0" y="275" width="26" height="25"/>
+  <object id="1247" name="noDestroySolidBorder" x="0" y="300" width="26" height="25"/>
+  <object id="1248" name="noDestroySolidBorder" x="26" y="300" width="26" height="25"/>
+  <object id="1249" name="noDestroySolidBorder" x="26" y="325" width="26" height="25"/>
+  <object id="1250" name="noDestroySolidBorder" x="0" y="325" width="26" height="25"/>
+  <object id="1251" name="noDestroySolidBorder" x="0" y="350" width="26" height="25"/>
+  <object id="1252" name="noDestroySolidBorder" x="26" y="350" width="26" height="25"/>
+  <object id="1253" name="noDestroySolidBorder" x="26" y="375" width="26" height="25"/>
+  <object id="1254" name="noDestroySolidBorder" x="0" y="375" width="26" height="25"/>
+  <object id="1255" name="noDestroySolidBorder" x="0" y="400" width="26" height="25"/>
+  <object id="1256" name="noDestroySolidBorder" x="26" y="400" width="26" height="25"/>
+  <object id="1257" name="noDestroySolidBorder" x="26" y="425" width="26" height="25"/>
+  <object id="1258" name="noDestroySolidBorder" x="0" y="425" width="26" height="25"/>
+  <object id="1259" name="noDestroySolidBorder" x="0" y="450" width="26" height="25"/>
+  <object id="1260" name="noDestroySolidBorder" x="26" y="450" width="26" height="25"/>
+  <object id="1261" name="noDestroySolidBorder" x="26" y="475" width="26" height="25"/>
+  <object id="1262" name="noDestroySolidBorder" x="0" y="475" width="26" height="25"/>
+  <object id="1263" name="noDestroySolidBorder" x="0" y="500" width="26" height="25"/>
+  <object id="1264" name="noDestroySolidBorder" x="26" y="500" width="26" height="25"/>
+  <object id="1265" name="noDestroySolidBorder" x="26" y="525" width="26" height="25"/>
+  <object id="1266" name="noDestroySolidBorder" x="0" y="525" width="26" height="25"/>
+  <object id="1267" name="noDestroySolidBorder" x="0" y="550" width="26" height="25"/>
+  <object id="1268" name="noDestroySolidBorder" x="26" y="550" width="26" height="25"/>
+  <object id="1269" name="noDestroySolidBorder" x="26" y="575" width="26" height="25"/>
+  <object id="1270" name="noDestroySolidBorder" x="0" y="575" width="26" height="25"/>
+  <object id="1271" name="noDestroySolidBorder" x="0" y="600" width="26" height="25"/>
+  <object id="1272" name="noDestroySolidBorder" x="26" y="600" width="26" height="25"/>
+  <object id="1273" name="noDestroySolidBorder" x="26" y="625" width="26" height="25"/>
+  <object id="1274" name="noDestroySolidBorder" x="0" y="625" width="26" height="25"/>
+  <object id="1275" name="noDestroySolidBorder" x="0" y="650" width="26" height="25"/>
+  <object id="1276" name="noDestroySolidBorder" x="26" y="650" width="26" height="25"/>
+  <object id="1277" name="noDestroySolidBorder" x="26" y="675" width="26" height="25"/>
+  <object id="1278" name="noDestroySolidBorder" x="0" y="675" width="26" height="25"/>
+  <object id="1279" name="noDestroySolidBorder" x="52" y="675" width="26" height="25"/>
+  <object id="1280" name="noDestroySolidBorder" x="78" y="675" width="26" height="25"/>
+  <object id="1281" name="noDestroySolidBorder" x="104" y="675" width="26" height="25"/>
+  <object id="1282" name="noDestroySolidBorder" x="130" y="675" width="26" height="25"/>
+  <object id="1283" name="noDestroySolidBorder" x="156" y="675" width="26" height="25"/>
+  <object id="1284" name="noDestroySolidBorder" x="182" y="675" width="26" height="25"/>
+  <object id="1285" name="noDestroySolidBorder" x="208" y="675" width="26" height="25"/>
+  <object id="1286" name="noDestroySolidBorder" x="234" y="675" width="26" height="25"/>
+  <object id="1287" name="noDestroySolidBorder" x="260" y="675" width="26" height="25"/>
+  <object id="1288" name="noDestroySolidBorder" x="286" y="675" width="26" height="25"/>
+  <object id="1289" name="noDestroySolidBorder" x="312" y="675" width="26" height="25"/>
+  <object id="1290" name="noDestroySolidBorder" x="338" y="675" width="26" height="25"/>
+  <object id="1291" name="noDestroySolidBorder" x="364" y="675" width="26" height="25"/>
+  <object id="1292" name="noDestroySolidBorder" x="390" y="675" width="26" height="25"/>
+  <object id="1293" name="noDestroySolidBorder" x="416" y="675" width="26" height="25"/>
+  <object id="1294" name="noDestroySolidBorder" x="442" y="675" width="26" height="25"/>
+  <object id="1295" name="noDestroySolidBorder" x="468" y="675" width="26" height="25"/>
+  <object id="1296" name="noDestroySolidBorder" x="494" y="675" width="26" height="25"/>
+  <object id="1297" name="noDestroySolidBorder" x="520" y="675" width="26" height="25"/>
+  <object id="1298" name="noDestroySolidBorder" x="546" y="675" width="26" height="25"/>
+  <object id="1299" name="noDestroySolidBorder" x="572" y="675" width="26" height="25"/>
+  <object id="1300" name="noDestroySolidBorder" x="598" y="675" width="26" height="25"/>
+  <object id="1301" name="noDestroySolidBorder" x="624" y="675" width="26" height="25"/>
+  <object id="1302" name="noDestroySolidBorder" x="650" y="675" width="26" height="25"/>
+  <object id="1303" name="noDestroySolidBorder" x="676" y="675" width="26" height="25"/>
+  <object id="1304" name="noDestroySolidBorder" x="702" y="675" width="26" height="25"/>
+  <object id="1305" name="noDestroySolidBorder" x="728" y="675" width="26" height="25"/>
+  <object id="1306" name="noDestroySolidBorder" x="754" y="675" width="26" height="25"/>
+  <object id="1307" name="noDestroySolidBorder" x="780" y="675" width="26" height="25"/>
+  <object id="1308" name="noDestroySolidBorder" x="806" y="675" width="26" height="25"/>
+  <object id="1309" name="noDestroySolidBorder" x="806" y="650" width="26" height="25"/>
+  <object id="1310" name="noDestroySolidBorder" x="780" y="650" width="26" height="25"/>
+  <object id="1311" name="noDestroySolidBorder" x="754" y="650" width="26" height="25"/>
+  <object id="1312" name="noDestroySolidBorder" x="728" y="650" width="26" height="25"/>
+  <object id="1313" name="noDestroySolidBorder" x="728" y="625" width="26" height="25"/>
+  <object id="1314" name="noDestroySolidBorder" x="754" y="625" width="26" height="25"/>
+  <object id="1315" name="noDestroySolidBorder" x="780" y="625" width="26" height="25"/>
+  <object id="1316" name="noDestroySolidBorder" x="806" y="625" width="26" height="25"/>
+  <object id="1317" name="noDestroySolidBorder" x="806" y="600" width="26" height="25"/>
+  <object id="1318" name="noDestroySolidBorder" x="780" y="600" width="26" height="25"/>
+  <object id="1319" name="noDestroySolidBorder" x="754" y="600" width="26" height="25"/>
+  <object id="1320" name="noDestroySolidBorder" x="728" y="600" width="26" height="25"/>
+  <object id="1321" name="noDestroySolidBorder" x="728" y="575" width="26" height="25"/>
+  <object id="1322" name="noDestroySolidBorder" x="754" y="575" width="26" height="25"/>
+  <object id="1323" name="noDestroySolidBorder" x="780" y="575" width="26" height="25"/>
+  <object id="1324" name="noDestroySolidBorder" x="806" y="575" width="26" height="25"/>
+  <object id="1325" name="noDestroySolidBorder" x="806" y="550" width="26" height="25"/>
+  <object id="1326" name="noDestroySolidBorder" x="780" y="550" width="26" height="25"/>
+  <object id="1327" name="noDestroySolidBorder" x="754" y="550" width="26" height="25"/>
+  <object id="1328" name="noDestroySolidBorder" x="728" y="550" width="26" height="25"/>
+  <object id="1329" name="noDestroySolidBorder" x="728" y="525" width="26" height="25"/>
+  <object id="1330" name="noDestroySolidBorder" x="754" y="525" width="26" height="25"/>
+  <object id="1331" name="noDestroySolidBorder" x="780" y="525" width="26" height="25"/>
+  <object id="1332" name="noDestroySolidBorder" x="806" y="525" width="26" height="25"/>
+  <object id="1333" name="noDestroySolidBorder" x="806" y="500" width="26" height="25"/>
+  <object id="1334" name="noDestroySolidBorder" x="780" y="500" width="26" height="25"/>
+  <object id="1335" name="noDestroySolidBorder" x="754" y="500" width="26" height="25"/>
+  <object id="1336" name="noDestroySolidBorder" x="728" y="500" width="26" height="25"/>
+  <object id="1337" name="noDestroySolidBorder" x="728" y="475" width="26" height="25"/>
+  <object id="1338" name="noDestroySolidBorder" x="754" y="475" width="26" height="25"/>
+  <object id="1339" name="noDestroySolidBorder" x="780" y="475" width="26" height="25"/>
+  <object id="1340" name="noDestroySolidBorder" x="806" y="475" width="26" height="25"/>
+  <object id="1341" name="noDestroySolidBorder" x="806" y="450" width="26" height="25"/>
+  <object id="1342" name="noDestroySolidBorder" x="780" y="450" width="26" height="25"/>
+  <object id="1343" name="noDestroySolidBorder" x="754" y="450" width="26" height="25"/>
+  <object id="1344" name="noDestroySolidBorder" x="728" y="450" width="26" height="25"/>
+  <object id="1345" name="noDestroySolidBorder" x="728" y="425" width="26" height="25"/>
+  <object id="1346" name="noDestroySolidBorder" x="754" y="425" width="26" height="25"/>
+  <object id="1347" name="noDestroySolidBorder" x="780" y="425" width="26" height="25"/>
+  <object id="1348" name="noDestroySolidBorder" x="806" y="425" width="26" height="25"/>
+  <object id="1349" name="noDestroySolidBorder" x="806" y="400" width="26" height="25"/>
+  <object id="1350" name="noDestroySolidBorder" x="780" y="400" width="26" height="25"/>
+  <object id="1351" name="noDestroySolidBorder" x="754" y="400" width="26" height="25"/>
+  <object id="1352" name="noDestroySolidBorder" x="728" y="400" width="26" height="25"/>
+  <object id="1353" name="noDestroySolidBorder" x="728" y="375" width="26" height="25"/>
+  <object id="1354" name="noDestroySolidBorder" x="754" y="375" width="26" height="25"/>
+  <object id="1355" name="noDestroySolidBorder" x="780" y="375" width="26" height="25"/>
+  <object id="1359" name="noDestroySolidBorder" x="806" y="375" width="26" height="25"/>
+  <object id="1360" name="noDestroySolidBorder" x="806" y="350" width="26" height="25"/>
+  <object id="1361" name="noDestroySolidBorder" x="780" y="350" width="26" height="25"/>
+  <object id="1362" name="noDestroySolidBorder" x="754" y="350" width="26" height="25"/>
+  <object id="1363" name="noDestroySolidBorder" x="728" y="350" width="26" height="25"/>
+  <object id="1364" name="noDestroySolidBorder" x="728" y="325" width="26" height="25"/>
+  <object id="1365" name="noDestroySolidBorder" x="754" y="325" width="26" height="25"/>
+  <object id="1366" name="noDestroySolidBorder" x="780" y="325" width="26" height="25"/>
+  <object id="1367" name="noDestroySolidBorder" x="806" y="325" width="26" height="25"/>
+  <object id="1368" name="noDestroySolidBorder" x="806" y="300" width="26" height="25"/>
+  <object id="1369" name="noDestroySolidBorder" x="780" y="300" width="26" height="25"/>
+  <object id="1370" name="noDestroySolidBorder" x="754" y="300" width="26" height="25"/>
+  <object id="1371" name="noDestroySolidBorder" x="728" y="300" width="26" height="25"/>
+  <object id="1372" name="noDestroySolidBorder" x="728" y="275" width="26" height="25"/>
+  <object id="1373" name="noDestroySolidBorder" x="754" y="275" width="26" height="25"/>
+  <object id="1374" name="noDestroySolidBorder" x="780" y="275" width="26" height="25"/>
+  <object id="1375" name="noDestroySolidBorder" x="806" y="275" width="26" height="25"/>
+  <object id="1376" name="noDestroySolidBorder" x="806" y="250" width="26" height="25"/>
+  <object id="1377" name="noDestroySolidBorder" x="754" y="250" width="26" height="25"/>
+  <object id="1378" name="noDestroySolidBorder" x="780" y="250" width="26" height="25"/>
+  <object id="1379" name="noDestroySolidBorder" x="728" y="250" width="26" height="25"/>
+  <object id="1380" name="noDestroySolidBorder" x="728" y="225" width="26" height="25"/>
+  <object id="1381" name="noDestroySolidBorder" x="754" y="225" width="26" height="25"/>
+  <object id="1382" name="noDestroySolidBorder" x="780" y="225" width="26" height="25"/>
+  <object id="1383" name="noDestroySolidBorder" x="806" y="225" width="26" height="25"/>
+  <object id="1384" name="noDestroySolidBorder" x="728" y="200" width="26" height="25"/>
+  <object id="1385" name="noDestroySolidBorder" x="754" y="200" width="26" height="25"/>
+  <object id="1386" name="noDestroySolidBorder" x="780" y="200" width="26" height="25"/>
+  <object id="1387" name="noDestroySolidBorder" x="806" y="200" width="26" height="25"/>
+  <object id="1388" name="noDestroySolidBorder" x="806" y="175" width="26" height="25"/>
+  <object id="1389" name="noDestroySolidBorder" x="780" y="175" width="26" height="25"/>
+  <object id="1390" name="noDestroySolidBorder" x="754" y="175" width="26" height="25"/>
+  <object id="1392" name="noDestroySolidBorder" x="728" y="175" width="26" height="25"/>
+  <object id="1393" name="noDestroySolidBorder" x="728" y="150" width="26" height="25"/>
+  <object id="1394" name="noDestroySolidBorder" x="754" y="150" width="26" height="25"/>
+  <object id="1395" name="noDestroySolidBorder" x="780" y="150" width="26" height="25"/>
+  <object id="1396" name="noDestroySolidBorder" x="806" y="150" width="26" height="25"/>
+  <object id="1397" name="noDestroySolidBorder" x="806" y="125" width="26" height="25"/>
+  <object id="1398" name="noDestroySolidBorder" x="780" y="125" width="26" height="25"/>
+  <object id="1399" name="noDestroySolidBorder" x="754" y="125" width="26" height="25"/>
+  <object id="1400" name="noDestroySolidBorder" x="728" y="125" width="26" height="25"/>
+  <object id="1401" name="noDestroySolidBorder" x="728" y="100" width="26" height="25"/>
+  <object id="1402" name="noDestroySolidBorder" x="754" y="100" width="26" height="25"/>
+  <object id="1403" name="noDestroySolidBorder" x="780" y="100" width="26" height="25"/>
+  <object id="1404" name="noDestroySolidBorder" x="806" y="100" width="26" height="25"/>
+  <object id="1405" name="noDestroySolidBorder" x="806" y="75" width="26" height="25"/>
+  <object id="1406" name="noDestroySolidBorder" x="780" y="75" width="26" height="25"/>
+  <object id="1407" name="noDestroySolidBorder" x="754" y="75" width="26" height="25"/>
+  <object id="1408" name="noDestroySolidBorder" x="728" y="75" width="26" height="25"/>
+  <object id="1409" name="noDestroySolidBorder" x="728" y="50" width="26" height="25"/>
+  <object id="1410" name="noDestroySolidBorder" x="754" y="50" width="26" height="25"/>
+  <object id="1411" name="noDestroySolidBorder" x="780" y="50" width="26" height="25"/>
+  <object id="1412" name="noDestroySolidBorder" x="806" y="50" width="26" height="25"/>
+  <object id="1413" name="noDestroySolidBorder" x="806" y="25" width="26" height="25"/>
+  <object id="1414" name="noDestroySolidBorder" x="806" y="0" width="26" height="25"/>
+  <object id="1415" name="noDestroySolidBorder" x="780" y="0" width="26" height="25"/>
+  <object id="1416" name="noDestroySolidBorder" x="780" y="25" width="26" height="25"/>
+  <object id="1417" name="noDestroySolidBorder" x="754" y="25" width="26" height="25"/>
+  <object id="1418" name="noDestroySolidBorder" x="728" y="25" width="26" height="25"/>
+  <object id="1419" name="noDestroySolidBorder" x="728" y="0" width="26" height="25"/>
+  <object id="1420" name="noDestroySolidBorder" x="754" y="0" width="26" height="25"/>
+  <object id="1421" name="noDestroySolidBorder" x="702" y="0" width="26" height="25"/>
+  <object id="1422" name="noDestroySolidBorder" x="676" y="0" width="26" height="25"/>
+  <object id="1423" name="noDestroySolidBorder" x="650" y="0" width="26" height="25"/>
+  <object id="1424" name="noDestroySolidBorder" x="624" y="0" width="26" height="25"/>
+  <object id="1425" name="noDestroySolidBorder" x="598" y="0" width="26" height="25"/>
+  <object id="1426" name="noDestroySolidBorder" x="572" y="0" width="26" height="25"/>
+  <object id="1427" name="noDestroySolidBorder" x="546" y="0" width="26" height="25"/>
+  <object id="1428" name="noDestroySolidBorder" x="520" y="0" width="26" height="25"/>
+  <object id="1429" name="noDestroySolidBorder" x="494" y="0" width="26" height="25"/>
+  <object id="1430" name="noDestroySolidBorder" x="468" y="0" width="26" height="25"/>
+  <object id="1431" name="noDestroySolidBorder" x="442" y="0" width="26" height="25"/>
+  <object id="1432" name="noDestroySolidBorder" x="416" y="0" width="26" height="25"/>
+  <object id="1433" name="noDestroySolidBorder" x="390" y="0" width="26" height="25"/>
+  <object id="1434" name="noDestroySolidBorder" x="364" y="0" width="26" height="25"/>
+  <object id="1435" name="noDestroySolidBorder" x="338" y="0" width="26" height="25"/>
+  <object id="1436" name="noDestroySolidBorder" x="312" y="0" width="26" height="25"/>
+  <object id="1437" name="noDestroySolidBorder" x="52" y="0" width="26" height="25"/>
+  <object id="1438" name="noDestroySolidBorder" x="78" y="0" width="26" height="25"/>
+  <object id="1439" name="noDestroySolidBorder" x="104" y="0" width="26" height="25"/>
+  <object id="1440" name="noDestroySolidBorder" x="156" y="0" width="26" height="25"/>
+  <object id="1441" name="noDestroySolidBorder" x="130" y="0" width="26" height="25"/>
+  <object id="1442" name="noDestroySolidBorder" x="182" y="0" width="26" height="25"/>
+  <object id="1443" name="noDestroySolidBorder" x="208" y="0" width="26" height="25"/>
+  <object id="1444" name="noDestroySolidBorder" x="234" y="0" width="26" height="25"/>
+  <object id="1445" name="noDestroySolidBorder" x="260" y="0" width="26" height="25"/>
+  <object id="1446" name="noDestroySolidBorder" x="286" y="0" width="26" height="25"/>
+  <object id="1448" name="noDestroySolidBlock" x="364" y="225" width="26" height="25"/>
+  <object id="1449" name="noDestroySolidBlock" x="390" y="225" width="26" height="25"/>
+  <object id="1450" name="noDestroySolidBlock" x="390" y="200" width="26" height="25"/>
+  <object id="1451" name="noDestroySolidBlock" x="364" y="200" width="26" height="25"/>
+  <object id="1452" name="noDestroySolidBlock" x="676" y="400" width="26" height="25"/>
+  <object id="1453" name="noDestroySolidBlock" x="702" y="400" width="26" height="25"/>
  </objectgroup>
 </map>
