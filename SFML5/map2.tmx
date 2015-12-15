@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="28" tilewidth="26" tileheight="25" nextobjectid="1128">
+ <tileset firstgid="1" name="block" tilewidth="26" tileheight="25" tilecount="14">
+  <image source="images/block.png" width="183" height="50"/>
+ </tileset>
+ <tileset firstgid="15" name="first" tilewidth="26" tileheight="25" tilecount="4">
+  <image source="images/first.png" width="52" height="56"/>
+ </tileset>
+ <tileset firstgid="19" name="tank1" tilewidth="26" tileheight="25" tilecount="1">
+  <image source="images/tank1.bmp" width="26" height="25"/>
+ </tileset>
+ <layer name="Слой тайлов 1" width="32" height="28">
+  <data>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+   <tile gid="11"/>
+  </data>
+ </layer>
+ <objectgroup name="Слой объектов 1">
+  <object id="897" name="solid" x="676" y="400" width="52" height="25"/>
+  <object id="898" name="destroyedSolid" x="338" y="325" width="26" height="25"/>
+  <object id="899" name="destroyedSolid" x="130" y="150" width="26" height="25"/>
+  <object id="900" name="Deagle" x="364" y="625" width="52.5" height="49"/>
+  <object id="901" name="destroyedSolid" x="520" y="600" width="26" height="25"/>
+  <object id="902" name="destroyedSolid" x="104" y="275" width="26" height="25"/>
+  <object id="903" name="destroyedSolid" x="234" y="525" width="26" height="25"/>
+  <object id="904" name="destroyedSolid" x="546" y="175" width="26" height="25"/>
+  <object id="905" name="destroyedSolid" x="520" y="250" width="26" height="25"/>
+  <object id="906" name="destroyedSolid" x="208" y="550" width="26" height="25"/>
+  <object id="907" name="destroyedSolid" x="130" y="525" width="26" height="25"/>
+  <object id="908" name="destroyedSolid" x="650" y="175" width="26" height="25"/>
+  <object id="909" name="destroyedSolid" x="390" y="450" width="26" height="25"/>
+  <object id="910" name="destroyedSolid" x="234" y="125" width="26" height="25"/>
+  <object id="911" name="destroyedSolid" x="338" y="100" width="26" height="25"/>
+  <object id="912" name="destroyedSolid" x="442" y="125" width="26" height="25"/>
+  <object id="913" name="destroyedSolid" x="104" y="125" width="26" height="25"/>
+  <object id="914" name="destroyedSolid" x="624" y="125" width="26" height="25"/>
+  <object id="915" name="destroyedSolid" x="546" y="200" width="26" height="25"/>
+  <object id="916" name="destroyedSolid" x="208" y="175" width="26" height="25"/>
+  <object id="917" name="destroyedSolid" x="104" y="150" width="26" height="25"/>
+  <object id="918" name="destroyedSolid" x="416" y="625" width="26" height="25"/>
+  <object id="919" name="destroyedSolid" x="520" y="550" width="26" height="25"/>
+  <object id="920" name="destroyedSolid" x="520" y="100" width="26" height="25"/>
+  <object id="921" name="destroyedSolid" x="338" y="425" width="26" height="25"/>
+  <object id="922" name="destroyedSolid" x="650" y="600" width="26" height="25"/>
+  <object id="923" name="destroyedSolid" x="546" y="575" width="26" height="25"/>
+  <object id="924" name="destroyedSolid" x="390" y="475" width="26" height="25"/>
+  <object id="925" name="destroyedSolid" x="442" y="175" width="26" height="25"/>
+  <object id="926" name="destroyedSolid" x="624" y="300" width="26" height="25"/>
+  <object id="927" name="destroyedSolid" x="156" y="400" width="26" height="25"/>
+  <object id="928" name="destroyedSolid" x="130" y="250" width="26" height="25"/>
+  <object id="929" name="destroyedSolid" x="416" y="125" width="26" height="25"/>
+  <object id="930" name="destroyedSolid" x="650" y="200" width="26" height="25"/>
+  <object id="931" name="destroyedSolid" x="130" y="175" width="26" height="25"/>
+  <object id="932" name="destroyedSolid" x="234" y="550" width="26" height="25"/>
+  <object id="933" name="destroyedSolid" x="182" y="400" width="26" height="25"/>
+  <object id="934" name="destroyedSolid" x="416" y="175" width="26" height="25"/>
+  <object id="935" name="destroyedSolid" x="546" y="125" width="26" height="25"/>
+  <object id="936" name="destroyedSolid" x="520" y="525" width="26" height="25"/>
+  <object id="937" name="destroyedSolid" x="156" y="375" width="26" height="25"/>
+  <object id="938" name="destroyedSolid" x="650" y="100" width="26" height="25"/>
+  <object id="939" name="destroyedSolid" x="442" y="75" width="26" height="25"/>
+  <object id="940" name="destroyedSolid" x="546" y="275" width="26" height="25"/>
+  <object id="941" name="destroyedSolid" x="546" y="600" width="26" height="25"/>
+  <object id="942" name="destroyedSolid" x="624" y="250" width="26" height="25"/>
+  <object id="943" name="destroyedSolid" x="416" y="325" width="26" height="25"/>
+  <object id="944" name="destroyedSolid" x="234" y="75" width="26" height="25"/>
+  <object id="945" name="destroyedSolid" x="572" y="375" width="26" height="25"/>
+  <object id="946" name="destroyedSolid" x="416" y="425" width="26" height="25"/>
+  <object id="947" name="destroyedSolid" x="650" y="225" width="26" height="25"/>
+  <object id="948" name="destroyedSolid" x="104" y="225" width="26" height="25"/>
+  <object id="949" name="destroyedSolid" x="234" y="275" width="26" height="25"/>
+  <object id="950" name="destroyedSolid" x="312" y="200" width="26" height="25"/>
+  <object id="951" name="destroyedSolid" x="312" y="525" width="26" height="25"/>
+  <object id="952" name="destroyedSolid" x="182" y="375" width="26" height="25"/>
+  <object id="953" name="destroyedSolid" x="442" y="200" width="26" height="25"/>
+  <object id="954" name="destroyedSolid" x="572" y="400" width="26" height="25"/>
+  <object id="955" name="destroyedSolid" x="338" y="500" width="26" height="25"/>
+  <object id="956" name="destroyedSolid" x="104" y="250" width="26" height="25"/>
+  <object id="957" name="destroyedSolid" x="312" y="100" width="26" height="25"/>
+  <object id="958" name="EasyEnemy" x="677.333" y="33" width="35" height="35"/>
+  <object id="959" name="destroyedSolid" x="624" y="500" width="26" height="25"/>
+  <object id="960" name="destroyedSolid" x="650" y="75" width="26" height="25"/>
+  <object id="961" name="destroyedSolid" x="130" y="600" width="26" height="25"/>
+  <object id="962" name="destroyedSolid" x="104" y="500" width="26" height="25"/>
+  <object id="963" name="destroyedSolid" x="130" y="225" width="26" height="25"/>
+  <object id="964" name="destroyedSolid" x="442" y="325" width="26" height="25"/>
+  <object id="965" name="destroyedSolid" x="208" y="200" width="26" height="25"/>
+  <object id="966" name="EasyEnemy" x="58.3333" y="27.8334" width="35" height="35"/>
+  <object id="967" name="destroyedSolid" x="338" y="625" width="26" height="25"/>
+  <object id="968" name="destroyedSolid" x="312" y="450" width="26" height="25"/>
+  <object id="969" name="destroyedSolid" x="234" y="500" width="26" height="25"/>
+  <object id="970" name="destroyedSolid" x="546" y="150" width="26" height="25"/>
+  <object id="971" name="destroyedSolid" x="624" y="75" width="26" height="25"/>
+  <object id="972" name="destroyedSolid" x="208" y="600" width="26" height="25"/>
+  <object id="973" name="destroyedSolid" x="130" y="500" width="26" height="25"/>
+  <object id="974" name="destroyedSolid" x="338" y="225" width="26" height="25"/>
+  <object id="975" name="destroyedSolid" x="442" y="100" width="26" height="25"/>
+  <object id="976" name="destroyedSolid" x="234" y="100" width="26" height="25"/>
+  <object id="977" name="destroyedSolid" x="416" y="500" width="26" height="25"/>
+  <object id="978" name="destroyedSolid" x="624" y="475" width="26" height="25"/>
+  <object id="979" name="destroyedSolid" x="442" y="225" width="26" height="25"/>
+  <object id="980" name="destroyedSolid" x="624" y="150" width="26" height="25"/>
+  <object id="981" name="destroyedSolid" x="104" y="100" width="26" height="25"/>
+  <object id="982" name="destroyedSolid" x="338" y="650" width="26" height="25"/>
+  <object id="983" name="destroyedSolid" x="442" y="475" width="26" height="25"/>
+  <object id="984" name="destroyedSolid" x="520" y="200" width="26" height="25"/>
+  <object id="985" name="destroyedSolid" x="104" y="175" width="26" height="25"/>
+  <object id="986" name="destroyedSolid" x="208" y="100" width="26" height="25"/>
+  <object id="987" name="destroyedSolid" x="442" y="525" width="26" height="25"/>
+  <object id="988" name="destroyedSolid" x="338" y="525" width="26" height="25"/>
+  <object id="989" name="destroyedSolid" x="546" y="75" width="26" height="25"/>
+  <object id="990" name="destroyedSolid" x="208" y="475" width="26" height="25"/>
+  <object id="991" name="destroyedSolid" x="650" y="550" width="26" height="25"/>
+  <object id="992" name="destroyedSolid" x="416" y="475" width="26" height="25"/>
+  <object id="993" name="destroyedSolid" x="364" y="475" width="26" height="25"/>
+  <object id="994" name="destroyedSolid" x="208" y="300" width="26" height="25"/>
+  <object id="995" name="destroyedSolid" x="650" y="275" width="26" height="25"/>
+  <object id="996" name="destroyedSolid" x="416" y="150" width="26" height="25"/>
+  <object id="997" name="destroyedSolid" x="130" y="275" width="26" height="25"/>
+  <object id="998" name="destroyedSolid" x="442" y="150" width="26" height="25"/>
+  <object id="999" name="destroyedSolid" x="104" y="75" width="26" height="25"/>
+  <object id="1000" name="destroyedSolid" x="520" y="225" width="26" height="25"/>
+  <object id="1001" name="destroyedSolid" x="390" y="600" width="26" height="25"/>
+  <object id="1002" name="destroyedSolid" x="234" y="575" width="26" height="25"/>
+  <object id="1003" name="destroyedSolid" x="416" y="250" width="26" height="25"/>
+  <object id="1004" name="destroyedSolid" x="234" y="200" width="26" height="25"/>
+  <object id="1005" name="destroyedSolid" x="546" y="225" width="26" height="25"/>
+  <object id="1006" name="destroyedSolid" x="338" y="475" width="26" height="25"/>
+  <object id="1007" name="destroyedSolid" x="442" y="450" width="26" height="25"/>
+  <object id="1008" name="destroyedSolid" x="624" y="600" width="26" height="25"/>
+  <object id="1009" name="destroyedSolid" x="208" y="400" width="26" height="25"/>
+  <object id="1010" name="destroyedSolid" x="624" y="100" width="26" height="25"/>
+  <object id="1011" name="destroyedSolid" x="104" y="600" width="26" height="25"/>
+  <object id="1012" name="destroyedSolid" x="546" y="475" width="26" height="25"/>
+  <object id="1013" name="destroyedSolid" x="650" y="125" width="26" height="25"/>
+  <object id="1014" name="destroyedSolid" x="416" y="75" width="26" height="25"/>
+  <object id="1015" name="destroyedSolid" x="130" y="75" width="26" height="25"/>
+  <object id="1016" name="destroyedSolid" x="312" y="225" width="26" height="25"/>
+  <object id="1017" name="solid" x="52" y="400" width="52" height="25"/>
+  <object id="1018" name="destroyedSolid" x="208" y="75" width="26" height="25"/>
+  <object id="1019" name="destroyedSolid" x="208" y="275" width="26" height="25"/>
+  <object id="1020" name="destroyedSolid" x="546" y="100" width="26" height="25"/>
+  <object id="1021" name="destroyedSolid" x="650" y="525" width="26" height="25"/>
+  <object id="1022" name="destroyedSolid" x="520" y="375" width="26" height="25"/>
+  <object id="1023" name="destroyedSolid" x="442" y="250" width="26" height="25"/>
+  <object id="1024" name="destroyedSolid" x="520" y="500" width="26" height="25"/>
+  <object id="1025" name="destroyedSolid" x="234" y="250" width="26" height="25"/>
+  <object id="1026" name="destroyedSolid" x="546" y="400" width="26" height="25"/>
+  <object id="1027" name="destroyedSolid" x="312" y="325" width="26" height="25"/>
+  <object id="1028" name="destroyedSolid" x="546" y="525" width="26" height="25"/>
+  <object id="1029" name="destroyedSolid" x="104" y="300" width="26" height="25"/>
+  <object id="1030" name="destroyedSolid" x="312" y="250" width="26" height="25"/>
+  <object id="1031" name="destroyedSolid" x="130" y="550" width="26" height="25"/>
+  <object id="1032" name="destroyedSolid" x="234" y="400" width="26" height="25"/>
+  <object id="1033" name="destroyedSolid" x="338" y="150" width="26" height="25"/>
+  <object id="1034" name="destroyedSolid" x="416" y="350" width="26" height="25"/>
+  <object id="1035" name="destroyedSolid" x="650" y="475" width="26" height="25"/>
+  <object id="1036" name="destroyedSolid" x="208" y="125" width="26" height="25"/>
+  <object id="1037" name="destroyedSolid" x="520" y="125" width="26" height="25"/>
+  <object id="1038" name="destroyedSolid" x="520" y="575" width="26" height="25"/>
+  <object id="1039" name="destroyedSolid" x="234" y="475" width="26" height="25"/>
+  <object id="1040" name="destroyedSolid" x="624" y="550" width="26" height="25"/>
+  <object id="1041" name="destroyedSolid" x="338" y="600" width="26" height="50"/>
+  <object id="1042" name="destroyedSolid" x="520" y="75" width="26" height="25"/>
+  <object id="1043" name="destroyedSolid" x="234" y="375" width="26" height="25"/>
+  <object id="1044" name="destroyedSolid" x="312" y="175" width="26" height="25"/>
+  <object id="1045" name="destroyedSolid" x="416" y="525" width="26" height="25"/>
+  <object id="1046" name="destroyedSolid" x="650" y="500" width="26" height="25"/>
+  <object id="1047" name="destroyedSolid" x="104" y="475" width="26" height="25"/>
+  <object id="1048" name="solid" x="364" y="200" width="52" height="50"/>
+  <object id="1049" name="destroyedSolid" x="312" y="150" width="26" height="25"/>
+  <object id="1050" name="destroyedSolid" x="338" y="450" width="26" height="25"/>
+  <object id="1051" name="destroyedSolid" x="416" y="650" width="26" height="25"/>
+  <object id="1052" name="destroyedSolid" x="338" y="350" width="26" height="25"/>
+  <object id="1053" name="destroyedSolid" x="624" y="200" width="26" height="25"/>
+  <object id="1054" name="player" x="266" y="616.167" width="52" height="50"/>
+  <object id="1055" name="destroyedSolid" x="520" y="475" width="26" height="25"/>
+  <object id="1056" name="destroyedSolid" x="234" y="300" width="26" height="25"/>
+  <object id="1057" name="destroyedSolid" x="546" y="375" width="26" height="25"/>
+  <object id="1058" name="destroyedSolid" x="130" y="200" width="26" height="25"/>
+  <object id="1059" name="destroyedSolid" x="520" y="175" width="26" height="25"/>
+  <object id="1060" name="destroyedSolid" x="546" y="500" width="26" height="25"/>
+  <object id="1061" name="destroyedSolid" x="208" y="500" width="26" height="25"/>
+  <object id="1062" name="destroyedSolid" x="104" y="575" width="26" height="25"/>
+  <object id="1063" name="destroyedSolid" x="364" y="450" width="26" height="25"/>
+  <object id="1064" name="destroyedSolid" x="650" y="300" width="26" height="25"/>
+  <object id="1065" name="destroyedSolid" x="416" y="200" width="26" height="25"/>
+  <object id="1066" name="destroyedSolid" x="234" y="150" width="26" height="25"/>
+  <object id="1067" name="destroyedSolid" x="130" y="300" width="26" height="25"/>
+  <object id="1068" name="destroyedSolid" x="598" y="400" width="26" height="25"/>
+  <object id="1069" name="destroyedSolid" x="624" y="225" width="26" height="25"/>
+  <object id="1070" name="destroyedSolid" x="416" y="100" width="26" height="25"/>
+  <object id="1071" name="destroyedSolid" x="546" y="300" width="26" height="25"/>
+  <object id="1072" name="destroyedSolid" x="650" y="150" width="26" height="25"/>
+  <object id="1073" name="destroyedSolid" x="130" y="100" width="26" height="25"/>
+  <object id="1074" name="destroyedSolid" x="416" y="600" width="26" height="25"/>
+  <object id="1075" name="destroyedSolid" x="208" y="575" width="26" height="25"/>
+  <object id="1076" name="destroyedSolid" x="598" y="375" width="26" height="25"/>
+  <object id="1077" name="destroyedSolid" x="312" y="350" width="26" height="25"/>
+  <object id="1078" name="destroyedSolid" x="234" y="175" width="26" height="25"/>
+  <object id="1079" name="destroyedSolid" x="312" y="425" width="26" height="25"/>
+  <object id="1080" name="destroyedSolid" x="650" y="575" width="26" height="25"/>
+  <object id="1081" name="destroyedSolid" x="104" y="525" width="26" height="25"/>
+  <object id="1082" name="destroyedSolid" x="520" y="400" width="26" height="25"/>
+  <object id="1083" name="destroyedSolid" x="416" y="225" width="26" height="25"/>
+  <object id="1084" name="destroyedSolid" x="234" y="600" width="26" height="25"/>
+  <object id="1085" name="destroyedSolid" x="442" y="350" width="26" height="25"/>
+  <object id="1086" name="destroyedSolid" x="624" y="175" width="26" height="25"/>
+  <object id="1087" name="destroyedSolid" x="130" y="125" width="26" height="25"/>
+  <object id="1088" name="destroyedSolid" x="338" y="200" width="26" height="25"/>
+  <object id="1089" name="destroyedSolid" x="208" y="225" width="26" height="25"/>
+  <object id="1090" name="destroyedSolid" x="520" y="150" width="26" height="25"/>
+  <object id="1091" name="destroyedSolid" x="312" y="475" width="26" height="25"/>
+  <object id="1092" name="destroyedSolid" x="650" y="250" width="26" height="25"/>
+  <object id="1093" name="destroyedSolid" x="234" y="225" width="26" height="25"/>
+  <object id="1094" name="destroyedSolid" x="338" y="125" width="26" height="25"/>
+  <object id="1095" name="destroyedSolid" x="520" y="275" width="26" height="25"/>
+  <object id="1096" name="destroyedSolid" x="442" y="425" width="26" height="25"/>
+  <object id="1097" name="destroyedSolid" x="338" y="250" width="26" height="25"/>
+  <object id="1098" name="destroyedSolid" x="208" y="525" width="26" height="25"/>
+  <object id="1099" name="destroyedSolid" x="312" y="125" width="26" height="25"/>
+  <object id="1100" name="destroyedSolid" x="104" y="550" width="26" height="25"/>
+  <object id="1101" name="destroyedSolid" x="208" y="375" width="26" height="25"/>
+  <object id="1102" name="destroyedSolid" x="104" y="200" width="26" height="25"/>
+  <object id="1103" name="destroyedSolid" x="624" y="575" width="26" height="25"/>
+  <object id="1104" name="destroyedSolid" x="208" y="250" width="26" height="25"/>
+  <object id="1105" name="destroyedSolid" x="338" y="75" width="26" height="25"/>
+  <object id="1106" name="destroyedSolid" x="416" y="450" width="26" height="25"/>
+  <object id="1107" name="destroyedSolid" x="520" y="300" width="26" height="25"/>
+  <object id="1108" name="destroyedSolid" x="130" y="575" width="26" height="25"/>
+  <object id="1109" name="destroyedSolid" x="312" y="500" width="26" height="25"/>
+  <object id="1110" name="destroyedSolid" x="546" y="550" width="26" height="25"/>
+  <object id="1111" name="destroyedSolid" x="364" y="600" width="26" height="25"/>
+  <object id="1112" name="destroyedSolid" x="624" y="525" width="26" height="25"/>
+  <object id="1113" name="destroyedSolid" x="546" y="250" width="26" height="25"/>
+  <object id="1114" name="destroyedSolid" x="130" y="475" width="26" height="25"/>
+  <object id="1115" name="destroyedSolid" x="338" y="175" width="26" height="25"/>
+  <object id="1116" name="EasyEnemy" x="374.333" y="28.1667" width="35" height="35"/>
+  <object id="1117" name="destroyedSolid" x="624" y="275" width="26" height="25"/>
+  <object id="1118" name="destroyedSolid" x="208" y="150" width="26" height="25"/>
+  <object id="1119" name="destroyedSolid" x="312" y="75" width="26" height="25"/>
+  <object id="1120" name="destroyedSolid" x="442" y="500" width="26" height="25"/>
+  <object id="1121" name="solid" x="52" y="0" width="676" height="25"/>
+  <object id="1122" name="solid" x="728" y="25" width="26" height="650"/>
+  <object id="1126" name="solid" x="52" y="675" width="676" height="25"/>
+  <object id="1127" name="solid" x="26" y="25" width="26" height="650"/>
+ </objectgroup>
+</map>
