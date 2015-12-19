@@ -72,8 +72,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="images.cpp" />
     <ClCompile Include="level.cpp" />
+    <ClCompile Include="levelObject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="TinyXML\tinystr.cpp" />
     <ClCompile Include="TinyXML\tinyxml.cpp" />
     <ClCompile Include="TinyXML\tinyxmlerror.cpp" />
@@ -81,7 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="images.h" />
     <ClInclude Include="level.h" />
+    <ClInclude Include="levelObject.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="TinyXML\tinystr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

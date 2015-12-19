@@ -8,6 +8,9 @@
 #include <iostream>
 #include "TinyXML/tinyxml.h"
 
+using namespace std;
+using namespace sf;
+
 struct Object
 {
 	int GetPropertyInt(std::string name);//номер свойства объекта в нашем списке

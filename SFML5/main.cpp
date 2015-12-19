@@ -1,358 +1,8 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <sstream>
-#include <cstdlib>
-#include <random>
-#include "level.h"
-#include <vector>
-#include <list>
-#include <ctime>
-#include <crtdbg.h>
-#include "config.h"
-
+//#include <SFML/Graphics.hpp>
+#include "Enemy.h"
 
 using namespace sf;
 using namespace std;
-
-class Entity {
-public:
-	std::vector<Object> obj;
-	float speed;
-	float CurrentFrame;
-	float delay;
-	int w;
-	int h;
-	int health;
-	int individualNumber;
-	int individualNumberBonus;
-	int numberEnemyTank = 1;
-	enum { LEFT, RIGHT, UP, DOWN, STAY } state;
-	Vector2i coordinatesGunTank;
-	bool life;
-	bool isMove;
-	bool onGround;
-	bool bulletReleased = false;
-	Vector2f coordinates;
-	Vector2f diraction;
-	Vector2f speedBulles;
-	Texture *texture;
-	Sprite *sprite;
-	String name;
-	Entity(Image &image, String Name, float X, float Y, int W, int H, Vector2i coordinatesGunTank) {
-		coordinates.x = X; coordinates.y = Y; w = W; h = H; name = Name;
-		speed = 0; health = 100; diraction.x = 0; diraction.y = 0;
-		life = true; onGround = false; isMove = false;
-		texture = new Texture;
-		sprite = new Sprite;
-		texture->loadFromImage(image);
-		sprite->setTexture(*texture);
-	}
-
-	FloatRect getRect() {
-		return FloatRect(coordinates.x, coordinates.y, float(w), float(h)); 
-	}
-
-	virtual void update(float time) = 0;
-
-};
-
-class Player : public Entity {
-public:
-	
-	int playerScore;
-	bool cheats = false;
-	Player(Image &image, String name, Level &lev, float X, float Y, int W, int H, Object player) :Entity(image, name, X, Y, W, H, coordinatesGunTank) {
-		obj = lev.GetAllObjects();
-		playerScore = 0; state = STAY;
-		health = 2;
-		if (name == PLAYER_NAME) {
-			sprite->setTextureRect(IntRect(0, 0, w, h));
-			coordinatesGunTank.x = int(player.rect.left) + w;
-			coordinatesGunTank.y = int(player.rect.top) + h / 2;
-		}
-	}
-
-	void control(float time) {
-		if (CurrentFrame > 2) (CurrentFrame = 0);
-		if (Keyboard::isKeyPressed) {
-			if (Keyboard::isKeyPressed(Keyboard::Left)) {
-				state = LEFT; speed = 0.1f;
-				sprite->setTextureRect(IntRect(145, 52 * int(CurrentFrame), 40, 40));
-				coordinatesGunTank.x = coordinates.x;
-				coordinatesGunTank.y = coordinates.y + h / 2;
-				speedBulles.x = -0.15f;
-				speedBulles.y = 0.0f;
-			}
-			if (Keyboard::isKeyPressed(Keyboard::Right)) {
-				state = RIGHT; speed = 0.1f;
-				sprite->setTextureRect(IntRect(0, 52 * int(CurrentFrame), 40, 40));
-				coordinatesGunTank.x = coordinates.x + w;
-				coordinatesGunTank.y = coordinates.y + h / 2;
-				speedBulles.x = 0.15f;
-				speedBulles.y = 0.0f;
-			}
-
-			if ((Keyboard::isKeyPressed(Keyboard::Up))) {
-				state = UP; speed = 0.1f;
-				sprite->setTextureRect(IntRect(100, 52 * int(CurrentFrame), 40, 40));
-				coordinatesGunTank.x = coordinates.x + w / 2;
-				coordinatesGunTank.y = coordinates.y;
-				speedBulles.x = 0.0f;
-				speedBulles.y = -0.15f;
-			}
-
-			if (Keyboard::isKeyPressed(Keyboard::Down)) {
-				state = DOWN; speed = 0.1f;
-				sprite->setTextureRect(IntRect(50, 52 * int(CurrentFrame), 40, 40));
-				coordinatesGunTank.x = coordinates.x + w / 2;
-				coordinatesGunTank.y = coordinates.y + h;
-				speedBulles.x = 0.0f;
-				speedBulles.y = 0.15f;
-
-			}
-		}
-	}
-
-	void checkCollisionWithMap(float Dx, float Dy)
-	{
-		for (int i = 0; i < int(obj.size()); i++)
-			if (getRect().intersects(obj[i].rect))
-			{
-				if (obj[i].name == SOLID_NAME)
-				{
-					if (Dy > 0) { coordinates.y = obj[i].rect.top - h;  diraction.y = 0; }
-					if (Dy < 0) { coordinates.y = obj[i].rect.top + obj[i].rect.height;   diraction.y = 0; }
-					if (Dx > 0) { coordinates.x = obj[i].rect.left - w; }
-					if (Dx < 0) { coordinates.x = obj[i].rect.left + obj[i].rect.width; }
-				}
-			}
-	}
-
-	void update(float time) {
-		CurrentFrame += 0.005f * time;
-		control(time);
-		switch (state) {
-		case RIGHT:diraction.x = speed; diraction.y = 0; break;
-		case LEFT:diraction.x = -speed; diraction.y = 0; break;
-		case UP:diraction.x = 0; diraction.y = -speed; break;
-		case DOWN:diraction.x = 0; diraction.y = speed; break;
-		case STAY: break;
-		}
-		coordinates.x += diraction.x*time;
-		checkCollisionWithMap(diraction.x, 0);
-		coordinates.y += diraction.y*time;
-		checkCollisionWithMap(0, diraction.y);
-		speed = 0;
-		sprite->setPosition(coordinates.x, coordinates.y);
-	}
-};
-
-class Enemy :public Entity {
-public:
-	Enemy(Image &image, String Name, Level &lvl, float X, float Y, int W, int H, Player *p, Entity* *entity) :Entity(image, Name, X, Y, W, H, coordinatesGunTank) {
-		obj = lvl.GetObjects(SOLID_NAME);
-		if (name == EASY_ENEMY_NAME) {
-			sprite->setTextureRect(IntRect(51, 0, w, h));
-			state = DOWN; speed = 0.1f;
-			delay = 2;
-			individualNumber = p->numberEnemyTank;
-		}
-		if (name == DISPLAYS_ENEMY_NAME) {
-			sprite->setPosition(coordinates.x, coordinates.y);
-		}
-		if (name == PLAYER_BULLES_NAME) {
-			if ((p->speedBulles.x > 0) && (p->speedBulles.y == 0)) {
-				diraction.x = 0.30f;
-				diraction.y = 0;
-				sprite->setTextureRect(IntRect(26, 2, w, h));
-			}
-			if ((p->speedBulles.x < 0) && (p->speedBulles.y == 0)) {
-				diraction.x = -0.30f;
-				diraction.y = 0;
-				sprite->setTextureRect(IntRect(16, 2, w, h));
-			}
-			if ((p->speedBulles.x == 0) && (p->speedBulles.y < 0)) {
-				diraction.x = 0;
-				diraction.y = -0.30f;
-				sprite->setTextureRect(IntRect(0, 0, w, h));
-			}
-			if ((p->speedBulles.x == 0) && (p->speedBulles.y > 0)) {
-				diraction.x = 0;
-				diraction.y = 0.30f;
-				sprite->setTextureRect(IntRect(7, 2, w, h));
-			}
-		}
-		if (name == EAGLE_NAME){
-			sprite->setPosition(X, Y);
-		}
-		if (name == BRICK_NAME) {
-			sprite->setPosition(X, Y);
-		}
-		if (name == BONUS_NAME){
-			sprite->setPosition(coordinates.x, coordinates.y);
-			individualNumberBonus = p->individualNumberBonus;
-		}
-		if (name == ENEMY_BULLES_NAME) {
-			bulletReleased = true;
-
-			if (((*entity)->diraction.x > 0) && ((*entity)->diraction.y == 0)) {
-				diraction.x = 0.30f;
-				diraction.y = 0;
-				sprite->setTextureRect(IntRect(26, 2, w, h));
-			}
-			if (((*entity)->diraction.x < 0) && ((*entity)->diraction.y == 0)) {
-				diraction.x = -0.30f;
-				diraction.y = 0;
-				sprite->setTextureRect(IntRect(16, 2, w, h));
-			}
-			if (((*entity)->diraction.x == 0) && ((*entity)->diraction.y < 0)) {
-				diraction.x = 0;
-				diraction.y = -0.30f;
-				sprite->setTextureRect(IntRect(0, 0, w, h));
-			}
-			if (((*entity)->diraction.x == 0) && ((*entity)->diraction.y > 0)) {
-				diraction.x = 0;
-				diraction.y = 0.30f;
-				sprite->setTextureRect(IntRect(7, 2, w, h));
-			}
-		}
-	}
-
-	
-	void changeDirection(float Dx, float Dy) {
-		random_device rd;
-		mt19937 gen(rd());
-		uniform_int_distribution<> dist(1, 3);
-		int randomNumber = dist(gen);
-		if (Dx > 0) { //Right
-			if (randomNumber == 1) {
-				state = LEFT; speed = 0.1f;
-				coordinates.x -= 2;
-			}
-			if (randomNumber == 2) {
-				state = DOWN; speed = 0.1f;
-				coordinates.x -= 2;
-			}
-			else if (randomNumber == 3) {
-				state = UP; speed = 0.1f;
-				coordinates.x -= 2;
-			}
-		}
-		if (Dx < 0) { //Left
-			if (randomNumber == 1) {
-				state = RIGHT; speed = 0.1f;
-				coordinates.x += 2;
-			}
-			if (randomNumber == 2) {
-				state = DOWN; speed = 0.1f;
-				coordinates.x += 2;
-			}
-			else if (randomNumber == 3) {
-				state = UP; speed = 0.1f;
-				coordinates.x += 2;
-			}
-		}
-		if (Dy < 0) { //Up
-			if (randomNumber == 1) {
-				state = RIGHT; speed = 0.1f;
-				coordinates.y += 2;
-			}
-			else if (randomNumber == 2) {
-				state = LEFT; speed = 0.1f;
-				coordinates.y += 2;
-			}
-			else if (randomNumber == 3) {
-				state = DOWN; speed = 0.1f;
-				coordinates.y += 2;
-			}
-		}
-		if (Dy > 0) { //Down
-			if (randomNumber == 1) {
-				state = RIGHT; speed = 0.1f;
-				coordinates.y -= 2;
-			}
-			else if (randomNumber == 2) {
-				state = LEFT; speed = 0.1f;
-				coordinates.y -= 2;
-			}
-			else if (randomNumber == 3) {
-				state = UP; speed = 0.1f;
-				coordinates.y -= 2;
-			}
-		}
-	}
-	
-	void checkCollisionWithMap(float time)
-	{
-		for (int i = 0; i < int(obj.size()); i++)
-			if (getRect().intersects(obj[i].rect))
-			{
-				if (obj[i].name == SOLID_NAME) {
-					if (name == EASY_ENEMY_NAME) {
-						if (diraction.y > 0) { coordinates.y = obj[i].rect.top - h; }
-						if (diraction.y < 0) { coordinates.y = obj[i].rect.top + obj[i].rect.height; }
-						if (diraction.x > 0) { coordinates.x = obj[i].rect.left - w; }
-						if (diraction.x < 0) { coordinates.x = obj[i].rect.left + obj[i].rect.width; }
-						changeDirection(diraction.x, diraction.y);
-						delay = 0;
-					}
-					if (name == PLAYER_BULLES_NAME || name == ENEMY_BULLES_NAME) {
-						life = false;
-						bulletReleased = false;
-					}
-				}
-			}
-	}	
-	void animation(int X, int Y, float time, int w, int h, string dir) {
-		if (CurrentFrame > 2) (CurrentFrame = 0);
-		sprite->setTextureRect(IntRect(X, Y * int(CurrentFrame), w, h));
-		if (dir == RIGHT_DIR_NAME) {
-			coordinatesGunTank.x = coordinates.x + float(w);
-			coordinatesGunTank.y = coordinates.y + float(h) / 2.0f;
-		}
-		else if (dir == LEFT_DIR_NAME) {
-			coordinatesGunTank.x = coordinates.x;
-			coordinatesGunTank.y = coordinates.y + float(h) / 2.0f;
-		}
-		else if (dir == UP_DIR_NAME) {
-			coordinatesGunTank.x = coordinates.x + float(w) / 2.0f;
-			coordinatesGunTank.y = coordinates.y;
-		}
-		else if (dir == DOWN_DIR_NAME) {
-			coordinatesGunTank.x = coordinates.x + float(w) / 2.0f;
-			coordinatesGunTank.y = coordinates.y + float(h);
-		}
-	}
-	void update(float time)
-	{
-		if (life) {
-			if (name == EASY_ENEMY_NAME) {
-				delay += 0.005f* time;
-				if (delay > 1) {
-					CurrentFrame += 0.005f * time;
-					switch (state) {
-					case RIGHT:diraction.x = speed; diraction.y = 0; animation(0, 51, time, 44, 44, "RIGHT"); break;
-					case LEFT:diraction.x = -speed; diraction.y = 0; animation(141, 51, time, 44, 44, "LEFT"); break;
-					case UP:diraction.x = 0; diraction.y = -speed; animation(92, 51, time, 44, 44, "UP"); break;
-					case DOWN:diraction.x = 0; diraction.y = speed; animation(48, 51, time, 44, 44, "DOWN"); break;
-					case STAY: break;
-					}
-					coordinates.x += diraction.x * time;
-					coordinates.y += diraction.y * time;
-					sprite->setPosition(coordinates.x, coordinates.y);
-					checkCollisionWithMap(time);
-				}
-				if (health <= 0) { life = false; }
-			}
-			if (name == PLAYER_BULLES_NAME || name == ENEMY_BULLES_NAME) {
-				checkCollisionWithMap(time);
-				coordinates.x += diraction.x * time;
-				coordinates.y += diraction.y * time;
-				sprite->setPosition(coordinates.x, coordinates.y);
-			}
-		}
-	}
-};
 
 void rangeValuesRandomly(int &number, int upperLimit) {
 	random_device rd;
@@ -381,7 +31,7 @@ void randomDirect(Entity* &entity, float Dx, float Dy) {
 void changeCourseTank(int &randomNumber, int &timer, const float time, list<Entity*> &entities) {
 	if (randomNumber * 100 < timer) {
 		for (Entity* entity : entities) {
-			if (entity->life) randomDirect(entity, entity->diraction.x, entity->diraction.y);
+			if (entity->alive) randomDirect(entity, entity->diraction.x, entity->diraction.y);
 		}
 		timer = 0;
 		rangeValuesRandomly(randomNumber, 50);
@@ -392,7 +42,7 @@ void changeCourseTank(int &randomNumber, int &timer, const float time, list<Enti
 void updateBrick(list<Entity*> &listBrick) {
 	list<Entity*>::iterator itBrick;
 	for (itBrick = listBrick.begin(); itBrick != listBrick.end();) {
-		if ((*itBrick)->life == false) { delete (*itBrick); itBrick = listBrick.erase(itBrick); }
+		if ((*itBrick)->alive == false) { delete (*itBrick); itBrick = listBrick.erase(itBrick); }
 		else itBrick++;
 	}
 }
@@ -458,7 +108,7 @@ void  explosion(float time, list<Entity*>::iterator it, float &currentFrame, boo
 void updateEnemy(float time, list<Entity*> &entities, bool &explEnemy, float &currentFrame, Texture &explTexture, bool &playerWinTime, bool &playerWin) {
 	list<Entity*>::iterator it;
 	for (it = entities.begin(); it != entities.end();) {
-		if (!(*it)->life) {
+		if (!(*it)->alive) {
 			explEnemy = true;
 			if (explEnemy) {
 				explosion(time, it, currentFrame, explEnemy, explTexture, 3);
@@ -552,7 +202,7 @@ void stoping(Entity* &it,Entity* &entity) {
 
 void collisionWithBricks(Entity* &it, list<Entity*> &listBrick) {
 	for (Entity* brick : listBrick) {
-		if (it->getRect().intersects(brick->getRect()) && it->life) {
+		if (it->getRect().intersects(brick->getRect()) && it->alive) {
 			stoping(it, brick);
 			changeDirection(it->diraction.x, it->diraction.y, it);
 			it->delay = 0;
@@ -583,10 +233,20 @@ void enemiesClash(list<Entity*> &entities, Entity* &it) {
 
 
 void checkCollisionWithMap(Player &p, Entity* brick) {
-	if (p.diraction.y > 0) { p.coordinates.y = brick->sprite->getPosition().y - p.h;  p.diraction.y = 0; }
-	if (p.diraction.y < 0) { p.coordinates.y = brick->sprite->getPosition().y + brick->h;   p.diraction.y = 0; }
-	if (p.diraction.x > 0) { p.coordinates.x = brick->sprite->getPosition().x - p.w; }
-	if (p.diraction.x < 0) { p.coordinates.x = brick->sprite->getPosition().x + brick->w; }
+	if (p.diraction.y > 0) {
+		p.coordinates.y = brick->sprite->getPosition().y - p.h;
+		p.diraction.y = 0;
+	}
+	else if (p.diraction.y < 0) {
+		p.coordinates.y = brick->sprite->getPosition().y + brick->h;
+		p.diraction.y = 0;
+	}
+	if (p.diraction.x > 0) {
+		p.coordinates.x = brick->sprite->getPosition().x - p.w;
+	}
+	if (p.diraction.x < 0) {
+		p.coordinates.x = brick->sprite->getPosition().x + brick->w;
+	}
 }
 
 void collisionWithBricksForPlayer(Player &p, list<Entity*> &listBrick) {
@@ -599,7 +259,7 @@ void collisionWithBricksForPlayer(Player &p, list<Entity*> &listBrick) {
 
 void collisionWithEnemyForPlayer(Player &p, list<Entity*> &entities) {
 	for (Entity* entity : entities) {
-		if (entity->getRect().intersects(p.getRect()) && entity->life) {
+		if (entity->getRect().intersects(p.getRect()) && entity->alive) {
 			checkCollisionWithMap(p, entity);
 			entity->speed = 0;
 		}
@@ -611,10 +271,10 @@ void collisionWithEnemyForPlayer(Player &p, list<Entity*> &entities) {
 
 void checkHitTheEnemy(Entity* &iter, list<Entity*>  &entities) {
 	for (Entity* entity : entities) {
-		if (entity->life && iter->life) {
+		if (entity->alive && iter->alive) {
 			if (entity->getRect().intersects(iter->getRect())) {
-				entity->life = false;
-				iter->life = false;
+				entity->alive = false;
+				iter->alive = false;
 			}
 		}
 	}
@@ -623,8 +283,8 @@ void checkHitTheEnemy(Entity* &iter, list<Entity*>  &entities) {
 void checkHitTheBrick(Entity* &iter, list<Entity*> &listBrick) {
 	for (Entity* brick : listBrick) {
 		if (iter->getRect().intersects(brick->getRect())) {
-			brick->life = false;
-			iter->life = false;
+			brick->alive = false;
+			iter->alive = false;
 		}
 	}
 }
@@ -632,8 +292,8 @@ void checkHitTheBrick(Entity* &iter, list<Entity*> &listBrick) {
 void checkHitTheBulletEnemy(Entity* &iter, list<Entity*> &listBrick) {
 	for (Entity* brick : listBrick) {
 		if (iter->getRect().intersects(brick->getRect())) {
-			brick->life = false;
-			iter->life = false;
+			brick->alive = false;
+			iter->alive = false;
 		}
 	}
 }
@@ -641,7 +301,7 @@ void checkHitTheBulletEnemy(Entity* &iter, list<Entity*> &listBrick) {
 void checkHitTheBaseForPlayer(RenderWindow &window, Enemy targetProtecting, Entity* &iter, bool &lose) {
 	if (iter->getRect().intersects(targetProtecting.getRect())) {
 		lose = true;
-		iter->life = false;
+		iter->alive = false;
 	}
 }
 
@@ -649,7 +309,7 @@ void checkHitByPlayer(Player &p, Entity* &bulles, list<Entity*> &entities, bool 
 	if (bulles->getRect().intersects(p.getRect())) {
 		for (Entity* entity : entities) {
 			if (entity->individualNumber == bulles->individualNumber) {
-				bulles->life = false;
+				bulles->alive = false;
 				bulles->bulletReleased = false;
 				p.health--;
 				isHit = true;
@@ -661,7 +321,7 @@ void checkHitByPlayer(Player &p, Entity* &bulles, list<Entity*> &entities, bool 
 void checkHitTheBaseForEnemy(RenderWindow &window, Enemy targetProtecting, Entity* &bulles, bool &lose) {
 	if (bulles->getRect().intersects(targetProtecting.getRect())) {
 		lose = true;
-		bulles->life = false;
+		bulles->alive = false;
 		bulles->bulletReleased = false;
 	}
 }
@@ -672,8 +332,8 @@ void checkHitTheBrickPlayer(list<Entity*> &listBrick, list<Entity*> &entities, E
 			for (Entity* entity : entities) {
 				if (entity->individualNumber == bulles->individualNumber) {
 					bulles->bulletReleased = false;
-					bulles->life = false;
-					brick->life = false;
+					bulles->alive = false;
+					brick->alive = false;
 				}
 			}
 		}
@@ -681,12 +341,11 @@ void checkHitTheBrickPlayer(list<Entity*> &listBrick, list<Entity*> &entities, E
 }
 
 void checkForBonus(Player &p, list<Entity*> &listPointsBonus, list<Entity*> &entities) {
-	int numberBonus = 1;
 	for (list<Entity*>::iterator it = listPointsBonus.begin(); it != listPointsBonus.end(); it++) {
 		if (p.getRect().intersects((*it)->getRect())) {
 			if ((*it)->individualNumberBonus == 0) {
 				for (list<Entity*>::iterator it2 = entities.begin(); it2 != entities.end(); it2++) {
-					(*it2)->life = false;
+					(*it2)->alive = false;
 				}
 			}
 			else {
@@ -694,76 +353,67 @@ void checkForBonus(Player &p, list<Entity*> &listPointsBonus, list<Entity*> &ent
 			}
 			delete *it;
 			it = listPointsBonus.erase(it);
-			if (it == listPointsBonus.end()) break;
+			if (it == listPointsBonus.end()) {
+				break;
+			}
 		}
-		numberBonus++;
 	}
 }
 
-void drawing(RenderWindow &window, Player p, list<Entity*> bullesPlayer, list<Entity*> entities, list<Entity*> bullesEnemy, list<Entity*> listBrick, Level lvl, Enemy targetProtecting, list<Entity*> enemies, bool app, Sprite sprite, Text text, bool isHit, Sprite bigExplosion, bool lose, Text youLose, bool win, Text youWin, list<Entity*> imagesBonus) {
+void drawing(RenderWindow &window, Player p,  Level lvl,  bool app, Sprite sprite, Text text, bool isHit, Sprite bigExplosion, bool lose, Text youLose, bool win, Text youWin, objectLevel map, images *im, Enemy &targetProtecting) {
 	window.clear();
 	ostringstream playerHealthString;
 	playerHealthString << p.health;
 	text.setString("" + playerHealthString.str());
 	lvl.Draw(window);
 	window.draw(text);
-	for (Entity* brick : listBrick) {
+	for (Entity* brick : map.listBrick) {
 		window.draw(*brick->sprite);
 	}
-	for (Entity* bonus : imagesBonus) {
+	for (Entity* bonus : map.listPointsBonus) {
 		window.draw(*bonus->sprite);
 	}
 	if (!lose) {
-		if (isHit) window.draw(bigExplosion);
-		else window.draw(*p.sprite);
+		if (isHit) {
+			window.draw(bigExplosion);
+		}
+		else {
+			window.draw(*p.sprite);
+		}
 	}
-	else window.draw(youLose);
-	if (win) window.draw(youWin);
+	else {
+		window.draw(youLose);
+	}
+	if (win) {
+		window.draw(youWin);
+	}
 	window.draw(*targetProtecting.sprite);
-	for (Entity* entity : bullesPlayer) {
+	for (Entity* entity : map.bullesPlayer) {
 		window.draw(*entity->sprite);
 	}
-	for (Entity* entity : entities) {
+	for (Entity* entity : map.entities) {
 		window.draw(*entity->sprite);
 	}
-	for (Entity* bulles : bullesEnemy) {
+	for (Entity* bulles : map.bullesEnemy) {
 		window.draw(*bulles->sprite);
 	}
-	for (Entity* enemy : enemies) {
+	for (Entity* enemy : map.numberEnemies) {
 		window.draw(*enemy->sprite);
 	}
 	if (app) window.draw(sprite);
 	window.display();
 }
 
-int main(){
-	
-	
+void cleaning() {
 
+}
+
+int main(){
 	Clock clock;
 	
 
-	std::list<Entity*>  entities;
-	std::list<Entity*>::iterator it;
-	std::list<Entity*>::iterator it2;
-
-	
-	std::list<Entity*> bullesEnemy;
-	std::list<Entity*>::iterator itBulles;
-	
-	std::list<Entity*>  listBrick;
-	std::list<Entity*>::iterator itBrick;
-	
-
-	std::list<Entity*> bullesPlayer;
-	std::list<Entity*>::iterator iter;
-	
-	list<Entity*> numberEnemies;
-	list<Entity*>::iterator itEnemies;
-	
-	list<Entity*> listPointsBonus;
-	list<Entity*>::iterator itBonus;
-
+	images * im = new images;
+	im->create();
 
 
 	Level lvl;
@@ -772,59 +422,6 @@ int main(){
 
 
 	
-	Image easyEnemyImage;
-	easyEnemyImage.loadFromFile("recources/images/easyEnemy.png");
-	easyEnemyImage.createMaskFromColor(Color(0, 128, 128));
-
-	Image brickImage;
-	brickImage.loadFromFile("recources/images/brick.png");
-	
-	Image Bulles;
-	Bulles.loadFromFile("recources/images/Bulles.png");
-	Bulles.createMaskFromColor(Color(0, 128, 128));
-
-	Image displaysEnemies;
-	displaysEnemies.loadFromFile("recources/images/enemies.png");
-	displaysEnemies.createMaskFromColor(Color(109, 109, 109));
-	Texture enemiesTexture;
-	enemiesTexture.loadFromImage(displaysEnemies);
-	
-	Image eagle;
-	eagle.loadFromFile("recources/images/eagle.png");
-	eagle.createMaskFromColor(Color::Black);
-
-	Image hero;
-	hero.loadFromFile("recources/images/hero.png");
-	hero.createMaskFromColor(Color::Black);
-
-	Image expl;
-	expl.loadFromFile("recources/images/explosionBulles.png");
-	expl.createMaskFromColor(Color(0, 128, 128));
-	Texture explTexture;
-	explTexture.loadFromImage(expl);
-
-	Image appearance;
-	appearance.loadFromFile("recources/images/appearance.png");
-	appearance.createMaskFromColor(Color(0, 128, 128));
-	Texture appTexture;
-	appTexture.loadFromImage(appearance);
-	Sprite spriteAppEnemies;
-	spriteAppEnemies.setTexture(appTexture);
-
-	Image bigExplosion;
-	bigExplosion.loadFromFile("recources/images/BigExplosion.png");
-	bigExplosion.createMaskFromColor(Color(0, 128, 128));
-	Texture bigExplosionTexture;
-	bigExplosionTexture.loadFromImage(bigExplosion);
-	Sprite bigExplosionSprite;
-	bigExplosionSprite.setTexture(bigExplosionTexture);
-
-	Image imageBonusBomb;
-	Image imageBonusLife;
-	imageBonusBomb.loadFromFile("recources/images/bonus-bomb.png");
-	imageBonusLife.loadFromFile("recources/images/bonus-life.png");
-	imageBonusBomb.createMaskFromColor(Color(34, 177, 76));
-	imageBonusLife.createMaskFromColor(Color(34, 177, 76));		
 	Object health = lvl.GetObject("health");
 
 	/*--------------------------------------------------------------------------------------------------------*/
@@ -847,45 +444,32 @@ int main(){
 	youWin.setPosition(200, SIZE_WINDOW.y / 2);
 	/*--------------------------------------------------------------------------------------------------------*/
 	Object player = lvl.GetObject("player");
-
-	Object targetDeagle = lvl.GetObject("Deagle");
-
-	vector<Object> bonus = lvl.GetObjects("bonus");
-
-	Player p(hero, "Player", lvl, player.rect.left, player.rect.top, 37.0f, 39.0f, player);
-
-	Enemy targetProtecting(eagle, "Deagle", lvl, targetDeagle.rect.left, targetDeagle.rect.top, 50.0f, 50.0f, nullptr, nullptr);
-
-	std::vector<Object> e = lvl.GetObjects("EasyEnemy");
-	std::vector<Object> brick = lvl.GetObjects("destroyedSolid");
-	vector<Object> enemies = lvl.GetObjects("enemy");
-	vector<Image> imagesBonus = {imageBonusBomb,imageBonusLife };
 	
+	Vector2f coordPlayer{ float(player.rect.left), float(player.rect.top) };
+	Vector2i sizePlayer = { 37, 39 };
+	Player p(im->hero, "Player", lvl, coordPlayer, sizePlayer, player);
 
-	for (int i = 0; i < int(enemies.size()); i++) {
-		numberEnemies.push_back(new Enemy(displaysEnemies, "enemy", lvl, enemies[i].rect.left, enemies[i].rect.top, 26, 26, nullptr, nullptr));
-	}
-
-	int pointRessurection = 0;
-	for (it = entities.begin(); it != entities.end(); it++) {
-		(*it)->individualNumber = p.numberEnemyTank;
-		p.numberEnemyTank++;
-	}
-	for (int i = 0; i < int(brick.size()); i++) {
-		listBrick.push_back(new Enemy(brickImage, "brick", lvl, brick[i].rect.left, brick[i].rect.top, 26, 25, nullptr, nullptr));
-		brick[i].rect.left;//коорд Х
-		brick[i].rect.top;//коорд Y
+	objectLevel map(lvl, p, im);
+	cout << "map->e.size() = " << map.e.size() << endl;
+	cout << "map.entities.size() = " << map.entities.size() << endl;
+	cout << "map.brick.size() = " << map.brick.size() << endl;
+	cout << "map.listBrick.size() = " << map.listBrick.size() << endl;
 	
-	}
+	Vector2f coordEagle = { float(map.targetDeagle.rect.left), float(map.targetDeagle.rect.top) };
+	Vector2i sizeEagle = { 50, 50 };
+	Enemy targetProtecting(im->eagle, "Deagle", lvl, coordEagle, sizeEagle, nullptr, nullptr);
+
+
 	sf::RenderWindow window(sf::VideoMode(SIZE_WINDOW.x, SIZE_WINDOW.y), WINDOW_NAME);
 	clock.restart();
-	//float respawnTime = 0;
 	
 	random_device rd;
 	mt19937 gen(rd());
 	uniform_int_distribution<> dist(1, 50);
-	int randomNumber = dist(gen);
+	int randomNumber;
+	rangeValuesRandomly(randomNumber, 50);
 	/*--------------------------------------------------*/
+	int pointRessurection = 0;
 	int timer = 0;
 	float currentFrame = 0;
 	float frame = 0; // todo Создать вектор для CurrentFrame и запихуть их туда все!
@@ -918,8 +502,10 @@ int main(){
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		if ((Keyboard::isKeyPressed(Keyboard::RControl)) && bullesPlayer.size() == 0){
-			bullesPlayer.push_back(new Enemy(Bulles, "Bulles", lvl, p.coordinatesGunTank.x, p.coordinatesGunTank.y, 8.0f, 8.0f, &p, nullptr));
+		if ((Keyboard::isKeyPressed(Keyboard::RControl)) && map.bullesPlayer.size() == 0){
+			Vector2f coordBullesPlayer = { float(p.coordinatesGunTank.x), float(p.coordinatesGunTank.y) };
+			Vector2i sizeBullesPlayer = { 8, 8 };
+			map.bullesPlayer.push_back(new Enemy(im->Bulles, "Bulles", lvl, coordBullesPlayer, sizeBullesPlayer, &p, nullptr));
 		}
 		if (!playerLose && !playerWin) {
 			if (timerAppearenceEnemy > 4000 && p.numberEnemyTank <= 20) {
@@ -936,7 +522,9 @@ int main(){
 				countBonus = 0;
 			}
 			if (isBonus) {
-				listPointsBonus.push_back(new Enemy(imagesBonus[numberBonus], "bonus", lvl, bonus[numberBonus].rect.left, bonus[numberBonus].rect.top, 45, 42, &p, nullptr));
+				Vector2f coordIconBonus = { float(map.bonus[numberBonus].rect.left), float(map.bonus[numberBonus].rect.top) };
+				Vector2i sizeIconBonus = { 45, 42 };
+				map.listPointsBonus.push_back(new Enemy(im->imagesBonus[numberBonus], "bonus", lvl, coordIconBonus, sizeIconBonus, &p, nullptr));
 				if (numberBonus == 0) {
 					numberBonus++;
 					p.individualNumberBonus++;
@@ -951,8 +539,9 @@ int main(){
 				bool flag = false;
 				while (!flag) {
 					int last = pointRessurection;
-					if (p.sprite->getPosition().x + 22  > e[pointRessurection].rect.left && p.sprite->getPosition().x + 22 < e[pointRessurection].rect.left + 45 &&
-						p.sprite->getPosition().y + 22  > e[pointRessurection].rect.top && p.sprite->getPosition().y + 22  < e[pointRessurection].rect.top + 45) {
+					
+					if (p.sprite->getPosition().x + 22  > map.e[pointRessurection].rect.left && p.sprite->getPosition().x + 22 < map.e[pointRessurection].rect.left + 45 &&
+						p.sprite->getPosition().y + 22  > map.e[pointRessurection].rect.top && p.sprite->getPosition().y + 22  < map.e[pointRessurection].rect.top + 45) {
 						if (pointRessurection == 2) {
 							pointRessurection = 0;
 						}
@@ -960,11 +549,15 @@ int main(){
 							++pointRessurection;
 						}
 					}
-					for (Entity* entity : entities) {
-						if (entity->sprite->getPosition().x + 22 > e[pointRessurection].rect.left && entity->sprite->getPosition().x + 22 < e[pointRessurection].rect.left + 45 &&
-							entity->sprite->getPosition().y + 22 > e[pointRessurection].rect.top && entity->sprite->getPosition().y + 22 < e[pointRessurection].rect.top + 45) {
-							if (pointRessurection == 2) pointRessurection = 0;
-							else ++pointRessurection;
+					for (Entity* entity : map.entities) {
+						if (entity->sprite->getPosition().x + 22 > map.e[pointRessurection].rect.left && entity->sprite->getPosition().x + 22 < map.e[pointRessurection].rect.left + 45 &&
+							entity->sprite->getPosition().y + 22 > map.e[pointRessurection].rect.top && entity->sprite->getPosition().y + 22 < map.e[pointRessurection].rect.top + 45) {
+							if (pointRessurection == 2) {
+								pointRessurection = 0;
+							}
+							else {
+								++pointRessurection;
+							}
 						}
 					}
 					if (last == pointRessurection) {
@@ -972,12 +565,12 @@ int main(){
 					}
 				}
 				if (curFrame < 1) {
-					spriteAppEnemies.setTextureRect(IntRect(0, 0, 44, 45));
-					spriteAppEnemies.setPosition(e[pointRessurection].rect.left, e[pointRessurection].rect.top);
+					im->spriteAppEnemies.setTextureRect(IntRect(0, 0, 44, 45));
+					im->spriteAppEnemies.setPosition(map.e[pointRessurection].rect.left, map.e[pointRessurection].rect.top);
 				}
 				else {
-					spriteAppEnemies.setTextureRect(IntRect(44, 0, 46, 45));
-					spriteAppEnemies.setPosition(e[pointRessurection].rect.left, e[pointRessurection].rect.top);
+					im->spriteAppEnemies.setTextureRect(IntRect(44, 0, 46, 45));
+					im->spriteAppEnemies.setPosition(map.e[pointRessurection].rect.left, map.e[pointRessurection].rect.top);
 				}
 				if (curFrame > 2) {
 					count++;
@@ -985,16 +578,18 @@ int main(){
 				}
 				curFrame += 0.005f * time;
 				if (count == 2) {
-					entities.push_back(new Enemy(easyEnemyImage, "EasyEnemy", lvl, e[pointRessurection].rect.left, e[pointRessurection].rect.top, 45, 45, &p, nullptr));
+					Vector2f coordEnemy = { float(map.e[pointRessurection].rect.left), float(map.e[pointRessurection].rect.top) };
+					Vector2i sizeEnemy = { 45, 45 };
+					map.entities.push_back(new Enemy(im->easyEnemyImage, "EasyEnemy", lvl, coordEnemy, sizeEnemy,  &p, nullptr));
 					timerAppearenceEnemy = 0;
 
 					appearanceEnemies = false;
 					count = 0;
 					p.numberEnemyTank++;
 					list<Entity*>::iterator iter;
-					iter = numberEnemies.begin();
+					iter = map.numberEnemies.begin();
 					delete (*iter);
-					iter = numberEnemies.erase(iter);
+					iter = map.numberEnemies.erase(iter);
 					if (pointRessurection == 2) {
 						pointRessurection = 0;
 					}
@@ -1007,99 +602,120 @@ int main(){
 			if (isHit) {
 				isExplPlayer = true;
 				if (isExplPlayer) {
-					explosionsPlayer(time, frame, isExplPlayer, bigExplosionSprite, p);
+					explosionsPlayer(time, frame, isExplPlayer, im->bigExplosionSprite, p);
 				}
 				if (!isExplPlayer) {
 					isHit = false;
-					p.sprite->setPosition(player.rect.left, player.rect.top);
-					p.coordinates.x = player.rect.left;
-					p.coordinates.y = player.rect.top;
+					p.sprite->setPosition(map.player.rect.left, map.player.rect.top);
+					p.coordinates.x = map.player.rect.left;
+					p.coordinates.y = map.player.rect.top;
 				}
 
 				if (p.health == -1) {
-					p.life = false;
+					p.alive = false;
 				}
 			}
 			else {
-				if (p.life) p.update(time);
-				else playerLose = true;
+				if (p.alive) {
+					p.update(time);
+				}
+				else {
+					playerLose = true;
+				}
 			}
-			for (iter = bullesPlayer.begin(); iter != bullesPlayer.end();) {
-				if (!(*iter)->life) {
+			for (list<Entity*>::iterator iter = map.bullesPlayer.begin(); iter != map.bullesPlayer.end();) {
+				if (!(*iter)->alive) {
 					explPlayerBulles = true;
 					if (explPlayerBulles) {
-						explosion(time, iter, currentFrame, explPlayerBulles, explTexture, 2);
+						explosion(time, iter, currentFrame, explPlayerBulles, im->explTexture, 2);
 						iter++;
 					}
 					if (!explPlayerBulles) {
 						iter--;
 						delete (*iter);
-						iter = bullesPlayer.erase(iter);
+						iter = map.bullesPlayer.erase(iter);
 					}
 				}
 				else {
 					(*iter)->update(time);
-					if (bullesPlayer.size() != 0) iter++;
+					if (map.bullesPlayer.size() != 0) iter++;
 				}
 			}
-			for (itBulles = bullesEnemy.begin(); itBulles != bullesEnemy.end();) {
-				if (!(*itBulles)->life) {
-					for (it = entities.begin(); it != entities.end(); it++) {
+			for (list<Entity*>::iterator itBulles = map.bullesEnemy.begin(); itBulles != map.bullesEnemy.end();) {
+				if (!(*itBulles)->alive) {
+					for (list<Entity*>::iterator it = map.entities.begin(); it != map.entities.end(); it++) {
 						if ((*it)->individualNumber == (*itBulles)->individualNumber) {
 							(*it)->bulletReleased = (*itBulles)->bulletReleased;
 						}
 					}
 					explEnemyBulles = true;
 					if (explEnemyBulles) {
-						explosion(time, itBulles, currentFrame, explEnemyBulles, explTexture, 2);
+						explosion(time, itBulles, currentFrame, explEnemyBulles, im->explTexture, 2);
 						itBulles++;
 					}
 					if (!explEnemyBulles) {
 						itBulles--;
 						delete *itBulles;
-						itBulles = bullesEnemy.erase(itBulles);
+						itBulles = map.bullesEnemy.erase(itBulles);
 					}
 				}
 				else {
 					(*itBulles)->update(time);
-					if (bullesEnemy.size() != 0) itBulles++;
+					if (map.bullesEnemy.size() != 0) {
+						itBulles++;
+					}
 				}
 			}
-			changeCourseTank(randomNumber, timer, time, entities);
-			updateBrick(listBrick);
-			updateEnemy(time, entities, explEnemy, currentFrame, bigExplosionTexture, playerWinTime, playerWin);
-			for (Entity* entity : entities) {
+			changeCourseTank(randomNumber, timer, time, map.entities);
+			updateBrick(map.listBrick);
+			updateEnemy(time, map.entities, explEnemy, currentFrame, im->bigExplosionTexture, playerWinTime, playerWin);
+			for (Entity* entity : map.entities) {
 				int random;
 				rangeValuesRandomly(random, 200);
-				if (entity->life) {
+				if (entity->alive) {
 					if (random == 1 && !entity->bulletReleased) {
-						bullesEnemy.push_back(new Enemy(Bulles, "bullesEnemy", lvl, entity->coordinatesGunTank.x, entity->coordinatesGunTank.y, 8.0f, 8.0f, nullptr, &entity));
-						itBulles = bullesEnemy.end();
+						Vector2f coordBullesEnemy = { float(entity->coordinatesGunTank.x), float(entity->coordinatesGunTank.y) };
+						Vector2i sizeBullesEnemy = { 8, 8 };
+						map.bullesEnemy.push_back(new Enemy(im->Bulles, "bullesEnemy", lvl, coordBullesEnemy, sizeBullesEnemy, nullptr, &entity));
+						list<Entity*>::iterator itBulles = map.bullesEnemy.end();
 						--itBulles;
 						(*itBulles)->individualNumber = entity->individualNumber;
-						cout << (*itBulles)->individualNumber << endl;
 						entity->bulletReleased = true;
 					}
-					enemiesClash(entities, entity);
-					collisionWithBricks(entity, listBrick);
+					enemiesClash(map.entities, entity);
+					collisionWithBricks(entity, map.listBrick);
 				}
 			}
-			checkForBonus(p, listPointsBonus, entities);
-			collisionWithBricksForPlayer(p, listBrick);
-			collisionWithEnemyForPlayer(p, entities);
-			for (Entity* bulles : bullesPlayer) {
-				if (bulles->life) checkHitTheEnemy(bulles, entities);
-				if (bulles->life) checkHitTheBrick(bulles, listBrick);
-				if (bulles->life) checkHitTheBaseForPlayer(window, targetProtecting, bulles, playerLose);
-				if (bulles->life) checkHitTheBulletEnemy(bulles, bullesEnemy);
+			checkForBonus(p, map.listPointsBonus, map.entities);
+			collisionWithBricksForPlayer(p, map.listBrick);
+			collisionWithEnemyForPlayer(p, map.entities);
+			for (Entity* bulles : map.bullesPlayer) {
+				if (bulles->alive) {
+					checkHitTheEnemy(bulles, map.entities);
+				}
+				if (bulles->alive) {
+					checkHitTheBrick(bulles, map.listBrick);
+				}
+				if (bulles->alive) {
+					checkHitTheBaseForPlayer(window, targetProtecting, bulles, playerLose);
+				}
+				if (bulles->alive) {
+					checkHitTheBulletEnemy(bulles, map.bullesEnemy);
+				}
 			}
-			for (Entity* bulles : bullesEnemy) {
-				if (bulles->life) checkHitByPlayer(p, bulles, entities, isHit);
-				if (bulles->life) checkHitTheBaseForEnemy(window, targetProtecting, bulles, playerLose);
-				if (bulles->life) checkHitTheBrickPlayer(listBrick, entities, bulles);
+			for (Entity* bulles : map.bullesEnemy) {
+				if (bulles->alive) {
+					checkHitByPlayer(p, bulles, map.entities, isHit);
+				}
+				if (bulles->alive) {
+					checkHitTheBaseForEnemy(window, targetProtecting, bulles, playerLose);
+				}
+				if (bulles->alive) {
+					checkHitTheBrickPlayer(map.listBrick, map.entities, bulles);
+				}
 			}
 		}
-		drawing(window, p, bullesPlayer, entities, bullesEnemy, listBrick, lvl, targetProtecting, numberEnemies, appearanceEnemies, spriteAppEnemies, text, isExplPlayer, bigExplosionSprite, playerLose, youLose, playerWin, youWin, listPointsBonus);
+		drawing(window, p, lvl, appearanceEnemies, im->spriteAppEnemies, text, isExplPlayer, im->bigExplosionSprite, playerLose, youLose, playerWin, youWin, map, im, targetProtecting);
 	}
 
 	return 0;

@@ -16,6 +16,15 @@
     <Filter Include="Source Files\TinyXML">
       <UniqueIdentifier>{3115e603-520f-4888-8000-ef16281d454e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{9a862157-f0d5-41e8-aee8-98635664b8ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player">
+      <UniqueIdentifier>{1b81fce3-73eb-4131-8622-2266268a6922}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Enemy">
+      <UniqueIdentifier>{153cf17b-12a2-4de5-8049-0c8984d0a5a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,6 +45,21 @@
     <ClCompile Include="level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="levelObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="images.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="level.h">
@@ -45,6 +69,21 @@
       <Filter>Source Files\TinyXML</Filter>
     </ClInclude>
     <ClInclude Include="config.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Source Files\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="levelObject.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="images.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
