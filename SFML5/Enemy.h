@@ -29,11 +29,11 @@ public:
 		checkNameForBullesEnemy(entity);
 	}
 
-	void update(float time);
+	void update(float time, vector<Object> &obj);
 
 private:
 	void changeDirection(float Dx, float Dy);
-	void checkCollisionWithMap(float time);
+	void checkCollisionWithMap(float time, vector<Object> &obj);
 	void animation(int X, int Y, float time, int w, int h, string dir);
 	void checkNameForBullesPlayer(Player *p);
 	void checkNameForBullesEnemy(Entity* *entity);

@@ -65,7 +65,7 @@ void Enemy::changeDirection(float Dx, float Dy) {
 	}
 }
 
-void Enemy::checkCollisionWithMap(float time) {
+void Enemy::checkCollisionWithMap(float time, vector<Object> &obj) {
 	for (Object element : obj) {
 		if (getRect().intersects(element.rect)) {
 			if (element.name == SOLID_NAME) {
@@ -99,24 +99,24 @@ void Enemy::animation(int X, int Y, float time, int w, int h, string dir) {
 	if (currentFrame > 2) (currentFrame = 0);
 	sprite->setTextureRect(IntRect(X, Y * int(currentFrame), w, h));
 	if (dir == RIGHT_DIR_NAME) {
-		coordinatesGunTank.x = coordinates.x + float(w);
-		coordinatesGunTank.y = coordinates.y + float(h) / 2.0f;
+		coordinatesGunTank.x = int(coordinates.x) + w;
+		coordinatesGunTank.y = int(coordinates.y) + h / 2;
 	}
 	else if (dir == LEFT_DIR_NAME) {
-		coordinatesGunTank.x = coordinates.x;
-		coordinatesGunTank.y = coordinates.y + float(h) / 2.0f;
+		coordinatesGunTank.x = int(coordinates.x);
+		coordinatesGunTank.y = int(coordinates.y) + h / 2;
 	}
 	else if (dir == UP_DIR_NAME) {
-		coordinatesGunTank.x = coordinates.x + float(w) / 2.0f;
-		coordinatesGunTank.y = coordinates.y;
+		coordinatesGunTank.x = int(coordinates.x) + w / 2;
+		coordinatesGunTank.y = int(coordinates.y);
 	}
 	else if (dir == DOWN_DIR_NAME) {
-		coordinatesGunTank.x = coordinates.x + float(w) / 2.0f;
-		coordinatesGunTank.y = coordinates.y + float(h);
+		coordinatesGunTank.x = int(coordinates.x) + w / 2;
+		coordinatesGunTank.y = int(coordinates.y) + h;
 	}
 }
 
-void Enemy::update(float time) {
+void Enemy::update(float time, vector<Object> &obj) {
 	if (alive) {
 		if (name == EASY_ENEMY_NAME) {
 			delay += 0.005f* time;
@@ -148,12 +148,12 @@ void Enemy::update(float time) {
 				coordinates.x += diraction.x * time;
 				coordinates.y += diraction.y * time;
 				sprite->setPosition(coordinates.x, coordinates.y);
-				checkCollisionWithMap(time);
+				checkCollisionWithMap(time, obj);
 			}
 			if (health <= 0) { alive = false; }
 		}
 		if (name == PLAYER_BULLES_NAME || name == ENEMY_BULLES_NAME) {
-			checkCollisionWithMap(time);
+			checkCollisionWithMap(time, obj);
 			coordinates.x += diraction.x * time;
 			coordinates.y += diraction.y * time;
 			sprite->setPosition(coordinates.x, coordinates.y);

@@ -15,7 +15,7 @@
 
 class Entity {
 public:
-	std::vector<Object> obj;
+	//std::vector<Object> obj;
 	float speed;
 	float currentFrame;
 	float delay;
@@ -42,5 +42,5 @@ public:
 
 	FloatRect getRect();
 	
-	virtual void update(float time) = 0;
+	virtual void update(float time, vector<Object> &obj) = 0;
 };

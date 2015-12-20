@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-static const Vector2i SIZE_WINDOW = { 832, 700 };
+static const Vector2f SIZE_WINDOW = { 832, 700 };
 
 
 

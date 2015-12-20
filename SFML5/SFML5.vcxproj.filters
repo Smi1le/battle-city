@@ -60,6 +60,12 @@
     <ClCompile Include="images.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="boolean.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="level.h">
@@ -84,6 +90,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="images.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="boolean.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

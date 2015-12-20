@@ -24,8 +24,11 @@ public:
 	vector<Object> enemies;
 	std::vector<Object> e;
 	std::vector<Object> brick;
+	std::vector<Object> obj;
 	//vector<Image> imagesBonus;
 
+	Level lvl;
 
-	objectLevel(Level &lvl, Player &p, images *im);
+	objectLevel(images *im);
+	void createEnemy(Player *p);
 };

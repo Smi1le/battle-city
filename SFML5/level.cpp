@@ -257,6 +257,7 @@ Object Level::GetObject(std::string name)
 	for (int i = 0; i < int(objects.size()); i++)
 		if (objects[i].name == name)
 			return objects[i];
+	return objects.back();
 }
 
 std::vector<Object> Level::GetObjects(std::string name)

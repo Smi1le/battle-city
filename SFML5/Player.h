@@ -6,7 +6,7 @@
 
 class Player : public Entity{
 public:
-	Player(Image &image, String name, Level &lev, Vector2f position, Vector2i size, Object player) : Entity(image, name, position, size, coordinatesGunTank, lev){
+	Player(Image &image, String name, Level &lvl, Vector2f position, Vector2i size, Object player) : Entity(image, name, position, size, coordinatesGunTank, lvl){
 		state = STAY;
 		health = 2;
 		if (name == PLAYER_NAME) {
@@ -17,11 +17,11 @@ public:
 		}
 	};
 
-	void update(float time);
+	void update(float time, vector<Object> &obj);
 
 private:
 
-	void checkCollisionWithMap(float Dx, float Dy);
+	void checkCollisionWithMap(float Dx, float Dy, vector<Object> &obj);
 	
 	void control(float time);
 };

@@ -8,7 +8,7 @@ Entity::Entity(Image &image, String Name, Vector2f position, Vector2i size, Vect
 	sprite = new Sprite;
 	texture->loadFromImage(image);
 	sprite->setTexture(*texture);
-	obj = lvl.GetObjects(SOLID_NAME);
+	//obj = lvl.GetObjects(SOLID_NAME);
 }
 
 FloatRect Entity::getRect() {
