@@ -3,6 +3,7 @@
 #include "levelObject.h"
 
 
+
 class Enemy :public Entity {
 public:
 	Enemy(Image &image, String Name, Level &lvl, Vector2f position, Vector2i size, Player *p, Entity* *entity) :Entity(image, Name, position, size, coordinatesGunTank, lvl) {

@@ -8,7 +8,7 @@ void Enemy::changeDirection(float Dx, float Dy) {
 	uniform_int_distribution<> dist(1, 3);
 	int randomNumber = dist(gen);
 	if (Dx > 0) { //Right
-		if (randomNumber == 1) {
+		if (randomNumber == 1) {	
 			state = LEFT; speed = 0.1f;
 			coordinates.x -= 2;
 		}
@@ -152,10 +152,21 @@ void Enemy::update(float time, vector<Object> &obj) {
 			}
 			if (health <= 0) { alive = false; }
 		}
-		if (name == PLAYER_BULLES_NAME || name == ENEMY_BULLES_NAME) {
+		
+		if (name == PLAYER_BULLES_NAME) {
 			checkCollisionWithMap(time, obj);
 			coordinates.x += diraction.x * time;
 			coordinates.y += diraction.y * time;
+			cout << "diraction.x = " << diraction.x << endl;
+			cout << "diraction.x = " << diraction.x << endl;
+			sprite->setPosition(coordinates.x, coordinates.y);
+		}
+		if (name == "bullesEnemy") {
+			checkCollisionWithMap(time, obj);
+			coordinates.x += diraction.x * time;
+			coordinates.y += diraction.y * time;
+			cout << "sdsdsd = " << diraction.x << endl;
+			cout << "sdsdsd = " << diraction.x << endl;
 			sprite->setPosition(coordinates.x, coordinates.y);
 		}
 	}
@@ -163,6 +174,7 @@ void Enemy::update(float time, vector<Object> &obj) {
 
 void Enemy::checkNameForBullesPlayer(Player *p) {
 	if (name == PLAYER_BULLES_NAME) {
+		
 		if ((p->speedBulles.x > 0) && (p->speedBulles.y == 0)) {
 			diraction.x = 0.30f;
 			diraction.y = 0;
@@ -189,6 +201,9 @@ void Enemy::checkNameForBullesPlayer(Player *p) {
 void Enemy::checkNameForBullesEnemy(Entity* *entity) {
 	if (name == ENEMY_BULLES_NAME) {
 		bulletReleased = true;
+		alive = true;
+		cout << "coordinates.x = " << coordinates.x << endl;
+		cout << "coordinates.y = " << coordinates.y << endl;
 		if (((*entity)->diraction.x > 0) && ((*entity)->diraction.y == 0)) {
 			diraction.x = 0.30f;
 			diraction.y = 0;

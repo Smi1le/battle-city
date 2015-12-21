@@ -73,6 +73,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="boolean.cpp" />
+    <ClCompile Include="checks.cpp" />
+    <ClCompile Include="collisions.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="images.cpp" />
@@ -85,18 +87,23 @@
     <ClCompile Include="TinyXML\tinyxml.cpp" />
     <ClCompile Include="TinyXML\tinyxmlerror.cpp" />
     <ClCompile Include="TinyXML\tinyxmlparser.cpp" />
+    <ClCompile Include="updates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="boolean.h" />
+    <ClInclude Include="checks.h" />
+    <ClInclude Include="collisions.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="globalVariableWithGame.h" />
     <ClInclude Include="images.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="levelObject.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TinyXML\tinystr.h" />
+    <ClInclude Include="updates.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

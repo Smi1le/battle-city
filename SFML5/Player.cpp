@@ -43,22 +43,24 @@ void Player::control(float time) {
 }
 
 void Player::checkCollisionWithMap(float Dx, float Dy, vector<Object> &obj) {
-	for (size_t i = 0; i < obj.size(); ++i){
-		if (getRect().intersects(obj[i].rect)) {
-			if (obj[i].name == SOLID_NAME) {
-				if (Dy > 0) {
-					coordinates.y = obj[i].rect.top - h;
+	if (!changeCourse) {
+		for (size_t i = 0; i < obj.size(); ++i) {
+			if (getRect().intersects(obj[i].rect)) {
+				if (obj[i].name == SOLID_NAME) {
+					if (Dy > 0) {
+						coordinates.y = obj[i].rect.top - h;
 						diraction.y = 0;
-				}
-				if (Dy < 0) {
-					coordinates.y = obj[i].rect.top + obj[i].rect.height;
+					}
+					if (Dy < 0) {
+						coordinates.y = obj[i].rect.top + obj[i].rect.height;
 						diraction.y = 0;
-				}
-				if (Dx > 0) {
-					coordinates.x = obj[i].rect.left - w;
-				}
-				if (Dx < 0) {
-					coordinates.x = obj[i].rect.left + obj[i].rect.width;
+					}
+					if (Dx > 0) {
+						coordinates.x = obj[i].rect.left - w;
+					}
+					if (Dx < 0) {
+						coordinates.x = obj[i].rect.left + obj[i].rect.width;
+					}
 				}
 			}
 		}
@@ -87,6 +89,8 @@ void Player::update(float time, vector<Object> &obj) {
 		break;
 	case STAY: break;
 	}
+	lastCoordinates.x = coordinates.x;
+	lastCoordinates.y = coordinates.y;
 	coordinates.x += diraction.x * time;
 	coordinates.y += diraction.y * time;
 	checkCollisionWithMap(diraction.x, diraction.y, obj);

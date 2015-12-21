@@ -25,7 +25,9 @@ public:
 	std::vector<Object> e;
 	std::vector<Object> brick;
 	std::vector<Object> obj;
-	//vector<Image> imagesBonus;
+	Object health;
+	RenderWindow *window = nullptr;
+	Clock clock;
 
 	Level lvl;
 

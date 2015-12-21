@@ -66,6 +66,15 @@
     <ClCompile Include="Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="updates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="collisions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="checks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="level.h">
@@ -96,6 +105,18 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalVariableWithGame.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="updates.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="collisions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="checks.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

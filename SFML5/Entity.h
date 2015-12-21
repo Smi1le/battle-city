@@ -19,6 +19,7 @@ public:
 	float speed;
 	float currentFrame;
 	float delay;
+	float frame;
 	int w;
 	int h;
 	int health;
@@ -34,6 +35,7 @@ public:
 	Vector2f coordinates;
 	Vector2f diraction;
 	Vector2f speedBulles;
+	Vector2f lastCoordinates;
 	Texture *texture;
 	Sprite *sprite;
 	String name;
