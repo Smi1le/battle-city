@@ -10,6 +10,7 @@ using namespace sf;
 /*---------------------STRING----------------------*/
 static const string WINDOW_NAME = "Battle City PC Version";
 static const string EASY_ENEMY_NAME = "EasyEnemy";
+static const string SPEED_ENEMY_NAME = "speedEnemy";
 static const string DISPLAYS_ENEMY_NAME = "enemy";
 static const string PLAYER_BULLES_NAME = "Bulles";
 static const string EAGLE_NAME = "Deagle";
@@ -41,10 +42,13 @@ static const Vector2f COORDINATES_CURSOR_MENU = { 220.0f, 380.0f };
 static const unsigned TIME_RESPAWN_ENEMY = 4000;
 static const unsigned FREQUENCY_SHOOT_BULLES = 100;
 static const unsigned DELAY = 1;
-static const unsigned NUMBER_ENEMYES = 5;
-static const unsigned FREQUENCY_RESPAWN_BONUS = 2;
+static const unsigned NUMBER_ENEMYES = 20;
+static const unsigned FREQUENCY_RESPAWN_BONUS = 8;
 static const unsigned LIMIT_FRAME = 60;
 static const unsigned LIMIT_FRAME_IN_MENU = 9;
 /*-------------------------------------------------*/
 static const float VOLUME = 75;
 static const float REDUCTION = 0.005f;
+static const float SPEED_BULLES = 0.2f;
+static const float SPEED_EASY_ENEMY = 0.1f;
+static const float SPEED_SPEED_ENEMY = 0.15f;

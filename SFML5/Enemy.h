@@ -15,6 +15,14 @@ public:
 			individualNumber = p->numberEnemyTank;
 			sprite->setPosition(position.x, position.y);
 		}
+		if (name == "speedEnemy") {
+			sprite->setTextureRect(IntRect(0, 0, w, h));
+			state = DOWN; speed = SPEED_SPEED_ENEMY;
+			speedBulles = { 0.0f, 0.3f };
+			delay = 2;
+			individualNumber = p->numberEnemyTank;
+			sprite->setPosition(position.x, position.y);
+		}
 		if (name == DISPLAYS_ENEMY_NAME) {
 			sprite->setPosition(coordinates.x, coordinates.y);
 		}
@@ -40,4 +48,14 @@ private:
 	void animation(int X, int Y, int w, int h, string dir);
 	void checkNameForBullesPlayer(Player *p);
 	void checkNameForBullesEnemy(Entity* *entity);
+
+	void changeDirection_Right_Easy(int randomNumber);
+	void changeDirection_Left_Easy(int randomNumber);
+	void changeDirection_UP_Easy(int randomNumber);
+	void changeDirection_DOWN_Easy(int randomNumber);
+
+	void changeDirection_Right_Speed(int randomNumber);
+	void changeDirection_Left_Speed(int randomNumber);
+	void changeDirection_UP_Speed(int randomNumber);
+	void changeDirection_DOWN_Speed(int randomNumber);
 };

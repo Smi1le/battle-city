@@ -10,25 +10,25 @@ void Player::control(music *sound) {
 		state = LEFT; speed = 0.1f;
 		sprite->setTextureRect(IntRect(145, 52 * int(currentFrame), 40, 40));
 		coordinatesGunTank = { int(coordinates.x), int(coordinates.y) + h / 2 };
-		speedBulles = { -0.15f, 0.0f };
+		speedBulles = { -SPEED_BULLES, 0.0f };
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::Right) && permittedMovementOptions[0] == 0) {
 		state = RIGHT; speed = 0.1f;
 		sprite->setTextureRect(IntRect(0, 52 * int(currentFrame), 40, 40));
 		coordinatesGunTank = { int(coordinates.x) + w, int(coordinates.y) + h / 2 };
-		speedBulles = { 0.15f, 0.0f };
+		speedBulles = { SPEED_BULLES, 0.0f };
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::Up) && permittedMovementOptions[2] == 0) {
 		state = UP; speed = 0.1f;
 		sprite->setTextureRect(IntRect(100, 52 * int(currentFrame), 40, 40));
 		coordinatesGunTank = { int(coordinates.x) + w / 2, int(coordinates.y) };
-		speedBulles = { 0.0f, -0.15f };
+		speedBulles = { 0.0f, -SPEED_BULLES };
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::Down) && permittedMovementOptions[3] == 0) {
 		state = DOWN; speed = 0.1f;
 		sprite->setTextureRect(IntRect(50, 52 * int(currentFrame), 40, 40));
 		coordinatesGunTank = { int(coordinates.x) + w / 2, int(coordinates.y) + h };
-		speedBulles = { 0.0f, 0.15f };
+		speedBulles = { 0.0f, SPEED_BULLES };
 	}	
 	else {
 		state = STAY;

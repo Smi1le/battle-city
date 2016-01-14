@@ -154,9 +154,9 @@ void enemiesClash(list<Entity*> &entities, Entity* &it) {
 	for (Entity* entity : entities) {
 		if (entity->getRect().intersects(it->getRect())) {
 			if (it->getRect() != entity->getRect()) {
-				if ((it->getRect().intersects(entity->getRect())) && (it->name == EASY_ENEMY_NAME) && (entity->name == EASY_ENEMY_NAME)){
+				if ((it->getRect().intersects(entity->getRect())) && ((it->name == EASY_ENEMY_NAME) || (it->name == SPEED_ENEMY_NAME)) && 
+					((entity->name == EASY_ENEMY_NAME) || (entity->name == SPEED_ENEMY_NAME))){
 					stopingWithEnemyClash(it, entity);
-					
 				}
 			}
 		}

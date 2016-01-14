@@ -1,78 +1,181 @@
 #include "Enemy.h"
 
 
+void Enemy::changeDirection_Right_Easy(int randomNumber) {
+	if (randomNumber == 1) {
+		state = LEFT; speed = 0.1f;
+		coordinates.x -= 2;
+		speedBulles = { -SPEED_BULLES, 0.0f };
+	}
+	if (randomNumber == 2) {
+		state = DOWN; speed = 0.1f;
+		coordinates.x -= 2;
+		speedBulles = { 0.0f, SPEED_BULLES };
+	}
+	else if (randomNumber == 3) {
+		state = UP; speed = 0.1f;
+		coordinates.x -= 2;
+		speedBulles = { 0.0f, -SPEED_BULLES };
+	}
+}
+
+void Enemy::changeDirection_UP_Easy(int randomNumber) {
+	if (randomNumber == 1) {
+		state = RIGHT; speed = 0.1f;
+		coordinates.y += 2;
+		speedBulles = { SPEED_BULLES, 0.0f };
+	}
+	else if (randomNumber == 2) {
+		state = LEFT; speed = 0.1f;
+		coordinates.y += 2;
+		speedBulles = { -SPEED_BULLES, 0.0f };
+	}
+	else if (randomNumber == 3) {
+		state = DOWN; speed = 0.1f;
+		coordinates.y += 2;
+		speedBulles = { 0.0f, SPEED_BULLES };
+	}
+}
+
+void Enemy::changeDirection_Left_Easy(int randomNumber) {
+	if (randomNumber == 1) {
+		state = RIGHT; speed = 0.1f;
+		coordinates.x += 2;
+		speedBulles = { SPEED_BULLES, 0.0f };
+	}
+	if (randomNumber == 2) {
+		state = DOWN; speed = 0.1f;
+		coordinates.x += 2;
+		speedBulles = { 0.0f, SPEED_BULLES };
+	}
+	else if (randomNumber == 3) {
+		state = UP; speed = 0.1f;
+		coordinates.x += 2;
+		speedBulles = { 0.0f, -SPEED_BULLES };
+	}
+}
+
+void Enemy::changeDirection_DOWN_Easy(int randomNumber) {
+	if (randomNumber == 1) {
+		state = RIGHT; speed = 0.1f;
+		coordinates.y -= 2;
+		speedBulles = { SPEED_BULLES, 0.0f };
+	}
+	else if (randomNumber == 2) {
+		state = LEFT; speed = 0.1f;
+		coordinates.y -= 2;
+		speedBulles = { -SPEED_BULLES, 0.0f };
+	}
+	else if (randomNumber == 3) {
+		state = UP; speed = 0.1f;
+		coordinates.y -= 2;
+		speedBulles = { 0.0f, -SPEED_BULLES };
+	}
+}
+
+void Enemy::changeDirection_Right_Speed(int randomNumber) {
+	if (randomNumber == 1) {
+		state = LEFT; speed = SPEED_SPEED_ENEMY;
+		coordinates.x -= 2;
+		speedBulles = { -SPEED_BULLES, 0.0f };
+	}
+	if (randomNumber == 2) {
+		state = DOWN; speed = SPEED_SPEED_ENEMY;
+		coordinates.x -= 2;
+		speedBulles = { 0.0f, SPEED_BULLES };
+	}
+	else if (randomNumber == 3) {
+		state = UP; speed = SPEED_SPEED_ENEMY;
+		coordinates.x -= 2;
+		speedBulles = { 0.0f, -SPEED_BULLES };
+	}
+}
+
+void Enemy::changeDirection_UP_Speed(int randomNumber) {
+	if (randomNumber == 1) {
+		state = RIGHT; speed = SPEED_SPEED_ENEMY;
+		coordinates.y += 2;
+		speedBulles = { SPEED_BULLES, 0.0f };
+	}
+	else if (randomNumber == 2) {
+		state = LEFT; speed = SPEED_SPEED_ENEMY;
+		coordinates.y += 2;
+		speedBulles = { -SPEED_BULLES, 0.0f };
+	}
+	else if (randomNumber == 3) {
+		state = DOWN; speed = SPEED_SPEED_ENEMY;
+		coordinates.y += 2;
+		speedBulles = { 0.0f, SPEED_BULLES };
+	}
+}
+
+void Enemy::changeDirection_Left_Speed(int randomNumber) {
+	if (randomNumber == 1) {
+		state = RIGHT; speed = SPEED_SPEED_ENEMY;
+		coordinates.x += 2;
+		speedBulles = { SPEED_BULLES, 0.0f };
+	}
+	if (randomNumber == 2) {
+		state = DOWN; speed = SPEED_SPEED_ENEMY;
+		coordinates.x += 2;
+		speedBulles = { 0.0f, SPEED_BULLES };
+	}
+	else if (randomNumber == 3) {
+		state = UP; speed = SPEED_SPEED_ENEMY;
+		coordinates.x += 2;
+		speedBulles = { 0.0f, -SPEED_BULLES };
+	}
+}
+
+void Enemy::changeDirection_DOWN_Speed(int randomNumber) {
+	if (randomNumber == 1) {
+		state = RIGHT; speed = SPEED_SPEED_ENEMY;
+		coordinates.y -= 2;
+		speedBulles = { SPEED_BULLES, 0.0f };
+	}
+	else if (randomNumber == 2) {
+		state = LEFT; speed = SPEED_SPEED_ENEMY;
+		coordinates.y -= 2;
+		speedBulles = { -SPEED_BULLES, 0.0f };
+	}
+	else if (randomNumber == 3) {
+		state = UP; speed = SPEED_SPEED_ENEMY;
+		coordinates.y -= 2;
+		speedBulles = { 0.0f, -SPEED_BULLES };
+	}
+}
 
 void Enemy::changeDirection(float Dx, float Dy) {
 	random_device rd;
 	mt19937 gen(rd());
 	uniform_int_distribution<> dist(1, 3);
 	int randomNumber = dist(gen);
-	if (Dx > 0) { //Right
-		if (randomNumber == 1) {	
-			state = LEFT; speed = 0.1f;
-			coordinates.x -= 2;
-			speedBulles = { -0.15f, 0.0f };
+	if (name == EASY_ENEMY_NAME) {
+		if (Dx > 0) { //Right
+			changeDirection_Right_Easy(randomNumber);
 		}
-		if (randomNumber == 2) {
-			state = DOWN; speed = 0.1f;
-			coordinates.x -= 2;
-			speedBulles = { 0.0f, 0.15f };
+		if (Dx < 0) { //Left
+			changeDirection_Left_Easy(randomNumber);
 		}
-		else if (randomNumber == 3) {
-			state = UP; speed = 0.1f;
-			coordinates.x -= 2;
-			speedBulles = { 0.0f, -0.15f };
+		if (Dy < 0) { //Up
+			changeDirection_UP_Easy(randomNumber);
+		}
+		if (Dy > 0) { //Down
+			changeDirection_DOWN_Easy(randomNumber);
 		}
 	}
-	if (Dx < 0) { //Left
-		if (randomNumber == 1) {
-			state = RIGHT; speed = 0.1f;
-			coordinates.x += 2;
-			speedBulles = { 0.15f, 0.0f };
+	if (name == "speedEnemy") {
+		if (Dx > 0) { //Right
+			changeDirection_Right_Speed(randomNumber);
 		}
-		if (randomNumber == 2) {
-			state = DOWN; speed = 0.1f;
-			coordinates.x += 2;
-			speedBulles = { 0.0f, 0.15f };
+		if (Dx < 0) { //Left
+			changeDirection_Left_Speed(randomNumber);
 		}
-		else if (randomNumber == 3) {
-			state = UP; speed = 0.1f;
-			coordinates.x += 2;
-			speedBulles = { 0.0f, -0.15f };
+		if (Dy < 0) { //Up
+			changeDirection_UP_Speed(randomNumber);
 		}
-	}
-	if (Dy < 0) { //Up
-		if (randomNumber == 1) {
-			state = RIGHT; speed = 0.1f;
-			coordinates.y += 2;
-			speedBulles = { 0.15f, 0.0f };
-		}
-		else if (randomNumber == 2) {
-			state = LEFT; speed = 0.1f;
-			coordinates.y += 2;
-			speedBulles = { -0.15f, 0.0f };
-		}
-		else if (randomNumber == 3) {
-			state = DOWN; speed = 0.1f;
-			coordinates.y += 2;
-			speedBulles = { 0.0f, 0.15f };
-		}
-	}
-	if (Dy > 0) { //Down
-		if (randomNumber == 1) {
-			state = RIGHT; speed = 0.1f;
-			coordinates.y -= 2;
-			speedBulles = { 0.15f, 0.0f };
-		}
-		else if (randomNumber == 2) {
-			state = LEFT; speed = 0.1f;
-			coordinates.y -= 2;
-			speedBulles = { -0.15f, 0.0f };
-		}
-		else if (randomNumber == 3) {
-			state = UP; speed = 0.1f;
-			coordinates.y -= 2;
-			speedBulles = { 0.0f, -0.15f };
+		if (Dy > 0) { //Down
+			changeDirection_DOWN_Speed(randomNumber);
 		}
 	}
 }
@@ -81,7 +184,7 @@ void Enemy::checkCollisionWithMap(vector<Object> &obj, music *sound) {
 	for (Object element : obj) {
 		if (getRect().intersects(element.rect)) {
 			if (element.name == SOLID_NAME) {
-				if (name == EASY_ENEMY_NAME) {
+				if (name == EASY_ENEMY_NAME || name == "speedEnemy") {
 					if (diraction.y > 0) {
 						coordinates.y = element.rect.top - h;
 					}
@@ -172,7 +275,46 @@ void Enemy::update(float time, vector<Object> &obj, music *sound) {
 			}
 			if (health <= 0) { alive = false; }
 		}
-		
+		if (name == SPEED_ENEMY_NAME) {
+			delay += 0.005f * time;
+			if (delay > DELAY) {
+				currentFrame += 0.005f * time;
+				switch (state) {
+				case RIGHT:
+					diraction.x = speed;
+					diraction.y = 0;
+					animation(48, 51, 44, 44, "RIGHT");
+					break;
+				case LEFT:
+					diraction.x = -speed;
+					diraction.y = 0;
+					animation(141, 51, 44, 44, "LEFT");
+					break;
+				case UP:
+					diraction.x = 0;
+					diraction.y = -speed;
+					animation(92, 51, 44, 44, "UP");
+					break;
+				case DOWN:
+					diraction.x = 0;
+					diraction.y = speed;
+					animation(0, 51, 44, 44, "DOWN");
+					break;
+				case STAY:
+					diraction.x = 0;
+					diraction.y = 0;
+					break;
+				}
+				if (!isBlock) {
+					coordinates.x += diraction.x * time;
+					coordinates.y += diraction.y * time;
+				}
+				sprite->setPosition(coordinates.x, coordinates.y);
+				checkCollisionWithMap(obj, sound);
+
+			}
+			if (health <= 0) { alive = false; }
+		}
 		if (name == PLAYER_BULLES_NAME) {
 			checkCollisionWithMap(obj, sound);
 			coordinates.x += diraction.x * time;
@@ -190,25 +332,20 @@ void Enemy::update(float time, vector<Object> &obj, music *sound) {
 
 void Enemy::checkNameForBullesPlayer(Player *p) {
 	if (name == PLAYER_BULLES_NAME) {
-		
 		if ((p->speedBulles.x > 0) && (p->speedBulles.y == 0)) {
-			diraction.x = 0.30f;
-			diraction.y = 0;
+			diraction = { 0.3f, 0.0f };
 			sprite->setTextureRect(IntRect(26, 2, w, h));
 		}
 		if ((p->speedBulles.x < 0) && (p->speedBulles.y == 0)) {
-			diraction.x = -0.30f;
-			diraction.y = 0;
+			diraction = { -0.3f, 0.0f };
 			sprite->setTextureRect(IntRect(16, 2, w, h));
 		}
 		if ((p->speedBulles.x == 0) && (p->speedBulles.y < 0)) {
-			diraction.x = 0;
-			diraction.y = -0.30f;
+			diraction = { 0.0f, -0.3f };
 			sprite->setTextureRect(IntRect(0, 0, w, h));
 		}
 		if ((p->speedBulles.x == 0) && (p->speedBulles.y > 0)) {
-			diraction.x = 0;
-			diraction.y = 0.30f;
+			diraction = { 0.0f, 0.3f };
 			sprite->setTextureRect(IntRect(7, 2, w, h));
 		}
 	}

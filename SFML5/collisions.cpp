@@ -83,7 +83,10 @@ void collisionWithEnemyForPlayer(Player *p, list<Entity*> &entities, bool &chang
 			}
 		}
 		else {
-			entity->speed = 0.1f;
+			if (entity->name == EASY_ENEMY_NAME)
+				entity->speed = SPEED_EASY_ENEMY;
+			if (entity->name == SPEED_ENEMY_NAME)
+				entity->speed = SPEED_SPEED_ENEMY;
 		}
 	}
 }

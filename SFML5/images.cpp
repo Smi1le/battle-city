@@ -4,6 +4,9 @@ void images::create() {
 	easyEnemyImage.loadFromFile("recources/images/easyEnemy.png");
 	easyEnemyImage.createMaskFromColor(Color(0, 128, 128));
 
+	speedEnemyImage.loadFromFile("recources/images/speed enemy.png");
+	speedEnemyImage.createMaskFromColor(Color(0, 128, 128));
+
 	brickImage.loadFromFile("recources/images/brick.png");
 
 	Bulles.loadFromFile("recources/images/Bulles.png");

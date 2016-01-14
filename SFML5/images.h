@@ -4,6 +4,7 @@
 
 struct images {
 	Image easyEnemyImage;
+	Image speedEnemyImage;
 	Image brickImage;
 	Image Bulles;
 	Image displaysEnemies;

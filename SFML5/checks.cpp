@@ -11,21 +11,41 @@ void rangeValuesRandomly(int &number, int upperLimit) {
 void randomDirect(Entity* &entity, float Dx, float Dy) {
 	int randomNumber;
 	rangeValuesRandomly(randomNumber, 4);
-	if (randomNumber == 1) {
-		entity->state = entity->RIGHT; entity->speed = 0.1f;
-		entity->speedBulles = { 0.15f, 0.0f };
+	if (entity->name == EASY_ENEMY_NAME) {
+		if (randomNumber == 1) {
+			entity->state = entity->RIGHT; entity->speed = SPEED_EASY_ENEMY;
+			entity->speedBulles = { SPEED_BULLES, 0.0f };
+		}
+		else if (randomNumber == 2) {
+			entity->state = entity->LEFT; entity->speed = SPEED_EASY_ENEMY;
+			entity->speedBulles = { -SPEED_BULLES, 0.0f };
+		}
+		else if (randomNumber == 3) {
+			entity->state = entity->UP; entity->speed = SPEED_EASY_ENEMY;
+			entity->speedBulles = { 0.0f, -SPEED_BULLES };
+		}
+		else if (randomNumber == 4) {
+			entity->state = entity->DOWN; entity->speed = SPEED_EASY_ENEMY;
+			entity->speedBulles = { 0.0f, SPEED_BULLES };
+		}
 	}
-	else if (randomNumber == 2) {
-		entity->state = entity->LEFT; entity->speed = 0.1f;
-		entity->speedBulles = { -0.15f, 0.0f };
-	}
-	else if (randomNumber == 3) {
-		entity->state = entity->UP; entity->speed = 0.1f;
-		entity->speedBulles = { 0.0f, -0.15f };
-	}
-	else if (randomNumber == 4) {
-		entity->state = entity->DOWN; entity->speed = 0.1f;
-		entity->speedBulles = { 0.0f, 0.15f };
+	if (entity->name == SPEED_ENEMY_NAME) {
+		if (randomNumber == 1) {
+			entity->state = entity->RIGHT; entity->speed = SPEED_SPEED_ENEMY;
+			entity->speedBulles = { SPEED_BULLES, 0.0f };
+		}
+		else if (randomNumber == 2) {
+			entity->state = entity->LEFT; entity->speed = SPEED_SPEED_ENEMY;
+			entity->speedBulles = { -SPEED_BULLES, 0.0f };
+		}
+		else if (randomNumber == 3) {
+			entity->state = entity->UP; entity->speed = SPEED_SPEED_ENEMY;
+			entity->speedBulles = { 0.0f, -SPEED_BULLES };
+		}
+		else if (randomNumber == 4) {
+			entity->state = entity->DOWN; entity->speed = SPEED_SPEED_ENEMY;
+			entity->speedBulles = { 0.0f, SPEED_BULLES };
+		}
 	}
 }
 
@@ -204,8 +224,15 @@ void isAppearenceEnemy(globalVariable *var, globalBool *id, Player *p, objectLev
 		var->g_curFrame += 0.005f * time;
 		if (var->g_count == 2) {
 			Vector2f coordEnemy = { float(map->e[var->g_pointRessurection].rect.left), float(map->e[var->g_pointRessurection].rect.top) };
+			int ranNumber;
+			rangeValuesRandomly(ranNumber, 2);
 			Vector2i sizeEnemy = { 45, 45 };
-			map->entities.push_back(new Enemy(im->easyEnemyImage, "EasyEnemy", map->lvl, coordEnemy, sizeEnemy, p, nullptr));
+			if (ranNumber == 1) {
+				map->entities.push_back(new Enemy(im->easyEnemyImage, "EasyEnemy", map->lvl, coordEnemy, sizeEnemy, p, nullptr));
+			}
+			else {
+				map->entities.push_back(new Enemy(im->speedEnemyImage, "speedEnemy", map->lvl, coordEnemy, sizeEnemy, p, nullptr));
+			}
 			var->g_timerAppearenceEnemy = 0;
 
 			id->g_appearanceEnemies = false;
