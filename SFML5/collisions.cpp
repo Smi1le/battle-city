@@ -49,8 +49,38 @@ void collisionWithBricksForPlayer(Player *p, list<Entity*> &listBrick, bool &cha
 void collisionWithEnemyForPlayer(Player *p, list<Entity*> &entities, bool &changeCourse) {
 	for (Entity* entity : entities) {
 		if (entity->getRect().intersects(p->getRect()) && entity->alive) {
-			checkCollisionWithMap(p, entity, changeCourse);
-			entity->speed = 0;
+			if (p->speedBulles.x < 0.0f) {
+				p->permittedMovementOptions[1] = 1;
+				p->state = p->STAY;
+				if (entity->speedBulles.x > 0.0f || entity->speedBulles.x < 0.0f) {
+					p->isBlock = true;
+					entity->speed = 0;
+				}
+			}
+			else if  (p->speedBulles.x > 0.0f) {
+				p->permittedMovementOptions[0] = 1;
+				p->state = p->STAY;
+				if (entity->speedBulles.x < 0.0f || entity->speedBulles.x > 0.0f) {
+					p->isBlock = true;
+					entity->speed = 0;
+				}
+			}
+			else if (p->speedBulles.y < 0.0f) {
+				p->permittedMovementOptions[2] = 1;
+				p->state = p->STAY;
+				if (entity->speedBulles.y > 0.0f || entity->speedBulles.y < 0.0f) {
+					p->isBlock = true;
+					entity->speed = 0;
+				}
+			}
+			else if (p->speedBulles.y > 0.0f) {
+				p->permittedMovementOptions[3] = 1;
+				p->state = p->STAY;
+				if (entity->speedBulles.y < 0.0f || entity->speedBulles.y > 0.0f) {
+					p->isBlock = true;
+					entity->speed = 0;
+				}
+			}
 		}
 		else {
 			entity->speed = 0.1f;

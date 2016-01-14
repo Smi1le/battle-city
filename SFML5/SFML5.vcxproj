@@ -100,7 +100,11 @@
     <ClInclude Include="images.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="levelObject.h" />
+    <ClInclude Include="mainEngine.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="music.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="restart.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TinyXML\tinystr.h" />
     <ClInclude Include="updates.h" />

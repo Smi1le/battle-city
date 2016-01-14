@@ -10,8 +10,10 @@ public:
 		if (name == EASY_ENEMY_NAME) {
 			sprite->setTextureRect(IntRect(51, 0, w, h));
 			state = DOWN; speed = 0.1f;
+			speedBulles = { 0.0f, 0.3f};
 			delay = 2;
 			individualNumber = p->numberEnemyTank;
+			sprite->setPosition(position.x, position.y);
 		}
 		if (name == DISPLAYS_ENEMY_NAME) {
 			sprite->setPosition(coordinates.x, coordinates.y);
@@ -30,12 +32,12 @@ public:
 		checkNameForBullesEnemy(entity);
 	}
 
-	void update(float time, vector<Object> &obj);
+	void update(float time, vector<Object> &obj, music *sound);
 
 private:
 	void changeDirection(float Dx, float Dy);
-	void checkCollisionWithMap(float time, vector<Object> &obj);
-	void animation(int X, int Y, float time, int w, int h, string dir);
+	void checkCollisionWithMap(vector<Object> &obj, music *sound);
+	void animation(int X, int Y, int w, int h, string dir);
 	void checkNameForBullesPlayer(Player *p);
 	void checkNameForBullesEnemy(Entity* *entity);
 };

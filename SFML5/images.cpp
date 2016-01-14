@@ -43,4 +43,18 @@ void images::create() {
 	imageBonusLife.createMaskFromColor(Color(34, 177, 76));
 
 	imagesBonus = { imageBonusBomb, imageBonusLife };
+
+	fontImage.loadFromFile("recources/images/fontGameMenu.png");
+	cursorImage.loadFromFile("recources/images/hero.png");
+	cursorImage.createMaskFromColor(Color::Black);
+
+	fontTexture.loadFromImage(fontImage);
+	cursorTexture.loadFromImage(cursorImage);
+
+	fontSprite.setTexture(fontTexture);
+	cursorSprite.setTexture(cursorTexture);
+	cursorSprite.setTextureRect(IntRect(0, 0, SIZE_PLAYER.x, SIZE_PLAYER.y));
+
+	fontSprite.setOrigin(float(fontImage.getSize().x) / 2.0f, float(fontImage.getSize().y) / 2.0f);
+	fontSprite.setScale(3.0f, 3.0f);
 }

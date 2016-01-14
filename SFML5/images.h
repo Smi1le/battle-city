@@ -15,14 +15,20 @@ struct images {
 	Image imageBonusBomb;
 	Image imageBonusLife;
 	vector<Image> imagesBonus;
+	Image fontImage;
+	Image cursorImage;
 
 	Texture explTexture;
 	Texture enemiesTexture;
 	Texture appTexture;
 	Texture bigExplosionTexture;
+	Texture fontTexture;
+	Texture cursorTexture;
 
 	Sprite spriteAppEnemies;
 	Sprite bigExplosionSprite;
+	Sprite fontSprite;
+	Sprite cursorSprite;
 
 	void create();
 };

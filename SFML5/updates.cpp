@@ -36,10 +36,10 @@ void  explosion(float time, list<Entity*>::iterator it, bool &explosion, Texture
 			explosion = false;
 		}
 	}
-	(*it)->frame += 0.005f * time;;
+	(*it)->frame += 0.005f * time;
 }
 
-void updateBullesPlayer(objectLevel *map, globalBool *id, images *im, float &time) {
+void updateBullesPlayer(objectLevel *map, globalBool *id, images *im, float &time, music *sound) {
 	for (list<Entity*>::iterator iter = map->bullesPlayer.begin(); iter != map->bullesPlayer.end();) {
 		if (!(*iter)->alive) {
 			id->g_explPlayerBulles = true;
@@ -49,21 +49,21 @@ void updateBullesPlayer(objectLevel *map, globalBool *id, images *im, float &tim
 			}
 			if (!id->g_explPlayerBulles) {
 				iter--;
-				delete (*iter);
+				Entity *b = *iter;
 				iter = map->bullesPlayer.erase(iter);
+				delete (b);
 			}
 		}
 		else {
-			(*iter)->update(time, map->obj);
+			(*iter)->update(time, map->obj, sound);
 			if (map->bullesPlayer.size() != 0) iter++;
 		}
 	}
 }
 
 
-void updateBullesEnemy(objectLevel *map, globalBool *id, float &time, images *im) {
+void updateBullesEnemy(objectLevel *map, globalBool *id, float &time, images *im, music *sound) {
 	for (list<Entity*>::iterator itBulles = map->bullesEnemy.begin(); itBulles != map->bullesEnemy.end();) {
-		cout << "(*itBulles)->alive = " << (*itBulles)->alive << endl;
 		if (!(*itBulles)->alive) {
 			for (list<Entity*>::iterator it = map->entities.begin(); it != map->entities.end(); it++) {
 				if ((*it)->individualNumber == (*itBulles)->individualNumber) {
@@ -77,13 +77,13 @@ void updateBullesEnemy(objectLevel *map, globalBool *id, float &time, images *im
 			}
 			if (!id->g_explEnemyBulles) {
 				itBulles--;
-				delete *itBulles;
+				Entity *b = *itBulles;
 				itBulles = map->bullesEnemy.erase(itBulles);
+				delete b;
 			}
 		}
 		else {
-			cout << "///////////" << endl;
-			(*itBulles)->update(time, map->obj);
+			(*itBulles)->update(time, map->obj, sound);
 			if (map->bullesEnemy.size() != 0) {
 				itBulles++;
 			}
@@ -94,12 +94,16 @@ void updateBullesEnemy(objectLevel *map, globalBool *id, float &time, images *im
 void updateBrick(list<Entity*> &listBrick) {
 	list<Entity*>::iterator itBrick;
 	for (itBrick = listBrick.begin(); itBrick != listBrick.end();) {
-		if ((*itBrick)->alive == false) { delete (*itBrick); itBrick = listBrick.erase(itBrick); }
+		if ((*itBrick)->alive == false) { 
+			Entity *b = *itBrick;
+			itBrick = listBrick.erase(itBrick);
+			delete b;
+		}
 		else itBrick++;
 	}
 }
 
-void updateEnemy(float time, Texture &explTexture, globalBool *id, objectLevel *map) {
+void updateEnemy(float time, Texture &explTexture, globalBool *id, objectLevel *map, music *sound) {
 	list<Entity*>::iterator it;
 	for (it = map->entities.begin(); it != map->entities.end();) {
 		if (!(*it)->alive) {
@@ -110,15 +114,16 @@ void updateEnemy(float time, Texture &explTexture, globalBool *id, objectLevel *
 			}
 			if (!id->g_explEnemy) {
 				it--;
-				delete (*it);
+				Entity *b = *it;
 				it = map->entities.erase(it);
+				delete b;
 			}
 			if (!id->g_explEnemy && id->g_playerWinTime && map->entities.size() == 0) {
 				id->g_playerWin = true;
 			}
 		}
 		else {
-			(*it)->update(time, map->obj);
+			(*it)->update(time, map->obj, sound);
 			it++;
 		}
 	}

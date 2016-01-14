@@ -13,4 +13,8 @@ globalBool::globalBool() {
 	g_playerLose = false;
 	g_playerWin = false;
 	g_playerWinTime = false;
+	g_isPause = true;
+	g_isMenu = true;
+	g_isRestart = false;
+	g_isStart = false;
 }

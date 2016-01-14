@@ -42,9 +42,6 @@
     <ClCompile Include="TinyXML\tinystr.cpp">
       <Filter>Source Files\TinyXML</Filter>
     </ClCompile>
-    <ClCompile Include="level.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
@@ -54,37 +51,34 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="levelObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="images.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="boolean.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="updates.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="collisions.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="checks.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="collisions.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="images.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="level.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levelObject.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="updates.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="level.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="TinyXML\tinystr.h">
       <Filter>Source Files\TinyXML</Filter>
-    </ClInclude>
-    <ClInclude Include="config.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Source Files\Entity</Filter>
@@ -95,29 +89,47 @@
     <ClInclude Include="Enemy.h">
       <Filter>Source Files\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="levelObject.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="images.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="boolean.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="globalVariableWithGame.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="updates.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="collisions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="boolean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="checks.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="images.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalVariableWithGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="updates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="restart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="music.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mainEngine.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

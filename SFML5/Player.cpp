@@ -2,44 +2,37 @@
 
 
 
-void Player::control(float time) {
+void Player::control(music *sound) {
 	if (currentFrame > 2) {
 		(currentFrame = 0);
 	}
-	if (Keyboard::isKeyPressed(Keyboard::Left)) {
+	if (Keyboard::isKeyPressed(Keyboard::Left) && permittedMovementOptions[1] == 0) {
 		state = LEFT; speed = 0.1f;
 		sprite->setTextureRect(IntRect(145, 52 * int(currentFrame), 40, 40));
-		coordinatesGunTank.x = int(coordinates.x);
-		coordinatesGunTank.y = int(coordinates.y) + h / 2;
-		speedBulles.x = -0.15f;
-		speedBulles.y = 0.0f;
+		coordinatesGunTank = { int(coordinates.x), int(coordinates.y) + h / 2 };
+		speedBulles = { -0.15f, 0.0f };
 	}
-	else if (Keyboard::isKeyPressed(Keyboard::Right)) {
+	else if (Keyboard::isKeyPressed(Keyboard::Right) && permittedMovementOptions[0] == 0) {
 		state = RIGHT; speed = 0.1f;
 		sprite->setTextureRect(IntRect(0, 52 * int(currentFrame), 40, 40));
-		coordinatesGunTank.x = int(coordinates.x) + w;
-		coordinatesGunTank.y = int(coordinates.y) + h / 2;
-		speedBulles.x = 0.15f;
-		speedBulles.y = 0.0f;
+		coordinatesGunTank = { int(coordinates.x) + w, int(coordinates.y) + h / 2 };
+		speedBulles = { 0.15f, 0.0f };
 	}
-	else if ((Keyboard::isKeyPressed(Keyboard::Up))) {
+	else if (Keyboard::isKeyPressed(Keyboard::Up) && permittedMovementOptions[2] == 0) {
 		state = UP; speed = 0.1f;
 		sprite->setTextureRect(IntRect(100, 52 * int(currentFrame), 40, 40));
-		coordinatesGunTank.x = int(coordinates.x) + w / 2;
-		coordinatesGunTank.y = int(coordinates.y);
-		speedBulles.x = 0.0f;
-		speedBulles.y = -0.15f;
+		coordinatesGunTank = { int(coordinates.x) + w / 2, int(coordinates.y) };
+		speedBulles = { 0.0f, -0.15f };
 	}
-	else if (Keyboard::isKeyPressed(Keyboard::Down)) {
+	else if (Keyboard::isKeyPressed(Keyboard::Down) && permittedMovementOptions[3] == 0) {
 		state = DOWN; speed = 0.1f;
 		sprite->setTextureRect(IntRect(50, 52 * int(currentFrame), 40, 40));
-		coordinatesGunTank.x = int(coordinates.x) + w / 2;
-		coordinatesGunTank.y = int(coordinates.y) + h;
-		speedBulles.x = 0.0f;
-		speedBulles.y = 0.15f;
-
+		coordinatesGunTank = { int(coordinates.x) + w / 2, int(coordinates.y) + h };
+		speedBulles = { 0.0f, 0.15f };
 	}	
-	
+	else {
+		state = STAY;
+	}
 }
 
 void Player::checkCollisionWithMap(float Dx, float Dy, vector<Object> &obj) {
@@ -67,33 +60,49 @@ void Player::checkCollisionWithMap(float Dx, float Dy, vector<Object> &obj) {
 	}
 }
 
-void Player::update(float time, vector<Object> &obj) {
-	currentFrame += 0.005f * time;
-	control(time);
+void Player::update(float time, vector<Object> &obj, music *sound) {
+	currentFrame += REDUCTION * time;
+	control(sound);
+	checkCollisionWithMap(diraction.x, diraction.y, obj);
 	switch (state) {
 	case RIGHT:
+		if (sound->isMove.getStatus() != sound->isMove.Playing) {
+			sound->isMove.play();
+		}
 		diraction.x = speed;
-		diraction.y = 0;
+		diraction.y = 0.0f;
 		break;
 	case LEFT:
+		if (sound->isMove.getStatus() != sound->isMove.Playing) {
+			sound->isMove.play();
+		}
 		diraction.x = -speed;
-		diraction.y = 0;
+		diraction.y = 0.0f;
 		break;
 	case UP:
-		diraction.x = 0;
+		if (sound->isMove.getStatus() != sound->isMove.Playing) {
+			sound->isMove.play();
+		}
+		diraction.x = 0.0f;
 		diraction.y = -speed;
 		break;
 	case DOWN:
-		diraction.x = 0;
+		if (sound->isMove.getStatus() != sound->isMove.Playing) {
+			sound->isMove.play();
+		}
+		diraction.x = 0.0f;
 		diraction.y = speed;
 		break;
-	case STAY: break;
+	case STAY: 
+		diraction.x = 0.0f;
+		diraction.y = 0.0f;
+		sound->isMove.stop();
+		break;
 	}
-	lastCoordinates.x = coordinates.x;
-	lastCoordinates.y = coordinates.y;
-	coordinates.x += diraction.x * time;
-	coordinates.y += diraction.y * time;
-	checkCollisionWithMap(diraction.x, diraction.y, obj);
+	if (!isBlock) {
+		coordinates.x += diraction.x * time;
+		coordinates.y += diraction.y * time;
+	}
 	speed = 0;
 	sprite->setPosition(coordinates.x, coordinates.y);
 }

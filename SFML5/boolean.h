@@ -13,6 +13,10 @@ struct globalBool {
 	bool g_playerLose;
 	bool g_playerWin;
 	bool g_playerWinTime;
+	bool g_isPause;
+	bool g_isMenu;
+	bool g_isRestart;
+	bool g_isStart;
 
 	globalBool();
 };

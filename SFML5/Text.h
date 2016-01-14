@@ -8,5 +8,9 @@ struct text {
 	Text healph;
 	Text youLose;
 	Text youWin;
+	Text escape;
+	Text game;
+	Text continues;
+	Text exit;
 	text(objectLevel *lvl);
 }; 

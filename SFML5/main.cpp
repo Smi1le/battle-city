@@ -1,78 +1,123 @@
 //#include <SFML/Graphics.hpp>
 //#define _CrtDumpMemoryLeaks
+
 #include "updates.h"
+#include "mainEngine.h"
+#include "Menu.h"
+#include "restart.h"
+
+
+
+
 
 using namespace sf;
 using namespace std;
+
+
+void changeDirection_Right(int randomNumber, Entity* &it) {
+	if (randomNumber == 2) {
+		it->state = it->LEFT; it->speed = 0.1f;
+		it->coordinates.x -= 5;
+		it->speedBulles = { -0.15f, 0.0f };
+
+	}
+	if (randomNumber == 3) {
+		it->state = it->DOWN; it->speed = 0.1f;
+		it->coordinates.x -= 5;
+		it->speedBulles = { 0.0f, 0.15f };
+	}
+	else if (randomNumber == 4) {
+		it->state = it->UP; it->speed = 0.1f;
+		it->coordinates.x -= 5;
+		it->speedBulles = { 0.0f, -0.15f };
+	}
+}
+
+void changeDirection_Left(int randomNumber, Entity* &it) {
+	if (randomNumber == 1) {
+		it->state = it->RIGHT; it->speed = 0.1f;
+		it->coordinates.x += 5;
+		it->speedBulles = { 0.15f, 0.0f };
+	}
+	if (randomNumber == 3) {
+		it->state = it->DOWN; it->speed = 0.1f;
+		it->coordinates.x += 5;
+		it->speedBulles = { 0.0f, 0.15f };
+	}
+	else if (randomNumber == 4) {
+		it->state = it->UP; it->speed = 0.1f;
+		it->coordinates.x += 5;
+		it->speedBulles = { 0.0f, -0.15f };
+	}
+}
+
+void changeDirection_Up(int randomNumber, Entity* &it) {
+	if (randomNumber == 1) {
+		it->state = it->RIGHT; it->speed = 0.1f;
+		it->coordinates.y += 5;
+		it->speedBulles = { 0.15f, 0.0f };
+	}
+	else if (randomNumber == 2) {
+		it->state = it->LEFT; it->speed = 0.1f;
+		it->coordinates.y += 5;
+		it->speedBulles = { -0.15f, 0.0f };
+	}
+	else if (randomNumber == 3) {
+		it->state = it->DOWN; it->speed = 0.1f;
+		it->coordinates.y += 5;
+		it->speedBulles = { 0.0f, 0.15f };
+
+	}
+}
+
+void changeDirection_Down(int randomNumber, Entity* &it) {
+	if (randomNumber == 1) {
+		it->state = it->RIGHT; it->speed = 0.1f;
+		it->coordinates.y -= 5;
+		it->speedBulles = { 0.15f, 0.0f };
+	}
+	else if (randomNumber == 2) {
+		it->state = it->LEFT; it->speed = 0.1f;
+		it->coordinates.y -= 5;
+		it->speedBulles = { -0.15f, 0.0f };
+	}
+	else if (randomNumber == 4) {
+		it->state = it->UP; it->speed = 0.1f;
+		it->coordinates.y -= 5;
+		it->speedBulles = { 0.0f, -0.15f };
+	}
+}
 
 void changeDirection(float Dx, float Dy, Entity* &it) {
 	int randomNumber;
 	rangeValuesRandomly(randomNumber, 4);
 	if (Dx > 0) { //Right
-		if (randomNumber == 2) {
-			it->state = it->LEFT; it->speed = 0.1f;
-			it->coordinates.x -= 5;
-
-		}
-		if (randomNumber == 3) {
-			it->state = it->DOWN; it->speed = 0.1f;
-			it->coordinates.x -= 5;
-		}
-		else if (randomNumber == 4) {
-			it->state = it->UP; it->speed = 0.1f;
-			it->coordinates.x -= 5;
-		}
+		changeDirection_Right(randomNumber, it);
 	}
 	if (Dx < 0) { //Left
-		if (randomNumber == 1) {
-			it->state = it->RIGHT; it->speed = 0.1f;
-			it->coordinates.x += 5;
-		}
-		if (randomNumber == 3) {
-			it->state = it->DOWN; it->speed = 0.1f;
-			it->coordinates.x += 5;
-		}
-		else if (randomNumber == 4) {
-			it->state = it->UP; it->speed = 0.1f;
-			it->coordinates.x += 5;
-		}
+		changeDirection_Left(randomNumber, it);
 	}
 	if (Dy < 0) { //Up
-		if (randomNumber == 1) {
-			it->state = it->RIGHT; it->speed = 0.1f;
-			it->coordinates.y += 5;
-		}
-		else if (randomNumber == 2) {
-			it->state = it->LEFT; it->speed = 0.1f;
-			it->coordinates.y += 5;
-		}
-		else if (randomNumber == 3) {
-			it->state = it->DOWN; it->speed = 0.1f;
-			it->coordinates.y += 5;
-
-		}
+		changeDirection_Up(randomNumber, it);
 	}
 	if (Dy > 0) { //Down
-		if (randomNumber == 1) {
-			it->state = it->RIGHT; it->speed = 0.1f;
-			it->coordinates.y -= 5;
-		}
-		else if (randomNumber == 2) {
-			it->state = it->LEFT; it->speed = 0.1f;
-			it->coordinates.y -= 5;
-		}
-		else if (randomNumber == 4) {
-			it->state = it->UP; it->speed = 0.1f;
-			it->coordinates.y -= 5;
-		}
+		changeDirection_Down(randomNumber, it);
 	}
 }
 
 void stoping(Entity* &it,Entity* &entity) {
-	if (it->diraction.y > 0) { it->coordinates.y = entity->sprite->getPosition().y - it->h; }
-	else if (it->diraction.y < 0) { it->coordinates.y = entity->sprite->getPosition().y + entity->h; }
-	else if (it->diraction.x > 0) { it->coordinates.x = entity->sprite->getPosition().x - it->w; }
-	else if (it->diraction.x < 0) { it->coordinates.x = entity->sprite->getPosition().x + entity->w; }
+	if (it->diraction.y > 0) { 
+		it->coordinates.y = entity->sprite->getPosition().y - it->h; 
+	}
+	else if (it->diraction.y < 0) {
+		it->coordinates.y = entity->sprite->getPosition().y + entity->h; 
+	}
+	else if (it->diraction.x > 0) { 
+		it->coordinates.x = entity->sprite->getPosition().x - it->w;
+	}
+	else if (it->diraction.x < 0) { 
+		it->coordinates.x = entity->sprite->getPosition().x + entity->w; 
+	}
 }
 
 void collisionWithBricks(Entity* &it, list<Entity*> &listBrick) {
@@ -85,39 +130,40 @@ void collisionWithBricks(Entity* &it, list<Entity*> &listBrick) {
 	}
 }
 
+void stopingWithEnemyClash(Entity* &it, Entity* &entity) {
+	stoping(it, entity);
+	if (it->state == it->RIGHT)
+		it->state = it->LEFT;
+	else if (it->state == it->LEFT)
+		it->state = it->RIGHT;
+	else if (it->state == it->UP)
+		it->state = it->DOWN;
+	else if (it->state == it->DOWN)
+		it->state = it->UP;
+	if (entity->state == entity->RIGHT)
+		entity->state = entity->LEFT;
+	else if (entity->state == entity->LEFT)
+		entity->state = entity->RIGHT;
+	else if (entity->state == entity->UP)
+		entity->state = entity->DOWN;
+	else if (entity->state == entity->DOWN)
+		entity->state = entity->UP;
+}
+
 void enemiesClash(list<Entity*> &entities, Entity* &it) {
 	for (Entity* entity : entities) {
 		if (entity->getRect().intersects(it->getRect())) {
 			if (it->getRect() != entity->getRect()) {
 				if ((it->getRect().intersects(entity->getRect())) && (it->name == EASY_ENEMY_NAME) && (entity->name == EASY_ENEMY_NAME)){
-					stoping(it, entity);
-					if (it->state == it->LEFT) { it->state = it->RIGHT; }
-					else if (it->state == it->RIGHT) { it->state = it->LEFT; }
-					else if (it->state == it->DOWN) { it->state = it->UP; }
-					else if (it->state == it->UP) { it->state = it->DOWN; }
-					if (entity->state == entity->LEFT) { entity->state = entity->RIGHT; }
-					else if (entity->state == entity->RIGHT) { entity->state = entity->LEFT; }
-					else if (entity->state == entity->DOWN) { entity->state = entity->UP; }
-					else if (entity->state == entity->UP) { entity->state = entity->DOWN; }
+					stopingWithEnemyClash(it, entity);
+					
 				}
 			}
 		}
 	}
 }
 
-void drawing(RenderWindow &window, Player *p, objectLevel *map, images *im, Enemy &targetProtecting, globalBool *id, text &txt) {
-	window.clear();
-	ostringstream playerHealthString;
-	playerHealthString << p->health;
-	txt.healph.setString("" + playerHealthString.str());
-	map->lvl.Draw(window);
-	window.draw(txt.healph);
-	for (Entity* brick : map->listBrick) {
-		window.draw(*brick->sprite);
-	}
-	for (Entity* bonus : map->listPointsBonus) {
-		window.draw(*bonus->sprite);
-	}
+void checkForWinOrLosePlayer(globalBool *id, RenderWindow &window, images *im, text *txt, Player *p) {
 	if (!id->g_playerLose) {
 		if (id->g_isHit) {
 			window.draw(im->bigExplosionSprite);
@@ -127,68 +173,99 @@ void drawing(RenderWindow &window, Player *p, objectLevel *map, images *im, Enem
 		}
 	}
 	else {
-		window.draw(txt.youLose);
+		window.draw(txt->youLose);
+		window.draw(txt->escape);
+		if (Keyboard::isKeyPressed(Keyboard::Key::Escape)) {
+			id->g_isMenu = true;
+		}
 	}
 	if (id->g_playerWin) {
-		window.draw(txt.youWin);
-	}
-	window.draw(*targetProtecting.sprite);
-	for (Entity* entity : map->bullesPlayer) {
-		window.draw(*entity->sprite);
-	}
-	for (Entity* entity : map->entities) {
-		window.draw(*entity->sprite);
-	}
-	for (Entity* bulles : map->bullesEnemy) {
-		window.draw(*bulles->sprite);
-	}
-	for (Entity* enemy : map->numberEnemies) {
-		window.draw(*enemy->sprite);
-	}
-	if (id->g_appearanceEnemies) window.draw(im->spriteAppEnemies);
-	window.display();
-}
-
-void cleaning(Player *p, objectLevel *map, images *im) {
-	delete p;
-	delete &map->clock;
-	delete map;
-	delete im;
-}
-
-void shotEnemy(objectLevel *map, images *im) {
-	for (Entity* entity : map->entities) {
-		int random;
-		rangeValuesRandomly(random, 100);
-		if (entity->alive) {
-			if (random == 1 && !entity->bulletReleased) {
-				Vector2f coordBullesEnemy = { float(entity->coordinatesGunTank.x), float(entity->coordinatesGunTank.y) };
-				Vector2i sizeBullesEnemy = { 8, 8 };
-				map->bullesEnemy.push_back(new Enemy(im->Bulles, "bullesEnemy", map->lvl, coordBullesEnemy, sizeBullesEnemy, nullptr, &entity));
-				list<Entity*>::iterator itBulles = map->bullesEnemy.end();
-				--itBulles;
-				(*itBulles)->individualNumber = entity->individualNumber;
-				entity->bulletReleased = true;
-			}
-			enemiesClash(map->entities, entity);
-			collisionWithBricks(entity, map->listBrick);
+		window.draw(txt->youWin);
+		window.draw(txt->escape);
+		if (Keyboard::isKeyPressed(Keyboard::Key::Escape)) {
+			id->g_isMenu = true;
 		}
 	}
 }
 
-void shotPlayer(objectLevel *map, images *im, Player *p) {
-	if ((Keyboard::isKeyPressed(Keyboard::RControl)) && map->bullesPlayer.size() == 0) {
-		Vector2f coordBullesPlayer = { float(p->coordinatesGunTank.x), float(p->coordinatesGunTank.y) };
-		Vector2i sizeBullesPlayer = { 8, 8 };
-		map->bullesPlayer.push_back(new Enemy(im->Bulles, "Bulles", map->lvl, coordBullesPlayer, sizeBullesPlayer, p, nullptr));
+void drawing(RenderWindow &window, engine *en) {
+	window.clear();
+	ostringstream playerHealthString;
+	playerHealthString << en->p->health;
+	en->txt->healph.setString("" + playerHealthString.str());
+	en->map->lvl.Draw(window);
+	window.draw(en->txt->healph);
+	for (Entity* brick : en->map->listBrick) {
+		window.draw(*brick->sprite);
+	}
+	for (Entity* bonus : en->map->listPointsBonus) {
+		window.draw(*bonus->sprite);
+	}
+	checkForWinOrLosePlayer(en->id, window, en->im, en->txt, en->p);
+	window.draw(*en->targetProtecting->sprite);
+	for (Entity* entity : en->map->bullesPlayer) {
+		window.draw(*entity->sprite);
+	}
+	for (Entity* entity : en->map->entities) {
+		window.draw(*entity->sprite);
+	}
+	for (Entity* bulles : en->map->bullesEnemy) {
+		window.draw(*bulles->sprite);
+	}
+	for (Entity* enemy : en->map->numberEnemies) {
+		window.draw(*enemy->sprite);
+	}
+	if (en->id->g_appearanceEnemies) window.draw(en->im->spriteAppEnemies);
+	window.display();
+}
+
+void cleaning(engine *en) {
+	delete en->p->sprite;
+	delete en->p->texture;
+	delete en->p;
+	delete en->map;
+	delete en->im;
+	delete en->id;
+	delete en->txt;
+	delete en->targetProtecting;
+	delete en->var;
+	delete en->sound;
+	delete en;
+}
+
+void shotEnemy(engine *en) {
+	for (Entity* entity : en->map->entities) {
+		int random;
+		rangeValuesRandomly(random, FREQUENCY_SHOOT_BULLES);
+		if (entity->alive) {
+			if (random == 1 && !entity->bulletReleased) {
+				Vector2f coordBullesEnemy = { float(entity->coordinatesGunTank.x), float(entity->coordinatesGunTank.y) };
+				en->map->bullesEnemy.push_back(new Enemy(en->im->Bulles, "bullesEnemy", en->map->lvl, coordBullesEnemy, SIZE_BULLES_ENEMY, nullptr, &entity));
+				en->sound->soundShoot.play();
+				list<Entity*>::iterator itBulles = en->map->bullesEnemy.end();
+				--itBulles;
+				(*itBulles)->individualNumber = entity->individualNumber;
+				entity->bulletReleased = true;
+			}
+			enemiesClash(en->map->entities, entity);
+			collisionWithBricks(entity, en->map->listBrick);
+		}
 	}
 }
 
-void updates(objectLevel *map, globalBool *id, images *im, float time) {
-	updateBullesPlayer(map, id, im, time);
-	updateBullesEnemy(map, id, time, im);
-	updateBrick(map->listBrick);
-	updateEnemy(time, im->bigExplosionTexture, id, map);
+void shootPlayer(engine *en) {
+	if ((Keyboard::isKeyPressed(Keyboard::RControl)) && en->map->bullesPlayer.size() == 0) {
+		Vector2f coordBullesPlayer = { float(en->p->coordinatesGunTank.x), float(en->p->coordinatesGunTank.y) };
+		en->map->bullesPlayer.push_back(new Enemy(en->im->Bulles, "Bulles", en->map->lvl, coordBullesPlayer, SIZE_BULLES_PLAYER, en->p, nullptr));
+		en->sound->soundShoot.play();
+	}
+}
+
+void updates(engine *en, float time) {
+	updateBullesPlayer(en->map, en->id, en->im, time, en->sound);
+	updateBullesEnemy(en->map, en->id, time, en->im, en->sound);
+	updateBrick(en->map->listBrick);
+	updateEnemy(time, en->im->bigExplosionTexture, en->id, en->map, en->sound);
 }
 
 void collisions(Player *p, objectLevel *map) {
@@ -196,63 +273,88 @@ void collisions(Player *p, objectLevel *map) {
 	collisionWithEnemyForPlayer(p, map->entities, p->changeCourse);
 }
 
-void checks(globalVariable &var, globalBool *id, Player *p, objectLevel *map, images *im, Enemy &targetProtecting, float time, Object player, RenderWindow &window, int &randomNumber) {
-	checkForRespawnBonus(var, id, p, map, im);
-	isAppearenceEnemy(var, id, p, map, im, time);
-	isHitForPlayer(time, im, player, p, id, map);
-	changeCourseTank(randomNumber, var.g_timer, time, map->entities);
-	checkPlayerBulles(map, window, targetProtecting, id);
-	checkEnemyBulles(map, p, id, window, targetProtecting);
-	p->changeCourse = false;
-	checkForBonus(p, map);
+void checks(float time, RenderWindow &window, int &randomNumber, engine *en) {
+	checkForRespawnBonus(en->var, en->id, en->p, en->map, en->im);
+	isAppearenceEnemy(en->var, en->id, en->p, en->map, en->im, time);
+	isHitForPlayer(time, en->im, en->player, en->p, en->id, en->map, en->sound);
+	changeCourseTank(randomNumber, en->var->g_timer, time, en->map->entities);
+	checkPlayerBulles(en->map, window, en->targetProtecting, en->id, en->sound);
+	checkEnemyBulles(en->map, en->p, en->id, window, en->targetProtecting, en->sound);
+	en->p->changeCourse = false;
+	checkForBonus(en->p, en->map, en->sound);
 }
 
-void events(RenderWindow &window) {
+void events(RenderWindow &window, globalBool *id) {
 	sf::Event event;
 	while (window.pollEvent(event)) {
 		if (event.type == sf::Event::Closed)
 			window.close();
+		if (Keyboard::isKeyPressed(Keyboard::RAlt)) {
+			if (!id->g_isPause) {
+				id->g_isPause = true;
+			}
+			else if (id->g_isPause) {
+				id->g_isPause = false;
+			}
+		}
+		if (Keyboard::isKeyPressed(Keyboard::Escape)) {	
+			id->g_isMenu = true;
+		}
 	}
 }
 
-void basicCycle(globalVariable &var, objectLevel *map, images *im, Object &player, globalBool *id, Enemy &targetProtecting, text &txt, Player *p) {
+
+
+
+void basicCycle(engine *en) {
 	int randomNumber;
 	rangeValuesRandomly(randomNumber, 50);
-	RenderWindow & window = *map->window;
-	map->clock.restart();
+	RenderWindow &window = *en->map->window;
+	en->map->clock.restart();
 	while (window.isOpen()) {
-		float time = float(map->clock.getElapsedTime().asMicroseconds());
-		map->clock.restart();
-		time = time / 800.0f;
-		var.g_timer += time;
-		var.g_timerAppearenceEnemy += time;
-		events(window);
-		shotPlayer(map, im, p);
-		if (!id->g_playerLose && !id->g_playerWin) {
-			updates(map, id, im, time);
-			shotEnemy(map, im);
-			collisions(p, map);
-			checks(var, id, p, map, im, targetProtecting, time, player, window, randomNumber);
+		if (en->id->g_isMenu) {
+			gameMenu(window, en);
+			en->map->clock.restart();
 		}
-		drawing(window, p, map, im, targetProtecting, id, txt);
+		if (!en->id->g_isMenu) {
+			if (en->sound->mainTheme.getStatus() != en->sound->mainTheme.Playing) {
+				en->sound->mainTheme.play();
+			}
+			
+			float time = float(en->map->clock.getElapsedTime().asMicroseconds());
+			en->map->clock.restart();
+			time = time / 800.0f;
+			events(window, en->id);
+			if (en->id->g_isRestart) {
+				restart(en->p, en->im, en->map, en->id, en->var);
+				en->id->g_isRestart = false;
+			}
+			if (!en->id->g_playerLose && !en->id->g_playerWin && !en->id->g_isPause) {
+				en->p->permittedMovementOptions = vector<int>(4, 0);
+				en->p->isBlock = false;
+				shootPlayer(en);
+				en->var->g_timer += time;
+				en->var->g_timerAppearenceEnemy += time;
+				updates(en, time);
+				shotEnemy(en);
+				collisions(en->p, en->map);
+				checks(time, window, randomNumber, en);
+			}
+			drawing(window, en);
+			if (en->id->g_isMenu) {
+				en->sound->mainTheme.stop();
+				if (en->sound->isMove.getStatus() == en->sound->isMove.Playing) {
+					en->sound->isMove.stop();
+				}
+			}
+		}
 	}
-
 }
 
 int main(){
-	
-	images * im = new images;
-	im->create();
-	globalBool *id = new globalBool;
-	objectLevel *map = new objectLevel(im);
-	Object player = map->lvl.GetObject("player");
-	text txt(map);
-	Vector2f coordPlayer{ float(player.rect.left), float(player.rect.top) };
-	Player *p = new Player(im->hero, "Player", map->lvl, coordPlayer, SIZE_PLAYER, player);
-	Vector2f coordEagle = { float(map->targetDeagle.rect.left), float(map->targetDeagle.rect.top) };
-	Enemy targetProtecting(im->eagle, "Deagle", map->lvl, coordEagle, SIZE_EAGLE, nullptr, nullptr);
-	globalVariable var;
-	basicCycle(var, map, im, player, id, targetProtecting, txt, p);
-	
+	engine *en = new engine;
+	en->sound->volumeSounds(VOLUME);
+	basicCycle(en);
+	cleaning(en);
 	return 0;
 }

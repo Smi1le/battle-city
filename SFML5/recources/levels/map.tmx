@@ -3,12 +3,6 @@
  <tileset firstgid="1" name="block" tilewidth="26" tileheight="25" tilecount="52">
   <image source="recources/images/block.png" width="360" height="124"/>
  </tileset>
- <tileset firstgid="53" name="first" tilewidth="26" tileheight="25" tilecount="4">
-  <image source="images/first.png" width="52" height="56"/>
- </tileset>
- <tileset firstgid="57" name="tank1" tilewidth="26" tileheight="25" tilecount="1">
-  <image source="images/tank1.bmp" width="26" height="25"/>
- </tileset>
  <layer name="Слой тайлов 1" width="32" height="28">
   <data>
    <tile gid="17"/>

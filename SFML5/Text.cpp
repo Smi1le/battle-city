@@ -17,4 +17,21 @@ text::text(objectLevel *lvl) {
 	youWin.setColor(Color::Blue);//покрасили текст в красный. если убрать эту строку, то по умолчанию он белый
 	youWin.setStyle(sf::Text::Bold);
 	youWin.setPosition(200.0f, SIZE_WINDOW.y / 2.0f);
+
+	game = Text("GAME", font, 50);
+	//game.setColor();
+	game.setStyle(sf::Text::Bold);
+	game.setPosition(COORDINATES_FIRST_STRING_MENU);
+
+	continues = Text("CONTINUE", font, 50);
+	continues.setStyle(Text::Bold);
+	continues.setPosition(COORDINATES_SECOND_STRING_MENU);
+
+	exit = Text("EXIT", font, 50);
+	exit.setStyle(Text::Bold);
+	exit.setPosition(COORDINATES_THIRD_STRING_MENU);
+
+	escape = Text("Please press ESC to exit the menu", font, 25);
+	escape.setStyle(Text::Bold);
+	escape.setPosition(Vector2f(100.0f, SIZE_WINDOW.y / 2.0f + 100.0f));
 }
